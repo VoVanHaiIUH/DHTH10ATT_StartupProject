@@ -1,0 +1,9 @@
+[ODBC]
+DRIVER=SQL Server
+UID=thanh
+DATABASE=QL Kho
+WSID=DESKTOP-69K2HSI
+APP=Enterprise Architect 11
+Trusted_Connection=Yes
+SERVER=DESKTOP-69K2HSI\SQLEXPRESS
+Description=QL Kho

@@ -1,0 +1,4 @@
+Login vào tài khoản github, chọn your profile ->edit profile
+->Chọn mục Account -> chọn Change USername, gõ lại tên
+
+yêu cầu: tên phải đầy đủ họ tên, không có dấu. Nếu trùng thì có thể thêm tên lớp vào sau
