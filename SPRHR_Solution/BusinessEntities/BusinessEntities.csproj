@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BanHang\eChiTietHoaDonBanHang.cs" />
+    <Compile Include="BanHang\eHoaDonBanHang.cs" />
     <Compile Include="NhanSu\ChiTietKyLuat.cs" />
     <Compile Include="NhanSu\ChiTietLich.cs" />
     <Compile Include="NhanSu\ChucVu.cs" />

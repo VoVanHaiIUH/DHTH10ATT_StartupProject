@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessEntities
+namespace BusinessLogicTier.BanHang.NhanHangTuKho
 {
-    public class Class1
+    class NhanHangTuKho_BUS
     {
+
     }
 }

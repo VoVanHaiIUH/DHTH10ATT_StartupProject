@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_BUS.cs" />
+    <Compile Include="BanHang\NhanHangTuKho\NhanHangTuKho_BUS.cs" />
     <Compile Include="CongNo\ChiTietPhieuThuNo_BUS.cs" />
     <Compile Include="CongNo\ChiTietPhieuTraNo_BUS.cs" />
     <Compile Include="CongNo\PhieuThuNo_BUS.cs" />
@@ -48,8 +50,6 @@
   <ItemGroup>
     <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
-    <Folder Include="BanHang\LapPhieuBanHang\" />
-    <Folder Include="BanHang\NhanHangTuKho\" />
     <Folder Include="CongNo\XemThongTinNoDaTra\" />
     <Folder Include="CongNo\XemThongTinNoKhachHang\" />
     <Folder Include="CongNo\XemThongTinNoNhaCungCap\" />
@@ -65,6 +65,16 @@
     <Folder Include="PhongKeHoach\QuanLyDichVuThanhVien\" />
     <Folder Include="PhongKeHoach\ThemThanhVien\" />
     <Folder Include="PhongKeHoach\TichDiemThanhVien\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
+      <Project>{91c04b68-7d25-4d06-b79e-ec572c614eb2}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{12be2beb-e102-4bb4-ae53-245c56a4d092}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
