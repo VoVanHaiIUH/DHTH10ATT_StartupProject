@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessEntities.Kho
 {
-    public class QuanLyKho
+    public class ePhieuXuatKho
     {
     }
 }
