@@ -17,7 +17,7 @@
       <Column Name="MaHoaDonBanSi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GiaBanSi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="MaSP" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSP" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaChiTietHoaDonBanSi" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="HoaDonBanSi_ChiTietHoaDonBanSi" Member="HoaDonBanSi" ThisKey="MaHoaDonBanSi" OtherKey="MaHoaDonBanSi" Type="HoaDonBanSi" IsForeignKey="true" />
