@@ -75,6 +75,7 @@ namespace BusinessEntities.Kho
                 _ngayLap = value;
             }
         }
+
         public ePhieuXuatKho(string _soPX, string _soPDNX, string _maNV, string _maKho, DateTime _ngayLap)
         {
             this._soPX = _soPX;

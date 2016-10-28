@@ -63,16 +63,13 @@ namespace BusinessEntities.Kho
                 _ngayLap = DateTime.Now;
             }
         }
-        //List<PhongKeHoach.ePhieuDNNK> listct;
         public ePhieuNhapKho(string _soPN, string _soPDNN, string _maNV, string _maKho, DateTime _ngayLap)
         {
-            //this._soPN = "PNK" + DateTime.Now.ToString("yyyyMMdd")+"-" + (stt + 1).ToString();
             this._soPN = _soPN;
             this._soPDNN = _soPDNN;
             this._maNV = _maNV;
             this._maKho = _maKho;
             this._ngayLap = _ngayLap;
-            //listct = new List<PhongKeHoach.ePhieuDNNK>();
         }
         public override int GetHashCode()
         {

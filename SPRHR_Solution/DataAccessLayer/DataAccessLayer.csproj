@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_DAL.cs" />
+    <Compile Include="Kho\PhieuNhapKho_dal.cs" />
+    <Compile Include="Kho\PhieuXuatKho_dal.cs" />
+    <Compile Include="Kho\QuanLyKho_dal.cs" />
+    <Compile Include="Kho\ThongTinKho_dal.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDeNghiNhapKho_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDeNghiXuatKho_DAL.cs" />
