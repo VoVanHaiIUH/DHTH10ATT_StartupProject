@@ -20,6 +20,9 @@ namespace DataAccessLayer.Kho
             {
                 ls.Add(new ePhieuNhapKho(pn.sopnk, pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
             }
+            //ChitietPhieuNhapKho
+            //
+            //
             return ls;
         }
         private string taosoPNK()
