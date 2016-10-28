@@ -59,12 +59,14 @@
     <Folder Include="Kho\LapPhieuNhapKho\" />
     <Folder Include="Kho\LapPhieuXuatKho\" />
     <Folder Include="NhanSu\" />
-    <Folder Include="PhongKeHoach\BanSi\" />
-    <Folder Include="PhongKeHoach\NhapHang\" />
-    <Folder Include="PhongKeHoach\PhatHanhChuongTrinhKhuyenMai\" />
-    <Folder Include="PhongKeHoach\QuanLyDichVuThanhVien\" />
-    <Folder Include="PhongKeHoach\ThemThanhVien\" />
-    <Folder Include="PhongKeHoach\TichDiemThanhVien\" />
+    <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
+    <Folder Include="PhongKeHoach\CuaHang\" />
+    <Folder Include="PhongKeHoach\HoaDonBanSiChoKhachHang\" />
+    <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
+    <Folder Include="PhongKeHoach\PhieuDeNghiNhapKho\" />
+    <Folder Include="PhongKeHoach\PhieuDeNghiXuatKho\" />
+    <Folder Include="PhongKeHoach\SanPham\" />
+    <Folder Include="PhongKeHoach\TheThanhVien\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
