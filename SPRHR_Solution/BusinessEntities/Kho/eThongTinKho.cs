@@ -64,9 +64,5 @@ namespace BusinessEntities.Kho
             this._diaChi = _diaChi;
             this._sDT = _sDT;
         }
-        public eThongTinKho()
-        {
-                
-        }
     }
 }

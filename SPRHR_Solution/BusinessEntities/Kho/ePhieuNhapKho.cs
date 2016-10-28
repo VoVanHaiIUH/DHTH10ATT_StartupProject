@@ -11,14 +11,7 @@ namespace BusinessEntities.Kho
         private string _soPN, _soPDNN, _maNV, _maKho;
         private DateTime _ngayLap;
 
-        public string SoPN
-        {
-            set
-            {
-                _soPN = value;
-            }
-        }
-
+        public string soPN { get; set; }
         public string SoPDNN
         {
             get
@@ -70,15 +63,16 @@ namespace BusinessEntities.Kho
                 _ngayLap = DateTime.Now;
             }
         }
-        List<PhongKeHoach.ePhieuDNNK> listct;
-        public ePhieuNhapKho(int stt, string _soPDNN, string _maNV, string _maKho, DateTime _ngayLap)
+        //List<PhongKeHoach.ePhieuDNNK> listct;
+        public ePhieuNhapKho(string _soPN, string _soPDNN, string _maNV, string _maKho, DateTime _ngayLap)
         {
-            this._soPN = "PNK" + DateTime.Now.ToString("yyyyMMdd")+"-" + (stt + 1).ToString();
+            //this._soPN = "PNK" + DateTime.Now.ToString("yyyyMMdd")+"-" + (stt + 1).ToString();
+            this._soPN = _soPN;
             this._soPDNN = _soPDNN;
             this._maNV = _maNV;
             this._maKho = _maKho;
             this._ngayLap = _ngayLap;
-            listct = new List<PhongKeHoach.ePhieuDNNK>();
+            //listct = new List<PhongKeHoach.ePhieuDNNK>();
         }
         public override int GetHashCode()
         {

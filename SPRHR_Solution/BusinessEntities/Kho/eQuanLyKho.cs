@@ -84,9 +84,5 @@ namespace BusinessEntities.Kho
             this._thoiGianBD = _thoiGianBD;
             this._thoiGianKT = _thoiGianKT;
         }
-        public eQuanLyKho()
-        {
-
-        }
     }
 }
