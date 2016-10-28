@@ -56,11 +56,17 @@
     <Compile Include="NhanSu\NhanVien.cs" />
     <Compile Include="NhanSu\PhongBan.cs" />
     <Compile Include="NhanSu\QuaTrinhDaoTao.cs" />
+    <Compile Include="PhongKeHoach\eChiTietChuongTrinhKhuyenMai.cs" />
     <Compile Include="PhongKeHoach\eChiTietPhieuDeNghiNhapKho.cs" />
     <Compile Include="PhongKeHoach\eChiTietPhieuDeNghiXuatKho.cs" />
+    <Compile Include="PhongKeHoach\eChuongTrinhKhuyenMai.cs" />
     <Compile Include="PhongKeHoach\eCuaHang.cs" />
+    <Compile Include="PhongKeHoach\eKhachHang.cs" />
+    <Compile Include="PhongKeHoach\eLoaiSanPham.cs" />
+    <Compile Include="PhongKeHoach\eNhaCungCap.cs" />
     <Compile Include="PhongKeHoach\ePhieuDeNghiNhapKho.cs" />
     <Compile Include="PhongKeHoach\ePhieuDeNghiXuatKho.cs" />
+    <Compile Include="PhongKeHoach\eSanPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
