@@ -41,6 +41,10 @@
   <ItemGroup>
     <Compile Include="BanHang\eChiTietHoaDonBanHang.cs" />
     <Compile Include="BanHang\eHoaDonBanHang.cs" />
+    <Compile Include="CongNo\eChiTietPhieuThuNo.cs" />
+    <Compile Include="CongNo\eChiTietPhieuTraNo.cs" />
+    <Compile Include="CongNo\ePhieuThuNo.cs" />
+    <Compile Include="CongNo\ePhieuTraNo.cs" />
     <Compile Include="Kho\ePhieuNhapKho.cs" />
     <Compile Include="Kho\ePhieuXuatKho.cs" />
     <Compile Include="Kho\eQuanLyKho.cs" />

@@ -84,6 +84,7 @@
     <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
+    <Folder Include="CongNo\" />
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\HoaDonBanSiChoKhachHang\" />
     <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
