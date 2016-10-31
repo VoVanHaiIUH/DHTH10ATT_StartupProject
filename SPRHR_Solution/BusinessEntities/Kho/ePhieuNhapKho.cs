@@ -8,10 +8,9 @@ namespace BusinessEntities.Kho
 {
     public class ePhieuNhapKho
     {
-        private string _soPN, _soPDNN, _maNV, _maKho;
+        private string _soPDNN, _maNV, _maKho;
         private DateTime _ngayLap;
 
-        public string soPN { get; set; }
         public string SoPDNN
         {
             get
@@ -63,9 +62,8 @@ namespace BusinessEntities.Kho
                 _ngayLap = DateTime.Now;
             }
         }
-        public ePhieuNhapKho(string _soPN, string _soPDNN, string _maNV, string _maKho, DateTime _ngayLap)
+        public ePhieuNhapKho(string _soPDNN, string _maNV, string _maKho, DateTime _ngayLap)
         {
-            this._soPN = _soPN;
             this._soPDNN = _soPDNN;
             this._maNV = _maNV;
             this._maKho = _maKho;
@@ -73,12 +71,12 @@ namespace BusinessEntities.Kho
         }
         public override int GetHashCode()
         {
-            return this._soPN.GetHashCode();
+            return this._soPDNN.GetHashCode();
         }
         public override bool Equals(object obj)
         {
             ePhieuNhapKho epn = (ePhieuNhapKho)obj;
-            return epn._soPN.ToLower().Equals(_soPN.ToLower());
+            return epn._soPDNN.ToLower().Equals(_soPDNN.ToLower());
         }
     }
 }

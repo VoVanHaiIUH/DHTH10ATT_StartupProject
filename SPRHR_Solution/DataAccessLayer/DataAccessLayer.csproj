@@ -76,11 +76,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SPRHR_Solution.dbml.layout">
-      <DependentUpon>SPRHR_Solution.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
@@ -96,6 +91,11 @@
       <Project>{91c04b68-7d25-4d06-b79e-ec572c614eb2}</Project>
       <Name>BusinessEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SPRHR_Solution.dbml.layout">
+      <DependentUpon>SPRHR_Solution.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

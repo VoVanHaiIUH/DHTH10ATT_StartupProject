@@ -13,35 +13,29 @@ namespace DataAccessLayer.Kho
         {
             db = new SPRHR_SolutionDataContext();
         }
-        public List<ePhieuNhapKho> getdspnk()
+        public List<ePhieuNhapKho> getpnk()
         {
             List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
             foreach(PhieuNhapKho pn in db.PhieuNhapKhos)
             {
-                ls.Add(new ePhieuNhapKho(pn.sopnk, pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
+                ls.Add(new ePhieuNhapKho( pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
             }
-            //ChitietPhieuNhapKho
-            //
-            //
             return ls;
         }
-        private string taosoPNK()
+        private void getSPtheosoPDNN(string maphieu)
         {
-            int max = 0;
-            foreach(PhieuNhapKho pnk in db.PhieuNhapKhos)
+            PhieuNhapKho pnk = db.PhieuNhapKhos.Where(e => e.sopdnn == maphieu).FirstOrDefault();
+            List<SanPham> l = new List<SanPham>();
+            foreach (ChiTietPhieuDNNK ct in pnk.PhieuDNNK.ChiTietPhieuDNNKs)
             {
-                int t = int.Parse(pnk.sopnk.Substring(3));
-                if (t >= max)
-                    max = t;
+                SanPham sp = db.SanPhams.Where(e => e.MaSP == ct.MaSP).FirstOrDefault();
+                l.Add(sp);
             }
-            max++;
-            return "PNK" + string.Format("{0:0000}", max);
         }
         public void taophieunhapkho(string manv, string sopdnnk, string makho, DateTime ngaylap)
         {
             PhieuNhapKho pn = new PhieuNhapKho();
-            pn.sopnk = taosoPNK();
-            pn.sopnk = sopdnnk;
+            pn.sopdnn = sopdnnk;
             pn.manhanvien = manv;
             pn.makho = makho;
             pn.ngaylap = ngaylap;
