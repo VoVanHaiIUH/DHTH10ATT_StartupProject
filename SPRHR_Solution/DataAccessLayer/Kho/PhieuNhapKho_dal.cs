@@ -13,6 +13,7 @@ namespace DataAccessLayer.Kho
         {
             db = new SPRHR_SolutionDataContext();
         }
+
         public List<ePhieuNhapKho> getpnk()
         {
             List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
@@ -22,7 +23,18 @@ namespace DataAccessLayer.Kho
             }
             return ls;
         }
-        private void getSPtheosoPDNN(string maphieu)
+
+        public List<ePhieuNhapKho> getpnktheoma(string ma)
+        {
+            List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
+            foreach(PhieuNhapKho pn in db.PhieuNhapKhos.Where(p => p.sopdnn == ma))
+            {
+                ls.Add(new ePhieuNhapKho(pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
+            }
+            return ls;
+        }
+
+        public List<SanPham> getSPtheosoPDNN(string maphieu)
         {
             PhieuNhapKho pnk = db.PhieuNhapKhos.Where(e => e.sopdnn == maphieu).FirstOrDefault();
             List<SanPham> l = new List<SanPham>();
@@ -31,17 +43,33 @@ namespace DataAccessLayer.Kho
                 SanPham sp = db.SanPhams.Where(e => e.MaSP == ct.MaSP).FirstOrDefault();
                 l.Add(sp);
             }
+            return l;
         }
-        public void taophieunhapkho(string manv, string sopdnnk, string makho, DateTime ngaylap)
+
+        private bool ktraTonTai(string soPhieu)
         {
+            PhieuDNNK p = db.PhieuDNNKs.Where(pdn => pdn.MaPhieuDNNK == soPhieu).FirstOrDefault();
+            if(p!=null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public int taophieunhapkho(ePhieuNhapKho pnk)
+        {
+            if (ktraTonTai(pnk.SoPDNN))
+                return 0;
+
             PhieuNhapKho pn = new PhieuNhapKho();
-            pn.sopdnn = sopdnnk;
-            pn.manhanvien = manv;
-            pn.makho = makho;
-            pn.ngaylap = ngaylap;
+            pn.sopdnn = pnk.SoPDNN;
+            pn.manhanvien = pnk.MaNV;
+            pn.makho = pnk.MaKho;
+            pn.ngaylap = pnk.NgayLap;
 
             db.PhieuNhapKhos.InsertOnSubmit(pn);
             db.SubmitChanges();
+            return 1;
         }
     }
 }

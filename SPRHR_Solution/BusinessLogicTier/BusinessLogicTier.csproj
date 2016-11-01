@@ -45,6 +45,7 @@
     <Compile Include="CongNo\CongNo_ThongKe_BUS.cs" />
     <Compile Include="CongNo\CongNo_ThuNo_BUS.cs" />
     <Compile Include="CongNo\CongNo_TraNo_BUS.cs" />
+    <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

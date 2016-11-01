@@ -25,7 +25,5 @@ namespace BusinessLogicTier.BanHang.LapPhieuBanHang
             db.themHoaDon(hd.MaNV, hd.MaKH, hd.NgayLap, hd.TongTien, hd.VAT);
             return true;
         }
-
-
     }
 }
