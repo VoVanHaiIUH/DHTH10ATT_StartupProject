@@ -69,6 +69,7 @@
     <Compile Include="PhongKeHoach\eCuaHang.cs" />
     <Compile Include="PhongKeHoach\eHoaDonBanSi.cs" />
     <Compile Include="PhongKeHoach\eHoaDonNhaCungCap.cs" />
+    <Compile Include="PhongKeHoach\eKeHoach.cs" />
     <Compile Include="PhongKeHoach\eKhachHang.cs" />
     <Compile Include="PhongKeHoach\eLoaiSanPham.cs" />
     <Compile Include="PhongKeHoach\eNhaCungCap.cs" />

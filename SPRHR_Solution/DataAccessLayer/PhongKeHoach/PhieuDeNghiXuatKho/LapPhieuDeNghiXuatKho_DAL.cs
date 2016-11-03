@@ -67,6 +67,66 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
             return ls;
         }
 
+        public List<ePhieuDeNghiXuatKho> GetPDNXKByMaNhanVien(string MaNhanVien)
+        {
+            var c = from i in db.PhieuDNXKs
+                    where i.MaNhanVien == MaNhanVien
+                    select i;
+            List<ePhieuDeNghiXuatKho> ls = new List<ePhieuDeNghiXuatKho>();
+            foreach (PhieuDNXK Phieu in c.ToList())
+            {
+                ePhieuDeNghiXuatKho XK = new ePhieuDeNghiXuatKho();
+                XK.SoPhieuDeNghiXuatKho = Phieu.MaPhieuDNXK;
+                XK.MaNhanVien = Phieu.MaNhanVien;
+                XK.MaKH = Phieu.MaKH;
+                XK.MaKho = Phieu.MaKho;
+                XK.NgayLap = Phieu.NgayLap;
+                XK.TinhTrang = Phieu.tinhtrang;
+                ls.Add(XK);
+            }
+            return ls;
+        }
+
+        public List<ePhieuDeNghiXuatKho> GetPDNXKByMaKho(string MaKho)
+        {
+            var c = from i in db.PhieuDNXKs
+                    where i.MaKho == MaKho
+                    select i;
+            List<ePhieuDeNghiXuatKho> ls = new List<ePhieuDeNghiXuatKho>();
+            foreach (PhieuDNXK Phieu in c.ToList())
+            {
+                ePhieuDeNghiXuatKho XK = new ePhieuDeNghiXuatKho();
+                XK.SoPhieuDeNghiXuatKho = Phieu.MaPhieuDNXK;
+                XK.MaNhanVien = Phieu.MaNhanVien;
+                XK.MaKH = Phieu.MaKH;
+                XK.MaKho = Phieu.MaKho;
+                XK.NgayLap = Phieu.NgayLap;
+                XK.TinhTrang = Phieu.tinhtrang;
+                ls.Add(XK);
+            }
+            return ls;
+        }
+
+        public List<ePhieuDeNghiXuatKho> GetPDNXKByMaKH(string MaKhachhang)
+        {
+            var c = from i in db.PhieuDNXKs
+                    where i.MaKH == MaKhachhang
+                    select i;
+            List<ePhieuDeNghiXuatKho> ls = new List<ePhieuDeNghiXuatKho>();
+            foreach (PhieuDNXK Phieu in c.ToList())
+            {
+                ePhieuDeNghiXuatKho XK = new ePhieuDeNghiXuatKho();
+                XK.SoPhieuDeNghiXuatKho = Phieu.MaPhieuDNXK;
+                XK.MaNhanVien = Phieu.MaNhanVien;
+                XK.MaKH = Phieu.MaKH;
+                XK.MaKho = Phieu.MaKho;
+                XK.NgayLap = Phieu.NgayLap;
+                XK.TinhTrang = Phieu.tinhtrang;
+                ls.Add(XK);
+            }
+            return ls;
+        }
+
         public List<eChiTietPhieuDeNghiXuatKho> GetALLChitietPDNXKByMa(string SoPhieu)
         {
             var c = from i in db.ChiTietPhieuDNXKs
@@ -105,9 +165,18 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
         // ....
         // ....
         //.........>>
-        public int InsertPDNXK(ePhieuDeNghiXuatKho Phieu)
+        public void InsertPDNXK(ePhieuDeNghiXuatKho Phieu)
         {
-            Phieu.NgayLap = DateTime.Now; 
+            Phieu.NgayLap = DateTime.Now;
+            PhieuDNXK NewPhieu = new PhieuDNXK();
+            NewPhieu.MaPhieuDNXK = TaoMaPDNXK();
+            NewPhieu.MaKH = Phieu.MaKH;
+            NewPhieu.MaKho = Phieu.MaKho;
+            NewPhieu.MaNhanVien = Phieu.MaNhanVien;
+            NewPhieu.NgayLap = Phieu.NgayLap;
+            NewPhieu.tinhtrang = Convert.ToInt32(Phieu.TinhTrang);
+            db.PhieuDNXKs.InsertOnSubmit(NewPhieu);
+            db.SubmitChanges();
         }
 
         public int InsertPDNXKChiTiet(eChiTietPhieuDeNghiXuatKho Chitiet)
@@ -165,6 +234,19 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
             ChiTietPhieuDNXK chitiet = db.ChiTietPhieuDNXKs.Where(x => x.MaPhieuDNXK == SoPhieu && x.MaSP == MaSP).FirstOrDefault();
             db.ChiTietPhieuDNXKs.DeleteOnSubmit(chitiet);
             db.SubmitChanges();
+        }
+
+        private string TaoMaPDNXK()
+        {
+            int max = 0;
+            foreach (PhieuDNXK Phieu in db.PhieuDNXKs)
+            {
+                int t = int.Parse(Phieu.MaPhieuDNXK.Substring(5));
+                if (t >= max)
+                    max = t;
+            }
+            max++;
+            return "PDNXK" + string.Format("{0:0000}", max);
         }
     }
 }

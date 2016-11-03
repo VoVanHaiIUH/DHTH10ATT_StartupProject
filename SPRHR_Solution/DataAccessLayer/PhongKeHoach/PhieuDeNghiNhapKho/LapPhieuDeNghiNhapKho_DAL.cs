@@ -66,7 +66,71 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             return ls;
         }
-        
+
+        public List<ePhieuDeNghiNhapKho> GetPDNNKByMaNhanVien(string MaNhanVien)
+        {
+            List<ePhieuDeNghiNhapKho> ls = new List<ePhieuDeNghiNhapKho>();
+            var c = from i in db.PhieuDNNKs
+                    where i.MaNhanVien == MaNhanVien
+                    select i;
+            foreach (PhieuDNNK Phieu in c.ToList())
+            {
+                ePhieuDeNghiNhapKho PDNNK = new ePhieuDeNghiNhapKho();
+                PDNNK.SoPhieuDeNghiNhapKho = Phieu.MaPhieuDNNK;
+                PDNNK.MaHoaDonNhaCungCap = Phieu.MaHoaDonNCC;
+                PDNNK.MaKho = Phieu.MaKho;
+                PDNNK.MaNhanVien = Phieu.MaNhanVien;
+                PDNNK.NgayLap = Phieu.NgayLap;
+                PDNNK.MoTa = Phieu.MoTa;
+                PDNNK.TinhTrang = Phieu.tinhtrang;
+                ls.Add(PDNNK);
+            }
+            return ls;
+        }
+
+        public List<ePhieuDeNghiNhapKho> GetPDNNKByMaHDNhaCungCap(string MaNhaCC)
+        {
+            List<ePhieuDeNghiNhapKho> ls = new List<ePhieuDeNghiNhapKho>();
+            var c = from i in db.PhieuDNNKs
+                    where i.MaHoaDonNCC == i.MaHoaDonNCC
+                    select i;
+            foreach (PhieuDNNK Phieu in c.ToList())
+            {
+                ePhieuDeNghiNhapKho PDNNK = new ePhieuDeNghiNhapKho();
+                PDNNK.SoPhieuDeNghiNhapKho = Phieu.MaPhieuDNNK;
+                PDNNK.MaHoaDonNhaCungCap = Phieu.MaHoaDonNCC;
+                PDNNK.MaKho = Phieu.MaKho;
+                PDNNK.MaNhanVien = Phieu.MaNhanVien;
+                PDNNK.NgayLap = Phieu.NgayLap;
+                PDNNK.MoTa = Phieu.MoTa;
+                PDNNK.TinhTrang = Phieu.tinhtrang;
+                ls.Add(PDNNK);
+            }
+            return ls;
+        }
+
+        public List<ePhieuDeNghiNhapKho> GetPDNNKByMaKho(string MaKho)
+        {
+            List<ePhieuDeNghiNhapKho> ls = new List<ePhieuDeNghiNhapKho>();
+            var c = from i in db.PhieuDNNKs
+                    where i.MaKho == MaKho
+                    select i;
+            foreach (PhieuDNNK Phieu in c.ToList())
+            {
+                ePhieuDeNghiNhapKho PDNNK = new ePhieuDeNghiNhapKho();
+                PDNNK.SoPhieuDeNghiNhapKho = Phieu.MaPhieuDNNK;
+                PDNNK.MaHoaDonNhaCungCap = Phieu.MaHoaDonNCC;
+                PDNNK.MaKho = Phieu.MaKho;
+                PDNNK.MaNhanVien = Phieu.MaNhanVien;
+                PDNNK.NgayLap = Phieu.NgayLap;
+                PDNNK.MoTa = Phieu.MoTa;
+                PDNNK.TinhTrang = Phieu.tinhtrang;
+                ls.Add(PDNNK);
+            }
+            return ls;
+        }
+
+
         public List<eChiTietPhieuDeNghiNhapKho> GetALLCTPDNNKByMa(string SoPhieu)
         {
             var c = from i in db.ChiTietPhieuDNNKs
@@ -107,9 +171,19 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             return n;
         }
 
-        public int InsertPDNNK(ePhieuDeNghiNhapKho Phieu)
+        public void InsertPDNNK(ePhieuDeNghiNhapKho Phieu)
         {
             Phieu.NgayLap = DateTime.Now;
+            PhieuDNNK PDNNK = new PhieuDNNK();
+            PDNNK.MaPhieuDNNK = TaoMaPDNNK();
+            PDNNK.MaHoaDonNCC = Phieu.MaHoaDonNhaCungCap;
+            PDNNK.MaKho = Phieu.MaKho;
+            PDNNK.MaNhanVien = Phieu.MaNhanVien;
+            PDNNK.MoTa = Phieu.MoTa;
+            PDNNK.NgayLap = Phieu.NgayLap;
+            PDNNK.tinhtrang = Convert.ToInt32(Phieu.TinhTrang);
+            db.PhieuDNNKs.InsertOnSubmit(PDNNK);
+            db.SubmitChanges();
         }
 
         public int InsertPDNNKChiTiet(eChiTietPhieuDeNghiNhapKho Chitiet)
@@ -168,10 +242,19 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             db.ChiTietPhieuDNNKs.DeleteOnSubmit(ct);
             db.SubmitChanges();
         }
-        public void UpdateSoLuongSP(string MaSP,int n)
+
+        private string TaoMaPDNNK()
         {
-            SanPham sp = db.SanPhams.Where(x => x.MaSP == MaSP).FirstOrDefault();
-            //......
+            int max = 0;
+            foreach (PhieuDNNK Phieu in db.PhieuDNNKs)
+            {
+                int t = int.Parse(Phieu.MaPhieuDNNK.Substring(5));
+                if (t >= max)
+                    max = t;
+            }
+            max++;
+            return "PDNNK" + string.Format("{0:0000}", max);
         }
+
     }
 }

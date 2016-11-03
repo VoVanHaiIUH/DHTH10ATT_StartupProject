@@ -83,6 +83,7 @@
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\HoaDonBanSiChoKhachHang\" />
     <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
+    <Folder Include="PhongKeHoach\KeHoach\" />
     <Folder Include="PhongKeHoach\SanPham\" />
     <Folder Include="PhongKeHoach\TheThanhVien\" />
   </ItemGroup>

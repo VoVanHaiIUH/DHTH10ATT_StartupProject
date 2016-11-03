@@ -43,27 +43,16 @@ namespace DataAccessLayer.PhongKeHoach.CuaHang
         // Insert CuaHang
         // Delete CuaHang
         // Fix Thong Tin CuaHang
-        public bool InsertCuaHang(eCuaHang CH)
+        public void InsertCuaHang(eCuaHang CH)
         {
-            var c = from i in db.DanhMucCuaHangs
-                    where i.MaCuaHang == CH.MaCuaHang
-                    select i;
-            if (c.Any())
-            {
-                return false;
-            }
-            else
-            {
                 DanhMucCuaHang CuaHang = new DanhMucCuaHang();
-                CuaHang.MaCuaHang = CH.MaCuaHang;
+                CuaHang.MaCuaHang = TaoMaCuaHang();
                 CuaHang.TenCuaHang = CH.TenCuaHang;
                 CuaHang.DiaChi = CH.DiaChi;
                 CuaHang.SoDienThoai = CH.SoDienThoai;
                 CuaHang.TinhTrang = Convert.ToInt32(CH.SoDienThoai);
                 db.DanhMucCuaHangs.InsertOnSubmit(CuaHang);
-                db.SubmitChanges();
-                return true;
-            }
+                db.SubmitChanges();            
         }
         public bool DeleteCuaHang(string MaCuaHang)
         {
@@ -84,6 +73,24 @@ namespace DataAccessLayer.PhongKeHoach.CuaHang
             CH.SoDienThoai = SoDienThoai;
             CH.TinhTrang = TinhTrang;
             db.SubmitChanges();
+        }
+
+        private string TaoMaCuaHang()
+        {
+            int max = 0;
+            foreach (DanhMucCuaHang ch in db.DanhMucCuaHangs)
+            {
+                int t = int.Parse(ch.MaCuaHang.Substring(3));
+                if (t >= max)
+                    max = t;
+            }
+            max++;
+            return "CH" + string.Format("{0:0000}", max);
+        }
+        public int CountSLCuaHang()
+        {
+            int n = db.DanhMucCuaHangs.Count();
+            return n;
         }
     }   
 }
