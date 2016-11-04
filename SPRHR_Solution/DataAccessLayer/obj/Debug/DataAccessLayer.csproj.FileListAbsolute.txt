@@ -1,0 +1,8 @@
+D:\PTUD\SPRHR_Solution\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+D:\PTUD\SPRHR_Solution\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\PTUD\SPRHR_Solution\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\PTUD\SPRHR_Solution\DataAccessLayer\bin\Debug\BusinessEntities.dll
+D:\PTUD\SPRHR_Solution\DataAccessLayer\bin\Debug\BusinessEntities.pdb
+D:\PTUD\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+D:\PTUD\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\PTUD\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

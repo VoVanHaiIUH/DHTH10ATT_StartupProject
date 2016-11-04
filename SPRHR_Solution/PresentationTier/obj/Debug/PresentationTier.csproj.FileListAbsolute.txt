@@ -1,0 +1,14 @@
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.pdb
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\BusinessEntities.dll
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\BusinessLogicTier.dll
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\DataAccessLayer.dll
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\BusinessEntities.pdb
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\BusinessLogicTier.pdb
+D:\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\DataAccessLayer.pdb
+D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csprojResolveAssemblyReference.cache
+D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Properties.Resources.resources
+D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache
+D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
+D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb

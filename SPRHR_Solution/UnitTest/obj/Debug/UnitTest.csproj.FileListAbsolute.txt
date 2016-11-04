@@ -1,0 +1,6 @@
+D:\PTUD\SPRHR_Solution\UnitTest\bin\Debug\UnitTest.dll
+D:\PTUD\SPRHR_Solution\UnitTest\bin\Debug\UnitTest.pdb
+D:\PTUD\SPRHR_Solution\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\PTUD\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+D:\PTUD\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.dll
+D:\PTUD\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.pdb
