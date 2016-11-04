@@ -16,10 +16,5 @@ namespace PresentationTier.TichHop
         {
             InitializeComponent();
         }
-
-        private void FormMainTichHop_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
