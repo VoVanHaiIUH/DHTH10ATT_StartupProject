@@ -84,6 +84,21 @@
     <Compile Include="TichHop\FormMainTichHop.Designer.cs">
       <DependentUpon>FormMainTichHop.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BanHang\FormMainBanHang.resx">
+      <DependentUpon>FormMainBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongNo\FormMainCongNo.resx">
+      <DependentUpon>FormMainCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kho\FormMainKho.resx">
+      <DependentUpon>FormMainKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\FormMainNhanSu.resx">
+      <DependentUpon>FormMainNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhongKeHoach\FormMainPhongKeHoach.resx">
+      <DependentUpon>FormMainPhongKeHoach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -93,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TichHop\FormMainTichHop.resx">
+      <DependentUpon>FormMainTichHop.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

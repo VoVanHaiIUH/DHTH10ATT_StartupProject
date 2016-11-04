@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormMainBanHang
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FormMainBanHang";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FormMainBanHang";
+            this.Text = "BanHang";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

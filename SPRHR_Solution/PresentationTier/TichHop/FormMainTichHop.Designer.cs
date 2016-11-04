@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormMainTichHop
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "FormMainTichHop";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FormMainTichHop";
+            this.Text = "TichHop";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
