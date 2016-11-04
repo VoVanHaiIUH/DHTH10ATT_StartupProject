@@ -16,5 +16,10 @@ namespace PresentationTier.NhanSu
         {
             InitializeComponent();
         }
+
+        private void FormMainNhanSu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

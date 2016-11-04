@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "FormMainNhanSu";
             this.Text = "NhanSu";
+            this.Load += new System.EventHandler(this.FormMainNhanSu_Load);
             this.ResumeLayout(false);
 
         }
