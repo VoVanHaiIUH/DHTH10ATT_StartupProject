@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessEntities.Kho;
+using BusinessEntities.PhongKeHoach;
 namespace DataAccessLayer.Kho
 {
     public class PhieuNhapKho_dal
@@ -14,27 +15,49 @@ namespace DataAccessLayer.Kho
             db = new SPRHR_SolutionDataContext();
         }
 
-        public List<ePhieuNhapKho> getpnk()
+        public List<ePhieuDeNghiNhapKho> GetPDNNK()
         {
-            List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
-            foreach(PhieuNhapKho pn in db.PhieuNhapKhos)
+            List<ePhieuDeNghiNhapKho> ls = new List<ePhieuDeNghiNhapKho>();
+            foreach (PhieuDNNK pdn in db.PhieuDNNKs)
             {
-                ls.Add(new ePhieuNhapKho( pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
+                if (pdn.tinhtrang != 1)
+                {
+                    ls.Add(new ePhieuDeNghiNhapKho(pdn.MaPhieuDNNK, pdn.MaNhanVien, pdn.MaHoaDonNCC, pdn.MaKho, pdn.MoTa, pdn.NgayLap, pdn.tinhtrang));
+                }
             }
             return ls;
         }
 
-        public List<ePhieuNhapKho> getpnktheoma(string ma)
+        public List<ePhieuDeNghiNhapKho> GetPDNNKbyMa(string ma)
+        {
+            List<ePhieuDeNghiNhapKho> ls = new List<ePhieuDeNghiNhapKho>();
+            foreach(PhieuDNNK pdn in db.PhieuDNNKs.Where(p=>p.MaPhieuDNNK == ma))
+            {
+                ls.Add(new ePhieuDeNghiNhapKho(pdn.MaPhieuDNNK, pdn.MaNhanVien, pdn.MaHoaDonNCC, pdn.MaKho, pdn.MoTa, pdn.NgayLap, pdn.tinhtrang));
+            }
+            return ls;
+        }
+        public List<ePhieuNhapKho> GetPNK()
         {
             List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
-            foreach(PhieuNhapKho pn in db.PhieuNhapKhos.Where(p => p.sopdnn == ma))
+            foreach (PhieuNhapKho pn in db.PhieuNhapKhos)
             {
                 ls.Add(new ePhieuNhapKho(pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
             }
             return ls;
         }
 
-        public List<SanPham> getSPtheosoPDNN(string maphieu)
+        public List<ePhieuNhapKho> GetPNKtheoMa(string ma)
+        {
+            List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
+            foreach (PhieuNhapKho pn in db.PhieuNhapKhos.Where(p => p.sopdnn == ma))
+            {
+                ls.Add(new ePhieuNhapKho(pn.sopdnn, pn.manhanvien, pn.makho, pn.ngaylap));
+            }
+            return ls;
+        }
+
+        public void GetSPtheoSoPN(string maphieu)
         {
             PhieuNhapKho pnk = db.PhieuNhapKhos.Where(e => e.sopdnn == maphieu).FirstOrDefault();
             List<SanPham> l = new List<SanPham>();
@@ -43,22 +66,21 @@ namespace DataAccessLayer.Kho
                 SanPham sp = db.SanPhams.Where(e => e.MaSP == ct.MaSP).FirstOrDefault();
                 l.Add(sp);
             }
-            return l;
         }
 
-        private bool ktraTonTai(string soPhieu)
+        private bool KtraTonTai(string soPhieu)
         {
             PhieuDNNK p = db.PhieuDNNKs.Where(pdn => pdn.MaPhieuDNNK == soPhieu).FirstOrDefault();
-            if(p!=null)
+            if (p != null)
             {
                 return false;
             }
             return true;
         }
 
-        public int taophieunhapkho(ePhieuNhapKho pnk)
+        public int TaoPNK(ePhieuNhapKho pnk)
         {
-            if (ktraTonTai(pnk.SoPDNN))
+            if (KtraTonTai(pnk.SoPDNN))
                 return 0;
 
             PhieuNhapKho pn = new PhieuNhapKho();
@@ -66,8 +88,13 @@ namespace DataAccessLayer.Kho
             pn.manhanvien = pnk.MaNV;
             pn.makho = pnk.MaKho;
             pn.ngaylap = pnk.NgayLap;
-
             db.PhieuNhapKhos.InsertOnSubmit(pn);
+            db.SubmitChanges();
+
+            //Chuyen tinh trang phiếu DNNK đã nhập => 1
+            PhieuDNNK pdn = new PhieuDNNK();
+            pdn.tinhtrang = 1;
+            db.PhieuDNNKs.InsertOnSubmit(pdn);
             db.SubmitChanges();
             return 1;
         }

@@ -12,3 +12,6 @@ D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Properties.Re
 D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache
 D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
 D:\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb
+E:\BT\PTUD\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
+E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
+E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb

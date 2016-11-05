@@ -15,21 +15,29 @@ namespace BusinessLogicTier.Kho
         {
             pnkDAL = new PhieuNhapKho_dal();
         }
+        public List<ePhieuDeNghiNhapKho> GetPDNNK()
+        {
+            return pnkDAL.GetPDNNK();
+        }
+        public List<ePhieuDeNghiNhapKho> GetPDNNKbyMa(string ma)
+        {
+            return pnkDAL.GetPDNNKbyMa(ma);
+        }
         public List<ePhieuNhapKho> getpnk()
         {
-            return pnkDAL.getpnk();
+            return pnkDAL.GetPNK();
         }
         public List<ePhieuNhapKho> getpnktheoma(string ma)
         {
-            return pnkDAL.getpnktheoma(ma);
+            return pnkDAL.GetPNKtheoMa(ma);
         }
-        public List<DataAccessLayer.SanPham> getSPtheosoPDNN(string maphieu)
+        public void getSPtheosoPDNN(string maphieu)
         {
-            return pnkDAL.getSPtheosoPDNN(maphieu);
+            pnkDAL.GetSPtheoSoPN(maphieu);
         }
         public int taophieunhapkho(ePhieuNhapKho pnk)
         {
-            return pnkDAL.taophieunhapkho(pnk);
+            return pnkDAL.TaoPNK(pnk);
         }
     }
 }
