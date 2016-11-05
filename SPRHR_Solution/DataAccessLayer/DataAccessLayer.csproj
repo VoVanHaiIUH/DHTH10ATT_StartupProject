@@ -57,6 +57,7 @@
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_DAL.cs" />
     <Compile Include="PhongKeHoach\HoaDonBanSiChoKhachHang\LapHoaDonBanSiChoKhachHang_DAL.cs" />
     <Compile Include="PhongKeHoach\HoaDonPhiaNhaCungCap\HoaDonPhiaNhaCungCap_DAL.cs" />
+    <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDeNghiNhapKho_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDeNghiXuatKho_DAL.cs" />
     <Compile Include="PhongKeHoach\TheThanhVien\LapTheThanhVien_DAL.cs" />
@@ -93,7 +94,6 @@
     <Folder Include="BanHang\NhanHangTuKho\" />
     <Folder Include="CongNo\" />
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
-    <Folder Include="PhongKeHoach\KeHoach\" />
     <Folder Include="PhongKeHoach\SanPham\" />
   </ItemGroup>
   <ItemGroup>
