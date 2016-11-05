@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessEntities.PhongKeHoach
+namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
 {
-    public class eKeHoach
+    public class HoaDonPhiaNhaCungCap_DAL
     {
-       
     }
 }

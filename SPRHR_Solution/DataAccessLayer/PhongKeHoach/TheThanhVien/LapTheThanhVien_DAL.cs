@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessEntities.PhongKeHoach
+namespace DataAccessLayer.PhongKeHoach.TheThanhVien
 {
-    public class eKeHoach
+    public class LapTheThanhVien_DAL
     {
-       
+
     }
 }
