@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentationTier.NhanSu
 {
-    public partial class FormMainNhanSu : Form
+    public partial class frmMainNhanSu : Form
     {
-        public FormMainNhanSu()
+        public frmMainNhanSu()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace PresentationTier.NhanSu
 {
-    partial class FormMainNhanSu
+    partial class frmMainNhanSu
     {
         /// <summary>
         /// Required designer variable.
