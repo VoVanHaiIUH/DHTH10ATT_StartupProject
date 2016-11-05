@@ -3,3 +3,8 @@ D:\PTUD\SPRHR_Solution\BusinessEntities\bin\Debug\BusinessEntities.pdb
 D:\PTUD\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
 D:\PTUD\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.dll
 D:\PTUD\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.pdb
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessEntities\bin\Debug\BusinessEntities.dll
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessEntities\bin\Debug\BusinessEntities.pdb
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.dll
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.pdb
