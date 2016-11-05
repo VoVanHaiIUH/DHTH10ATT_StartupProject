@@ -49,6 +49,7 @@ namespace BusinessEntities.NhanSu
             this._caLamViec = calamviec;
             this._gioLam = giolam;
             this._gioKetThuc = gioketthuc;
+            this._ghiChu = ghichu;
         }
         public override int GetHashCode()
         {
