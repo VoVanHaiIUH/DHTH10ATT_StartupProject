@@ -7,3 +7,12 @@ D:\PTUD\SPRHR_Solution\BusinessLogicTier\bin\Debug\DataAccessLayer.pdb
 D:\PTUD\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.csprojResolveAssemblyReference.cache
 D:\PTUD\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.dll
 D:\PTUD\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.pdb
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\bin\Debug\BusinessLogicTier.dll
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\bin\Debug\BusinessLogicTier.pdb
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\bin\Debug\BusinessEntities.dll
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\bin\Debug\DataAccessLayer.dll
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\bin\Debug\BusinessEntities.pdb
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\bin\Debug\DataAccessLayer.pdb
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.csprojResolveAssemblyReference.cache
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.dll
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.pdb
