@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.NhanSu.KyLuat
+namespace DataAccessLayer.NhanSu.PhongBan
 {
-    public class ChiTietKyLuat_DAL
+    class ChucVu_DAL
     {
-
     }
 }

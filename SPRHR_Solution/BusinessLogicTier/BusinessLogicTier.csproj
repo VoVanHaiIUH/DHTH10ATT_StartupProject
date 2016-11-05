@@ -47,6 +47,7 @@
     <Compile Include="CongNo\CongNo_TraNo_BUS.cs" />
     <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_BUL.cs" />
+    <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_BUL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDNNK_BUL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDNXK_BUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,7 +67,6 @@
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\HoaDonBanSiChoKhachHang\" />
     <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
-    <Folder Include="PhongKeHoach\KeHoach\" />
     <Folder Include="PhongKeHoach\SanPham\" />
     <Folder Include="PhongKeHoach\TheThanhVien\" />
   </ItemGroup>

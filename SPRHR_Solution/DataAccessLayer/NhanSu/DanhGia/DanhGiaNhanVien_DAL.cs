@@ -18,7 +18,7 @@ namespace DataAccessLayer.NhanSu.DanhGia
         {
             return Regex.Match(LDG.ToUpper(),"^[ABCD][WMQY]$").Success;
         }
-        public BusinessEntities.NhanSu.eDanhGia ThemDanhGia(DataAccessLayer.DanhGia Moi)
+        public BusinessEntities.NhanSu.eDanhGia Them(DataAccessLayer.DanhGia Moi)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace DataAccessLayer.NhanSu.DanhGia
                 throw new Exception (ex.Message);     
             }
         }
-        public int XoaDanhGia(string MaNhanVien,DateTime NgayDanhGia)
+        public int Xoa(string MaNhanVien,DateTime NgayDanhGia)
         {
             var c = from i in db.DanhGias
                     where i.maNhanVien.Equals(MaNhanVien) && i.ngayDanhGia.Equals(NgayDanhGia)
@@ -49,7 +49,7 @@ namespace DataAccessLayer.NhanSu.DanhGia
                 return 0;
             }
         }
-        public bool SuaDanhGia(DataAccessLayer.DanhGia Moi)
+        public bool Sua(DataAccessLayer.DanhGia Moi)
         {
             try
             {
