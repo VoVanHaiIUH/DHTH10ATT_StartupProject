@@ -45,6 +45,15 @@
     <Compile Include="Kho\PhieuXuatKho_dal.cs" />
     <Compile Include="Kho\QuanLyKho_dal.cs" />
     <Compile Include="Kho\ThongTinKho_dal.cs" />
+    <Compile Include="NhanSu\DanhGia\DanhGiaNhanVien_DAL.cs" />
+    <Compile Include="NhanSu\DaoTao\ChuongTrinhDaoTao_DAL.cs" />
+    <Compile Include="NhanSu\DaoTao\QuaTrinhDaoTao_DAL.cs" />
+    <Compile Include="NhanSu\KyLuat\BangKyLuat_DAL.cs" />
+    <Compile Include="NhanSu\KyLuat\ChiTietKyLuat_DAL.cs" />
+    <Compile Include="NhanSu\LichLamViec\ChiTietLichLamViec_DAL.cs" />
+    <Compile Include="NhanSu\LichLamViec\LichLamViec_DAL.cs" />
+    <Compile Include="NhanSu\NhanVien\LichSuLamViec_DAL.cs" />
+    <Compile Include="NhanSu\NhanVien\NhanVien_DAL.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDeNghiNhapKho_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDeNghiXuatKho_DAL.cs" />
