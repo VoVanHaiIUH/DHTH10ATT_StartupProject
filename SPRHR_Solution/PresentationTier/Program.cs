@@ -16,7 +16,7 @@ namespace PresentationTier
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TichHop.AddUser());
+            Application.Run(new NhanSu.frmNhanVien());
         }
     }
 }

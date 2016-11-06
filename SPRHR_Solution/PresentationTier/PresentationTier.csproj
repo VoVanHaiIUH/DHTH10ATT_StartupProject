@@ -66,6 +66,30 @@
     <Compile Include="Kho\FormMainKho.Designer.cs">
       <DependentUpon>FormMainKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanSu\frmChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmChucVu.Designer.cs">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\frmChuongTrinhDaoTao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmChuongTrinhDaoTao.Designer.cs">
+      <DependentUpon>frmChuongTrinhDaoTao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\frmKyLuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmKyLuat.Designer.cs">
+      <DependentUpon>frmKyLuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\frmLichLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmLichLamViec.Designer.cs">
+      <DependentUpon>frmLichLamViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanSu\frmMainNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +101,24 @@
     </Compile>
     <Compile Include="NhanSu\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\frmThaiDoiChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmThaiDoiChucVu.Designer.cs">
+      <DependentUpon>frmThaiDoiChucVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanSu\frmThuyenChuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanSu\frmThuyenChuyen.Designer.cs">
+      <DependentUpon>frmThuyenChuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="PhongKeHoach\FormMainPhongKeHoach.cs">
       <SubType>Form</SubType>
@@ -125,11 +167,32 @@
     <EmbeddedResource Include="Kho\FormMainKho.resx">
       <DependentUpon>FormMainKho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmChucVu.resx">
+      <DependentUpon>frmChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmChuongTrinhDaoTao.resx">
+      <DependentUpon>frmChuongTrinhDaoTao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmKyLuat.resx">
+      <DependentUpon>frmKyLuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmLichLamViec.resx">
+      <DependentUpon>frmLichLamViec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanSu\frmMainNhanSu.resx">
       <DependentUpon>frmMainNhanSu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanSu\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmThaiDoiChucVu.resx">
+      <DependentUpon>frmThaiDoiChucVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanSu\frmThuyenChuyen.resx">
+      <DependentUpon>frmThuyenChuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhongKeHoach\FormMainPhongKeHoach.resx">
       <DependentUpon>FormMainPhongKeHoach.cs</DependentUpon>
