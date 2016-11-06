@@ -30,9 +30,24 @@ namespace PresentationTier.PhongKeHoach
                 this.Show();
             }
         }
+        private void LoadHienThiPDNNK()
+        {
+            if(CBHT.SelectedItem.ToString() == "Hiển Thị PDNNK")
+            {
+                this.Hide();
+                ViewPDNNKPrint f = new ViewPDNNKPrint();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
         private void FormMainPhongKeHoach_Load(object sender, EventArgs e)
         {
             LoadLapKeHoachForm();
+            LoadHienThiPDNNK();
         }
     }
 }

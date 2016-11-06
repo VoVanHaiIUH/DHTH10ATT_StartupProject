@@ -225,17 +225,31 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
             else
             {
                 PhieuDNXK phieu = db.PhieuDNXKs.Where(x => x.MaPhieuDNXK == SoPhieu).FirstOrDefault();
-                db.PhieuDNXKs.DeleteOnSubmit(phieu);
-                db.SubmitChanges();
-                return true;
+                if (phieu != null)
+                {
+                    db.PhieuDNXKs.DeleteOnSubmit(phieu);
+                    db.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Invalid ID");
+                }
             }
         }
 
         public void DeletePDNXKChiTiet(string SoPhieu, string MaSP)
         {
             ChiTietPhieuDNXK chitiet = db.ChiTietPhieuDNXKs.Where(x => x.MaPhieuDNXK == SoPhieu && x.MaSP == MaSP).FirstOrDefault();
-            db.ChiTietPhieuDNXKs.DeleteOnSubmit(chitiet);
-            db.SubmitChanges();
+            if (chitiet != null)
+            {
+                db.ChiTietPhieuDNXKs.DeleteOnSubmit(chitiet);
+                db.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("Invald Details");
+            }
         }
 
         private string TaoMaPDNXK()

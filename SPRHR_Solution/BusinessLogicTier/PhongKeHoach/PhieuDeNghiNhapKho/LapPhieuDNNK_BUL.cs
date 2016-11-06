@@ -59,5 +59,9 @@ namespace BusinessLogicTier.PhongKeHoach.PhieuDeNghiNhapKho
         {
             NK.DeletePDNNKChiTiet(MaPhieu, MaSP);
         }
+        public string LayMaNV(string MaNV)
+        {
+            return NK.LayMaNhanVien(MaNV);
+        }
     }
 }

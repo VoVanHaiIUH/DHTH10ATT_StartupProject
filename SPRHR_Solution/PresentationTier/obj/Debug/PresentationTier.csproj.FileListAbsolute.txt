@@ -164,3 +164,4 @@ D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Nha
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.FormNhanVien.resources
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemLichNhanvien.resources
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemThongTinNhanVien.resources
+D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.ViewPDNNKPrint.resources
