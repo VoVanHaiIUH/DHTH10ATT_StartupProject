@@ -46,6 +46,7 @@
     <Compile Include="CongNo\CongNo_ThuNo_BUS.cs" />
     <Compile Include="CongNo\CongNo_TraNo_BUS.cs" />
     <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
+    <Compile Include="NhanSu\KyLuat\BangKyLuat_BUS.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_BUL.cs" />
     <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_BUL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDNNK_BUL.cs" />
@@ -63,12 +64,12 @@
     <Folder Include="Kho\BaoCaoTinhTrangKho\" />
     <Folder Include="Kho\LapPhieuNhapKho\" />
     <Folder Include="Kho\LapPhieuXuatKho\" />
-    <Folder Include="NhanSu\" />
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\HoaDonBanSiChoKhachHang\" />
     <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
     <Folder Include="PhongKeHoach\SanPham\" />
     <Folder Include="PhongKeHoach\TheThanhVien\" />
+    <Folder Include="TichHop\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">

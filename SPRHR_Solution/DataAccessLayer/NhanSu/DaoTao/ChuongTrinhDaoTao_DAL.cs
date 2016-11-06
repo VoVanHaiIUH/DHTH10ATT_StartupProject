@@ -13,16 +13,16 @@ namespace DataAccessLayer.NhanSu.DaoTao
         {
             db = new SPRHR_SolutionDataContext();
         }
-        public string TaoMa()
+        string TaoMa()
         {
             string s = db.ChuongTrinhDaoTaos.Last().machuongTrinhDaoTao;
             try
             {
                 s = s.Substring(4, 4);
                 int n = 0;
-                int.TryParse(s, out n);
-                if (n == -1) return "";
-                else return "CTDT" + (n + 1).ToString("0000");
+                bool x = int.TryParse(s, out n);
+                if (x) return "CTDT" + (n + 1).ToString("0000");
+                else return "CTDT0001";
             }
             catch
             {
@@ -40,6 +40,7 @@ namespace DataAccessLayer.NhanSu.DaoTao
             {
                 db.Connection.Open();
                 db.Transaction = db.Connection.BeginTransaction();
+                Moi.machuongTrinhDaoTao = TaoMa();
                 db.ChuongTrinhDaoTaos.InsertOnSubmit(Moi);
                 db.SubmitChanges();
                 return new BusinessEntities.NhanSu.eChuongTrinhDaoTao(Moi.machuongTrinhDaoTao, Moi.tenChuongTrinhDaoTao, Moi.ghiChu, Moi.coSoDaoTao);

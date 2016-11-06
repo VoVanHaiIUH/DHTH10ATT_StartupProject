@@ -95,6 +95,7 @@
     <Folder Include="CongNo\" />
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\SanPham\" />
+    <Folder Include="TichHop\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
