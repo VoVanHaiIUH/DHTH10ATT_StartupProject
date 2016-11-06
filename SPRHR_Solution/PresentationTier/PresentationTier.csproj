@@ -146,12 +146,6 @@
     <Compile Include="TichHop\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="TichHop\FormMainTichHop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TichHop\FormMainTichHop.Designer.cs">
-      <DependentUpon>FormMainTichHop.cs</DependentUpon>
-    </Compile>
     <Compile Include="TichHop\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,9 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TichHop\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TichHop\FormMainTichHop.resx">
-      <DependentUpon>FormMainTichHop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TichHop\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
