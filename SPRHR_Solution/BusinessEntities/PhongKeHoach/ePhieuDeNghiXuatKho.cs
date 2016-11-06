@@ -49,7 +49,12 @@ namespace BusinessEntities.PhongKeHoach
         }
         public ePhieuDeNghiXuatKho()
         {
-
+            this._SoPhieuDeNghiXuatKho = "1";
+            this._MaNhanVien = "";
+            this._MaKH = "";
+            this._MaKho = "";
+            this._NgayLap = DateTime.Now;
+            this._TinhTrang = 0;
         }
         public ePhieuDeNghiXuatKho(string sophieu,string manhanvien,string makh,string makho,DateTime ngaylap,int tinhtrang)
         {

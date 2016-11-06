@@ -36,7 +36,10 @@ namespace BusinessEntities.PhongKeHoach
         }
         public eKeHoach()
         {
-
+            this._MaSP = "";
+            this._SLHangMua = 0;
+            this._SLHangBan = 0;
+            this._KeHoach = ""; 
         }
         public eKeHoach(string MaSP,int SLD,int SLM,string KHoach)
         {

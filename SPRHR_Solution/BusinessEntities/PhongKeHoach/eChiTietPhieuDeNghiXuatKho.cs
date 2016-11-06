@@ -39,7 +39,10 @@ namespace BusinessEntities.PhongKeHoach
         }
         public eChiTietPhieuDeNghiXuatKho()
         {
-
+            this._SoPhieu = "";
+            this._MaSP = "";
+            this._GhiChu = "";
+            this._SoLuong = 0;
         }
         public eChiTietPhieuDeNghiXuatKho(string sophieu,string masp,string ghichu,int soluong)
         {

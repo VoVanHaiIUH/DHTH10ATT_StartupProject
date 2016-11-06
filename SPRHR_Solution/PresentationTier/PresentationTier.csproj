@@ -231,7 +231,10 @@
     <EmbeddedResource Include="TichHop\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.eCuaHang.datasource" />
     <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.eKeHoach.datasource" />
+    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.ePhieuDeNghiNhapKho.datasource" />
+    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.ePhieuDeNghiXuatKho.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

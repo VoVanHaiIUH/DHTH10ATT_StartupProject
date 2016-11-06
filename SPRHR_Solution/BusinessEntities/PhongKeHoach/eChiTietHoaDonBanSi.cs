@@ -16,7 +16,12 @@ namespace BusinessEntities.PhongKeHoach
         public string GhiChu { get; set; }
         public eChiTietHoaDonBanSi()
         {
-
+            this.MaHoaDonoBanSi = "";
+            this.soluong = 0;
+            this.GiaBanSi = 0;
+            this.MaSP = "";
+            this.MaChiTietHoaDonBanSi = "";
+            this.GhiChu = "";
         }
         public eChiTietHoaDonBanSi(string mahoadonbansi, int soluong, decimal giabansi, string masp, string machitiet, string ghichu)
         {

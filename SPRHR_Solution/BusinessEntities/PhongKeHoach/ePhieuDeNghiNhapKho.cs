@@ -55,7 +55,13 @@ namespace BusinessEntities.PhongKeHoach
         }
         public ePhieuDeNghiNhapKho()
         {
-
+            this.SoPhieuDeNghiNhapKho = "";
+            this.MaHoaDonNhaCungCap = "";
+            this._MaNhanVien = "";
+            this._NgayLap = DateTime.Now;
+            this._MaKho = "";
+            this._TinhTrang = 0;
+            this._MoTa = "";
         }
         public ePhieuDeNghiNhapKho(string MaPhieu,string Manv,string MaHDNCC,string Makho,string Mota,DateTime ngaylap,int tinhtrang)
         {

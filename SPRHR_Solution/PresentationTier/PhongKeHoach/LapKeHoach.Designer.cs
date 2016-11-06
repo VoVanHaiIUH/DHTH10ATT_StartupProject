@@ -38,12 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.eKeHoachBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ePhieuDeNghiNhapKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eCuaHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ePhieuDeNghiXuatKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLHangMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLHangBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KeHoach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DrvKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eKeHoachBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ePhieuDeNghiNhapKhoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eCuaHangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ePhieuDeNghiXuatKhoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DrvKH
@@ -58,7 +64,7 @@
             this.DrvKH.DataSource = this.eKeHoachBindingSource;
             this.DrvKH.Location = new System.Drawing.Point(12, 76);
             this.DrvKH.Name = "DrvKH";
-            this.DrvKH.Size = new System.Drawing.Size(425, 109);
+            this.DrvKH.Size = new System.Drawing.Size(423, 109);
             this.DrvKH.TabIndex = 0;
             this.DrvKH.Visible = false;
             // 
@@ -128,6 +134,18 @@
             // 
             this.eKeHoachBindingSource.DataSource = typeof(BusinessEntities.PhongKeHoach.eKeHoach);
             // 
+            // ePhieuDeNghiNhapKhoBindingSource
+            // 
+            this.ePhieuDeNghiNhapKhoBindingSource.DataSource = typeof(BusinessEntities.PhongKeHoach.ePhieuDeNghiNhapKho);
+            // 
+            // eCuaHangBindingSource
+            // 
+            this.eCuaHangBindingSource.DataSource = typeof(BusinessEntities.PhongKeHoach.eCuaHang);
+            // 
+            // ePhieuDeNghiXuatKhoBindingSource
+            // 
+            this.ePhieuDeNghiXuatKhoBindingSource.DataSource = typeof(BusinessEntities.PhongKeHoach.ePhieuDeNghiXuatKho);
+            // 
             // maSPDataGridViewTextBoxColumn
             // 
             this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
@@ -170,6 +188,9 @@
             this.Load += new System.EventHandler(this.LapKeHoach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DrvKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eKeHoachBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ePhieuDeNghiNhapKhoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eCuaHangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ePhieuDeNghiXuatKhoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,9 +207,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource ePhieuDeNghiNhapKhoBindingSource;
+        private System.Windows.Forms.BindingSource eCuaHangBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLHangMua;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLHangBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn KeHoach;
+        private System.Windows.Forms.BindingSource ePhieuDeNghiXuatKhoBindingSource;
     }
 }
