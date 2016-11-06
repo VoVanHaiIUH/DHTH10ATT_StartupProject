@@ -54,6 +54,8 @@
     <Compile Include="NhanSu\LichLamViec\LichLamViec_DAL.cs" />
     <Compile Include="NhanSu\NhanVien\LichSuLamViec_DAL.cs" />
     <Compile Include="NhanSu\NhanVien\NhanVien_DAL.cs" />
+    <Compile Include="NhanSu\PhongBan\ChucVu_DAL.cs" />
+    <Compile Include="NhanSu\PhongBan\QuanLiPhongBan_DAL.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_DAL.cs" />
     <Compile Include="PhongKeHoach\HoaDonBanSiChoKhachHang\LapHoaDonBanSiChoKhachHang_DAL.cs" />
     <Compile Include="PhongKeHoach\HoaDonPhiaNhaCungCap\HoaDonPhiaNhaCungCap_DAL.cs" />
