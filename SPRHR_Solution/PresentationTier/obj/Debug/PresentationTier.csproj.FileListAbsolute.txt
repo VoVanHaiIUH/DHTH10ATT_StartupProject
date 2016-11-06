@@ -126,3 +126,6 @@ D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Tic
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb
+C:\Users\KuAnh\SkyDrive\Nam03\PhatTrienUngDung\Project3\c\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
+C:\Users\KuAnh\SkyDrive\Nam03\PhatTrienUngDung\Project3\c\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
+C:\Users\KuAnh\SkyDrive\Nam03\PhatTrienUngDung\Project3\c\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb
