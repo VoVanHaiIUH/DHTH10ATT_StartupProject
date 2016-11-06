@@ -162,7 +162,7 @@
             this.lb_userName.Name = "lb_userName";
             this.lb_userName.Size = new System.Drawing.Size(91, 28);
             this.lb_userName.TabIndex = 12;
-            this.lb_userName.Text = "label3";
+            this.lb_userName.Text = "...";
             this.lb_userName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -217,6 +217,7 @@
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_addUser);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormAdmin";
             this.Text = "Admin";
             this.Activated += new System.EventHandler(this.FormAdmin_Activated);
