@@ -69,6 +69,7 @@
     <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
     <Folder Include="PhongKeHoach\SanPham\" />
     <Folder Include="PhongKeHoach\TheThanhVien\" />
+    <Folder Include="TichHop\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
