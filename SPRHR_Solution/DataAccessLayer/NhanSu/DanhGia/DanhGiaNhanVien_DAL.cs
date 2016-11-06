@@ -24,6 +24,7 @@ namespace DataAccessLayer.NhanSu.DanhGia
             {
                 db.DanhGias.InsertOnSubmit(Moi);
                 db.SubmitChanges();
+                Moi.ngayDanhGia = DateTime.Now;
                 BusinessEntities.NhanSu.eDanhGia M = new BusinessEntities.NhanSu.eDanhGia(Moi.maNhanVien,Moi.ngayDanhGia,Moi.loaiDanhGia,Moi.ghiChu);
                 return M;
             }

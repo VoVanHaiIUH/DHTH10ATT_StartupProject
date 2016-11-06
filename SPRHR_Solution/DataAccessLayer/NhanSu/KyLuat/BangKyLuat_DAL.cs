@@ -17,25 +17,39 @@ namespace DataAccessLayer.NhanSu.KyLuat
         {
             return (from i in db.KyLuats select new BusinessEntities.NhanSu.eKyLuat(i.maKyLuat, i.dieuKhoanKyLuat, i.hinhThucKyLuat)).ToList();
         }
-        public bool SuaKyLuat(string MKL)
+        string TaoMaKyLuat()
         {
-            var c = from i in db.KyLuats where i.maKyLuat.Equals(MKL) select i;
+            string s = (db.KyLuats.Last()).maKyLuat;
+            if (s.Length == 4)
+            {
+                s = s.Substring(2, 2);
+                int x;
+                bool t = int.TryParse(s, out x);
+                if (t) return "KL" + (x + 1).ToString("00");
+                else return "KL01";
+            }
+            else return "KL01";
+
+        }
+        public BusinessEntities.NhanSu.eKyLuat Them(DataAccessLayer.KyLuat Moi)
+        {
             try
             {
                 db.Connection.Open();
                 db.Transaction = db.Connection.BeginTransaction();
-                db.KyLuats.DeleteAllOnSubmit(c);
+                Moi.maKyLuat = TaoMaKyLuat();
+                db.KyLuats.InsertOnSubmit(Moi);
                 db.SubmitChanges();
-                db.Transaction.Commit();
-                return true;
+                return new BusinessEntities.NhanSu.eKyLuat(Moi.maKyLuat, Moi.dieuKhoanKyLuat, Moi.hinhThucKyLuat);
             }
             catch
             {
                 db.Transaction.Rollback();
-                return false;
+                return null;
             }
         }
-        public bool ThemKyLuat(DataAccessLayer.KyLuat Moi)
+
+        public bool SuaKyLuat(DataAccessLayer.KyLuat Moi)
         {
             try
             {

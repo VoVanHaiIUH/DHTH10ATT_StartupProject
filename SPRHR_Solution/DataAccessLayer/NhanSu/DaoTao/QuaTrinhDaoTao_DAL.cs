@@ -13,6 +13,7 @@ namespace DataAccessLayer.NhanSu.DaoTao
         {
             db = new SPRHR_SolutionDataContext();
         }
+        
         public List<BusinessEntities.NhanSu.eQuaTrinhDaoTao> LayDanhSach()
         {
             var c = from i in db.QuaTrinhDaoTaos
@@ -64,8 +65,7 @@ namespace DataAccessLayer.NhanSu.DaoTao
                 return 1;
             }
             catch
-            {
-               
+            {       
                 db.Transaction.Rollback();
                 return 0;
             }
