@@ -66,6 +66,12 @@
     <Compile Include="Kho\FormMainKho.Designer.cs">
       <DependentUpon>FormMainKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kho\PhieuNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kho\PhieuNhapKho.Designer.cs">
+      <DependentUpon>PhieuNhapKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanSu\frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kho\FormMainKho.resx">
       <DependentUpon>FormMainKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kho\PhieuNhapKho.resx">
+      <DependentUpon>PhieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanSu\frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
