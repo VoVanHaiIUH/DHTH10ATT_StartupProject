@@ -48,7 +48,6 @@ namespace DataAccessLayer.NhanSu.KyLuat
                 return null;
             }
         }
-
         public bool SuaKyLuat(DataAccessLayer.KyLuat Moi)
         {
             try

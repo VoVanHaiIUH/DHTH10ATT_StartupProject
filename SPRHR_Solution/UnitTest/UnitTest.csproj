@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\PDNNK_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,12 +67,25 @@
     <Folder Include="Kho\LapPhieuNhapKho\" />
     <Folder Include="Kho\LapPhieuXuatKho\" />
     <Folder Include="NhanSu\" />
-    <Folder Include="PhongKeHoach\BanSi\" />
     <Folder Include="PhongKeHoach\NhapHang\" />
     <Folder Include="PhongKeHoach\PhatHanhChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\QuanLyDichVuThanhVien\" />
     <Folder Include="PhongKeHoach\ThemThanhVien\" />
     <Folder Include="PhongKeHoach\TichDiemThanhVien\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">
+      <Project>{91c04b68-7d25-4d06-b79e-ec572c614eb2}</Project>
+      <Name>BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogicTier\BusinessLogicTier.csproj">
+      <Project>{5d2cd972-ad3b-4ac2-89f9-6da58129b2c2}</Project>
+      <Name>BusinessLogicTier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{12be2beb-e102-4bb4-ae53-245c56a4d092}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
