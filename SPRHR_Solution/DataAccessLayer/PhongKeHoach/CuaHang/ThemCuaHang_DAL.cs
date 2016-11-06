@@ -21,7 +21,7 @@ namespace DataAccessLayer.PhongKeHoach.CuaHang
             {
                 return true;
             }
-            return false;
+           throw new Exception("Không Tồn Tại Cửa Hàng Này");
         }
         public List<eCuaHang> GetALLCuaHang()
         {
@@ -63,7 +63,7 @@ namespace DataAccessLayer.PhongKeHoach.CuaHang
                 db.SubmitChanges();
                 return true;
             }
-            return false;
+            throw new Exception("Cửa Hàng Không Có Sao Thêm");
         }
         public void FixCuaHang(string MaCuaHang, string TenCuaHang, string DiaChi, string SoDienThoai, int TinhTrang)
         {

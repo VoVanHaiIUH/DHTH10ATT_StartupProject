@@ -16,5 +16,23 @@ namespace PresentationTier.PhongKeHoach
         {
             InitializeComponent();
         }
+        private void LoadLapKeHoachForm()
+        {
+            if (CBKH.SelectedItem.ToString() == "Lập Kế Hoạch Sản Phẩm")
+            {
+                this.Hide();
+                LapKeHoach F = new LapKeHoach();
+                F.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+        private void FormMainPhongKeHoach_Load(object sender, EventArgs e)
+        {
+            LoadLapKeHoachForm();
+        }
     }
 }

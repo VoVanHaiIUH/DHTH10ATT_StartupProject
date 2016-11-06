@@ -25,7 +25,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
             {
                 return true;
             }
-            return false;
+            throw new Exception("Invaild PDNXK");
         }
         
         public List<ePhieuDeNghiXuatKho> GetALLPDNXK()
@@ -192,6 +192,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
                 if (c.Any())
                 {
                     return 0;
+                    throw new Exception("There have already");
                 }
                 else
                 {
@@ -208,6 +209,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
             else
             {
                 return 2;
+                throw new Exception("Invaild SanPham");
             }
         }
 
@@ -218,7 +220,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiXuatKho
                     select i;
             if(c.Any())
             {
-                return false;
+                throw new Exception("This Can't Be Delete");
             }
             else
             {
