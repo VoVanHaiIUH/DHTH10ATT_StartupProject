@@ -40,3 +40,6 @@ E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\BusinessEntities.pdb
 E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\BusinessLogicTier.pdb
 E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\DataAccessLayer.pdb
 E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.LapKeHoach.resources
+D:\RED\PTUD\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
+D:\RED\PTUD\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
+D:\RED\PTUD\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb

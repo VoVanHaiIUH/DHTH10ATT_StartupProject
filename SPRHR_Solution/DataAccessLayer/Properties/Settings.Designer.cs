@@ -44,5 +44,26 @@ namespace DataAccessLayer.Properties {
                 return ((string)(this["SPRHR_SolutionConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-NUIMKH8\\SQLEXPRESS;Initial Catalog=SPRHR_Solution;Integrated " +
+            "Security=True")]
+        public string SPRHR_SolutionConnectionString2 {
+            get {
+                return ((string)(this["SPRHR_SolutionConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MRRED;Initial Catalog=UserRole;Integrated Security=True")]
+        public string UserRoleConnectionString {
+            get {
+                return ((string)(this["UserRoleConnectionString"]));
+            }
+        }
     }
 }
