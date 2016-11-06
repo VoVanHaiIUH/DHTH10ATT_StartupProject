@@ -31,20 +31,18 @@ namespace BusinessEntities.BanHang
             set { _maNV = value; }
         }
 
-        private decimal _tongTien;
+        private decimal _tongTien = 0;
 
         public decimal TongTien
         {
             get { return _tongTien; }
-            set { _tongTien = value; }
         }
 
-        private System.DateTime _ngayLap;
+        private System.DateTime _ngayLap = DateTime.Now;
 
         public System.DateTime NgayLap
         {
             get { return _ngayLap; }
-            set { _ngayLap = DateTime.Now; }
         }
 
         private bool _VAT;
@@ -75,7 +73,7 @@ namespace BusinessEntities.BanHang
             //   http://go.microsoft.com/fwlink/?LinkId=85238
             //
 
-            if (obj == null || this._soHD.ToLower() != ((eHoaDonBanHang)obj).SoHD.ToLower())
+            if (obj == null || this._soHD.ToLower() != ((eHoaDonBanHang)obj).SoHD.ToLower() || !(obj is eHoaDonBanHang))
             {
                 return false;
             }
@@ -88,15 +86,25 @@ namespace BusinessEntities.BanHang
         public override int GetHashCode()
         {
             // TODO: write your implementation of GetHashCode() here
-            return this._soHD.GetHashCode();
+            return GetHashCode();
         }
         public bool AddList(eChiTietHoaDonBanHang cthd)
         {
             if (list.Contains(cthd)) return false;
             eChiTietHoaDonBanHang temp = new eChiTietHoaDonBanHang(cthd.MaSP, cthd.SoLuong, cthd.Gia, cthd.GiaKhuyenMai);
+            foreach (var item in list)
+            {
+                if(item.MaSP==temp.MaSP)
+                {
+                    item.SoLuong += temp.SoLuong;
+                    this._tongTien += temp.SoLuong * (temp.Gia - temp.GiaKhuyenMai);
+                    return true;
+                }
+            }
             temp.SoHD = this._soHD;
             temp.SoCTHD = list.Count + 1;
             list.Add(temp);
+            this._tongTien = temp.Gia * (temp.SoLuong - temp.GiaKhuyenMai);
             return true;
         }
 

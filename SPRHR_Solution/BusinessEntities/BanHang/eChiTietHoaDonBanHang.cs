@@ -60,7 +60,9 @@ namespace BusinessEntities.BanHang
         public decimal GiaKhuyenMai
         {
             get { return _giaKhuyenMai; }
-            set { _giaKhuyenMai = value; }
+            set {
+                if (value > this._gia || value < 0) throw new Exception("Giá khuyến mãi không được nhỏ hơn 0 và phải nhỏ hơn giá sản phẩm");
+                _giaKhuyenMai = value; }
         }
         public eChiTietHoaDonBanHang(string masp,short solg,decimal gia)
         {
@@ -87,7 +89,7 @@ namespace BusinessEntities.BanHang
             //   http://go.microsoft.com/fwlink/?LinkId=85238
             //
 
-            if (obj == null || this._soHD.ToLower() != ((eChiTietHoaDonBanHang)obj).SoHD.ToLower() || this._soCTHD != ((eChiTietHoaDonBanHang)obj)._soCTHD)
+            if (obj == null || this._soHD.ToLower() != ((eChiTietHoaDonBanHang)obj).SoHD.ToLower() || this._soCTHD != ((eChiTietHoaDonBanHang)obj)._soCTHD || !(obj is eChiTietHoaDonBanHang))
             {
                 return false;
             }
@@ -100,7 +102,7 @@ namespace BusinessEntities.BanHang
         public override int GetHashCode()
         {
             // TODO: write your implementation of GetHashCode() here
-            return this._soCTHD.GetHashCode();
+            return GetHashCode();
         }
     }
 }
