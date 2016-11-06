@@ -4,3 +4,8 @@ D:\PTUD\SPRHR_Solution\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.Un
 D:\PTUD\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 D:\PTUD\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.dll
 D:\PTUD\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.pdb
+E:\SPRHR_Solution\SPRHR_Solution\UnitTest\bin\Debug\UnitTest.dll
+E:\SPRHR_Solution\SPRHR_Solution\UnitTest\bin\Debug\UnitTest.pdb
+E:\SPRHR_Solution\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+E:\SPRHR_Solution\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.dll
+E:\SPRHR_Solution\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.pdb

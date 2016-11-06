@@ -14,3 +14,11 @@ D:\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\bin\Debug\BusinessEnt
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\bin\Debug\BusinessEntities.dll
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\bin\Debug\BusinessEntities.pdb
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\SPRHR_Solution\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
