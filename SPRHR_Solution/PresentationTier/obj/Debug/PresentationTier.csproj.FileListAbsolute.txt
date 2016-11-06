@@ -81,8 +81,6 @@ D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\Presentati
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmChuongTrinhDaoTao.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmKyLuat.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmLichLamViec.resources
-D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmMainNhanSu.resources
-D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmNhanVien.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmPhongBan.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmThaiDoiChucVu.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmThuyenChuyen.resources
@@ -94,3 +92,7 @@ D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\Presentati
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.FormMainTichHop.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.Login.resources
 D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.FormMainNhanSu.resources
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.FormNhanVien.resources
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemLichNhanvien.resources
+D:\DHTH10ATT_StartupProject\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemThongTinNhanVien.resources

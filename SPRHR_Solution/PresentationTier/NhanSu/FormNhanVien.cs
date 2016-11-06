@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace PresentationTier.NhanSu
 {
-    public partial class frmNhanVien : Form
+    public partial class FormNhanVien : Form
     {
-        public frmNhanVien()
+        public FormNhanVien()
         {
             InitializeComponent();
         }
@@ -70,5 +70,24 @@ namespace PresentationTier.NhanSu
             dragging = false;
         }
         #endregion
+
+        private void btnthoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnthuyenchuyen_Click(object sender, EventArgs e)
+        {
+            frmThuyenChuyen tc;
+            tc= new frmThuyenChuyen();
+            tc.Show();
+        }
+
+        private void btnthaydoichucvu_Click(object sender, EventArgs e)
+        {
+            frmThaiDoiChucVu td;
+            td = new frmThaiDoiChucVu();
+            td.Show();
+        }
     }
 }
