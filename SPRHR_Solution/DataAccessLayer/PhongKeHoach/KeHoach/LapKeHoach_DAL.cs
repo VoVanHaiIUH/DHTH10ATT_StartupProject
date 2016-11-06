@@ -12,6 +12,7 @@ namespace DataAccessLayer.PhongKeHoach.KeHoach
         SPRHR_SolutionDataContext db = new SPRHR_SolutionDataContext();
         public List<eKeHoach> DanhSachKeHoachChoSanPham(DateTime First, DateTime SeCond)
         {
+            int n = 0;
             var Sp = from i in db.SanPhams
                      select i;
             List<eKeHoach> Ls = new List<eKeHoach>();
@@ -29,17 +30,25 @@ namespace DataAccessLayer.PhongKeHoach.KeHoach
                               select i;
             foreach (HoaDonBanSi hd in HoaDonBanSi.ToList())
             {
-                foreach (ChiTietHoaDonBanSi Ct in db.ChiTietHoaDonBanSis.Where(x => x.MaHoaDonBanSi == hd.MaHoaDonBanSi).ToList())
+                if (db.ChiTietHoaDonBanSis.Where(x => x.MaHoaDonBanSi == hd.MaHoaDonBanSi).Count() == 0)
                 {
-                    foreach (eKeHoach KeH in Ls)
+                    n++;
+                    throw new Exception("List Null" + n);
+                }
+                else
+                {
+                    foreach (ChiTietHoaDonBanSi Ct in db.ChiTietHoaDonBanSis.Where(x => x.MaHoaDonBanSi == hd.MaHoaDonBanSi).ToList())
                     {
-                        if (KeH.MaSP == Ct.MaSP)
+                        foreach (eKeHoach KeH in Ls)
                         {
-                            KeH.SLHangBan += Convert.ToInt32(Ct.SoLuong);
-                        }
-                        else
-                        {
-                            KeH.SLHangBan = KeH.SLHangBan;
+                            if (KeH.MaSP == Ct.MaSP)
+                            {
+                                KeH.SLHangBan += Convert.ToInt32(Ct.SoLuong);
+                            }
+                            else
+                            {
+                                KeH.SLHangBan = KeH.SLHangBan;
+                            }
                         }
                     }
                 }
@@ -49,17 +58,25 @@ namespace DataAccessLayer.PhongKeHoach.KeHoach
                                 select i;
             foreach (HoaDonBanHang Hd in HoaDonBanHang.ToList())
             {
-                foreach (ChiTietHoaDonBanHang Ct in db.ChiTietHoaDonBanHangs.Where(x => x.soHD == Hd.soHD).ToList())
+                if (db.ChiTietHoaDonBanHangs.Where(x => x.soHD == Hd.soHD).Count() == 0)
                 {
-                    foreach (eKeHoach KeH in Ls)
+                    n++;
+                    throw new Exception("List Null" + n);
+                }
+                else
+                {
+                    foreach (ChiTietHoaDonBanHang Ct in db.ChiTietHoaDonBanHangs.Where(x => x.soHD == Hd.soHD).ToList())
                     {
-                        if (KeH.MaSP == Ct.maSP)
+                        foreach (eKeHoach KeH in Ls)
                         {
-                            KeH.SLHangBan += Convert.ToInt32(Ct.soLuong);
-                        }
-                        else
-                        {
-                            KeH.SLHangBan = KeH.SLHangBan;
+                            if (KeH.MaSP == Ct.maSP)
+                            {
+                                KeH.SLHangBan += Convert.ToInt32(Ct.soLuong);
+                            }
+                            else
+                            {
+                                KeH.SLHangBan = KeH.SLHangBan;
+                            }
                         }
                     }
                 }
@@ -69,17 +86,25 @@ namespace DataAccessLayer.PhongKeHoach.KeHoach
                               select i;
             foreach (HoaDonNhaCungCap Hd in HoaDonNhaCC.ToList())
             {
-                foreach (ChiTietHoaDonNhaCungCap Ct in db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaHoaDonNhaCungCap == Hd.MaHoaDonNCC).ToList())
+                if (db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaHoaDonNhaCungCap == Hd.MaHoaDonNCC).Count() == 0)
                 {
-                    foreach (eKeHoach Kh in Ls)
+                    n++;
+                    throw new Exception("List Null" + n);
+                }
+                else
+                {
+                    foreach (ChiTietHoaDonNhaCungCap Ct in db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaHoaDonNhaCungCap == Hd.MaHoaDonNCC).ToList())
                     {
-                        if (Kh.MaSP == Ct.MaSp)
+                        foreach (eKeHoach Kh in Ls)
                         {
-                            Kh.SLHangMua += Convert.ToInt32(Ct.SoLuong);
-                        }
-                        else
-                        {
-                            Kh.SLHangMua = Kh.SLHangMua;
+                            if (Kh.MaSP == Ct.MaSp)
+                            {
+                                Kh.SLHangMua += Convert.ToInt32(Ct.SoLuong);
+                            }
+                            else
+                            {
+                                Kh.SLHangMua = Kh.SLHangMua;
+                            }
                         }
                     }
                 }

@@ -23,7 +23,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             {
                 return true;
             }
-            else return false;
+            throw new Exception("Invaild PDNNK");
         }
 
         public List<ePhieuDeNghiNhapKho> GetALLPDNNK()
@@ -199,6 +199,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
                 if(c.Any())
                 {
                     return 0;
+                    throw new Exception("There have already");
                 }
                 else
                 {
@@ -215,6 +216,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             else
             {
                 return 2;
+                throw new Exception("Invaild SanPham");
             }
         }
 
@@ -225,14 +227,14 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
                     select i;
             if (c.Any())
             {
-                return false;
+                throw new Exception("This Can't Be Delete");
             }
             else
             {
                 PhieuDNNK Phieu = db.PhieuDNNKs.Where(x => x.MaPhieuDNNK == SoPhieu).FirstOrDefault();
                 db.PhieuDNNKs.DeleteOnSubmit(Phieu);
                 db.SubmitChanges();
-                return false;
+                return true;
             }
         }
 

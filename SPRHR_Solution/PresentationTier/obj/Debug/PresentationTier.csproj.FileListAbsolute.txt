@@ -30,3 +30,13 @@ E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Tic
 E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache
 E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.exe
 E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.pdb
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.pdb
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\BusinessEntities.dll
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\BusinessLogicTier.dll
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\DataAccessLayer.dll
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\BusinessEntities.pdb
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\BusinessLogicTier.pdb
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\bin\Debug\DataAccessLayer.pdb
+E:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.LapKeHoach.resources
