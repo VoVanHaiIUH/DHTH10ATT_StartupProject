@@ -69,6 +69,11 @@ namespace BusinessEntities.Kho
             this._maKho = _maKho;
             this._ngayLap = _ngayLap;
         }
+
+        public ePhieuNhapKho()
+        {
+        }
+
         public override int GetHashCode()
         {
             return this._soPDNN.GetHashCode();
