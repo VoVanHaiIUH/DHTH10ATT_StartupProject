@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_BUS.cs" />
     <Compile Include="BanHang\NhanHangTuKho\NhanHangTuKho_BUS.cs" />
+    <Compile Include="CongNo\CongNo_ALL_BUS.cs" />
+    <Compile Include="CongNo\CongNo_ThongKe_BUS.cs" />
     <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
     <Compile Include="NhanSu\KyLuat\BangKyLuat_BUS.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_BUL.cs" />
