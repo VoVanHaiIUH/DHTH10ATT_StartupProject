@@ -36,7 +36,7 @@ namespace DataAccessLayer
     #endregion
 		
 		public SPRHR_UserDataContext() : 
-				base(global::DataAccessLayer.Properties.Settings.Default.UserRoleConnectionString, mappingSource)
+				base(global::DataAccessLayer.Properties.Settings.Default.UserRoleConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
