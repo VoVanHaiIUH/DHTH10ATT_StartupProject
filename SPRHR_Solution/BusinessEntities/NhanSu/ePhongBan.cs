@@ -29,11 +29,25 @@ namespace BusinessEntities.NhanSu
             get { return _khuVuc; }
             set { _khuVuc = value; }
         }
-        public ePhongBan(string maphong, string tenphong, string khuvuc)
+        private string _maTruongPhong;
+        public string MaTruongPhong
+        {
+            get
+            {
+                return _maTruongPhong;
+            }
+
+            set
+            {
+                _maTruongPhong = value;
+            }
+        }
+        public ePhongBan(string maphong, string tenphong, string khuvuc,string matruongphong)
         {
             this._maPhongBan = maphong;
             this._tenPhongBan = tenphong;
             this._khuVuc = khuvuc;
+            this._maTruongPhong = matruongphong;
         }
         public override int GetHashCode()
         {

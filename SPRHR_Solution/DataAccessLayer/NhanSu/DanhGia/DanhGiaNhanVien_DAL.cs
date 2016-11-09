@@ -22,15 +22,17 @@ namespace DataAccessLayer.NhanSu.DanhGia
         {
             try
             {
+                db.Connection.Open();
+                db.Transaction = db.Connection.BeginTransaction();
+                Moi.ngayDanhGia = DateTime.Now;
                 db.DanhGias.InsertOnSubmit(Moi);
                 db.SubmitChanges();
-                Moi.ngayDanhGia = DateTime.Now;
-                BusinessEntities.NhanSu.eDanhGia M = new BusinessEntities.NhanSu.eDanhGia(Moi.maNhanVien,Moi.ngayDanhGia,Moi.loaiDanhGia,Moi.ghiChu);
-                return M;
-            }
-            catch(Exception ex)
+                return new BusinessEntities.NhanSu.eDanhGia(Moi.maNhanVien, Moi.ngayDanhGia, Moi.loaiDanhGia, Moi.ghiChu);
+                }
+            catch
             {
-                throw new Exception (ex.Message);     
+                db.Transaction.Rollback();
+                return null;
             }
         }
         public int Xoa(string MaNhanVien,DateTime NgayDanhGia)
