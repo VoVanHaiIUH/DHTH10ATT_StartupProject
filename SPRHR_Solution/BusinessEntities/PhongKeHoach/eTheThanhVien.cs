@@ -17,7 +17,13 @@ namespace BusinessEntities.PhongKeHoach
         public string MaKH { get; set; }
         public eTheThanhVien()
         {
-
+            this.MaThe = "";
+            this.NgayCapThe = DateTime.Now;
+            this.SoDiem = 0;
+            this.TenThanhVien = "";
+            this.DiaChi = "";
+            this.SoCmnd = "";
+            this.MaKH = "";
         }
         public eTheThanhVien(string mathe, DateTime ngaycap, int sodiem, string tenthanhvien, string diachi, string socmnd, string makh)
         {

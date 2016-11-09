@@ -31,9 +31,9 @@ namespace BusinessLogicTier.Kho
         {
             return pnkDAL.GetPNKtheoMa(ma);
         }
-        public void getSPtheosoPDNN(string maphieu)
+        public IEnumerable<object> GetTTPhieuNhapKho(string maphieu)
         {
-            pnkDAL.GetSPtheoSoPN(maphieu);
+            return pnkDAL.GetTTPhieuNhapKho(maphieu);
         }
         public int taophieunhapkho(ePhieuNhapKho pnk)
         {

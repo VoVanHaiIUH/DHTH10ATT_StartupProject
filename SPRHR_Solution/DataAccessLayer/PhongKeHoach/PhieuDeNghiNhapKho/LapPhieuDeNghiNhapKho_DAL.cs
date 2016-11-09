@@ -232,17 +232,31 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             else
             {
                 PhieuDNNK Phieu = db.PhieuDNNKs.Where(x => x.MaPhieuDNNK == SoPhieu).FirstOrDefault();
-                db.PhieuDNNKs.DeleteOnSubmit(Phieu);
-                db.SubmitChanges();
-                return true;
+                if (Phieu != null)
+                {
+                    db.PhieuDNNKs.DeleteOnSubmit(Phieu);
+                    db.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    throw new Exception("Invalid ID");
+                }
             }
         }
 
         public void DeletePDNNKChiTiet(string SoPhieu,string MaSP)
         {
             ChiTietPhieuDNNK ct = db.ChiTietPhieuDNNKs.Where(x => x.MaPhieuDNNK == SoPhieu && x.MaSP == MaSP).FirstOrDefault();
-            db.ChiTietPhieuDNNKs.DeleteOnSubmit(ct);
-            db.SubmitChanges();
+            if (ct != null)
+            {
+                db.ChiTietPhieuDNNKs.DeleteOnSubmit(ct);
+                db.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("Invalid Details");
+            }
         }
 
         private string TaoMaPDNNK()
@@ -257,6 +271,11 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             max++;
             return "PDNNK" + string.Format("{0:0000}", max);
         }
-
+        public string LayMaNhanVien(string Manv)
+        {
+            NhanVien NV = db.NhanViens.Where(x => x.maNhanVien == Manv).FirstOrDefault();
+            string s = NV.hoTenNhanVien;
+            return s;
+        }
     }
 }

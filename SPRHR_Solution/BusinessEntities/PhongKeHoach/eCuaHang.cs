@@ -42,6 +42,11 @@ namespace BusinessEntities.PhongKeHoach
         }
         public eCuaHang()
         {
+            this._MaCuaHang = "";
+            this._TenCuaHang = "";
+            this._TinhTrang = 0;
+            this._SoDienThoai = "";
+            this._DiaChi = "";
 
         }
         public eCuaHang(string macuahang,string tencuahang,string diachi,string sodienthoai,int tinhtrang)

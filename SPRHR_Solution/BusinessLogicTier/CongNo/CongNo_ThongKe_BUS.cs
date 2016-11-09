@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
+namespace BusinessLogicTier.CongNo
 {
-    public class HoaDonPhiaNhaCungCap_DAL
+    public class CongNo_ThongKe_BUS
     {
     }
 }

@@ -63,16 +63,23 @@ namespace DataAccessLayer.PhongKeHoach.CuaHang
                 db.SubmitChanges();
                 return true;
             }
-            throw new Exception("Cửa Hàng Không Có Sao Thêm");
+            throw new Exception("Cửa Hàng Không Có Sao Xóa");
         }
         public void FixCuaHang(string MaCuaHang, string TenCuaHang, string DiaChi, string SoDienThoai, int TinhTrang)
         {
             DanhMucCuaHang CH = db.DanhMucCuaHangs.Where(x => x.MaCuaHang == MaCuaHang).FirstOrDefault();
-            CH.TenCuaHang = TenCuaHang;
-            CH.DiaChi = DiaChi;
-            CH.SoDienThoai = SoDienThoai;
-            CH.TinhTrang = TinhTrang;
-            db.SubmitChanges();
+            if (CH != null)
+            {
+                CH.TenCuaHang = TenCuaHang;
+                CH.DiaChi = DiaChi;
+                CH.SoDienThoai = SoDienThoai;
+                CH.TinhTrang = TinhTrang;
+                db.SubmitChanges();
+            }
+            else
+            {
+                throw new Exception("Invaild ID");
+            }
         }
 
         private string TaoMaCuaHang()

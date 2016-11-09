@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_DAL.cs" />
+    <Compile Include="CongNo\CongNo_ALL_DAL.cs" />
+    <Compile Include="CongNo\CongNo_ThongKe_DAL.cs" />
     <Compile Include="Kho\PhieuNhapKho_dal.cs" />
     <Compile Include="Kho\PhieuXuatKho_dal.cs" />
     <Compile Include="Kho\QuanLyKho_dal.cs" />
@@ -57,8 +59,8 @@
     <Compile Include="NhanSu\PhongBan\ChucVu_DAL.cs" />
     <Compile Include="NhanSu\PhongBan\QuanLiPhongBan_DAL.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_DAL.cs" />
-    <Compile Include="PhongKeHoach\HoaDonBanSiChoKhachHang\LapHoaDonBanSiChoKhachHang_DAL.cs" />
-    <Compile Include="PhongKeHoach\HoaDonPhiaNhaCungCap\HoaDonPhiaNhaCungCap_DAL.cs" />
+    <Compile Include="PhongKeHoach\HoaDonBanSiChoKhachHang\LapHoaDonBanSi_DAL.cs" />
+    <Compile Include="PhongKeHoach\HoaDonPhiaNhaCungCap\LapHoaDonNhaCungCap_DAL.cs" />
     <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDeNghiNhapKho_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDeNghiXuatKho_DAL.cs" />
@@ -105,7 +107,6 @@
     <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
-    <Folder Include="CongNo\" />
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\SanPham\" />
   </ItemGroup>

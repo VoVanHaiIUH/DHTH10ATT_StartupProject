@@ -15,7 +15,11 @@ namespace BusinessEntities.PhongKeHoach
         public decimal TongTien { get; set; }
         public eHoaDonNhaCungCap()
         {
-
+            this.MaHoaDonNCC = "";
+            this.MaNhaCungCap = "";
+            this.MaNhanVien = "";
+            this.NgayLap = DateTime.Now;
+            this.TongTien = 0;
         }
         public eHoaDonNhaCungCap(string mahoadonncc, string manhacungcap, string manhanvien, DateTime ngaylap, decimal tongtien)
         {
