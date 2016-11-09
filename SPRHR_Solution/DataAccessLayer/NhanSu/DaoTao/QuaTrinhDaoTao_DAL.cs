@@ -100,7 +100,7 @@ namespace DataAccessLayer.NhanSu.DaoTao
                 {
                     i.ngayDuocDaoTao = Moi.NgayDuocDaotao;
                     i.ngayKetThucDaoTao = Moi.NgayKetThucDaoTao;
-                    i.loaiDanhGia = i.loaiDanhGia;
+                    i.loaiDanhGia = Moi.LoaiDanhGia;
                 }
                 db.SubmitChanges();
                 return true;

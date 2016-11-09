@@ -50,15 +50,14 @@ namespace BusinessEntities.NhanSu
             get { return _ngayKetThucKyLuat; }
             set { _ngayKetThucKyLuat = value; }
         }
-
-        private eChiTietKyLuat(string makl, string manv, string lydo, DateTime ngaykl, DateTime ngayapdung, DateTime ngayketthuc)
+        public eChiTietKyLuat(string makl, string manv, string lydo, DateTime ngaykl, DateTime ngayapdung, DateTime ngayketthuc)
         {
             this._maKyLuat = makl;
             this._maNhanVien = manv;
             this._lyDo = lydo;
             this._ngayLapKyLuat = ngaykl;
             this._ngayApDungKyLuat = ngayapdung;
-            this._ngayKetThucKyLuat = ngayketthuc;
+            this._ngayKetThucKyLuat = ngayketthuc;/// can be null => datetime?
         }
         public override int GetHashCode()
         {
