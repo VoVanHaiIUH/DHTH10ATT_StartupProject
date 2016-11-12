@@ -58,12 +58,14 @@
     <Compile Include="NhanSu\NhanVien\NhanVien_DAL.cs" />
     <Compile Include="NhanSu\PhongBan\ChucVu_DAL.cs" />
     <Compile Include="NhanSu\PhongBan\QuanLiPhongBan_DAL.cs" />
+    <Compile Include="PhongKeHoach\ChuongTrinhKhuyenMai\LapChuongTrinhKhuyenMai_DAL.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_DAL.cs" />
     <Compile Include="PhongKeHoach\HoaDonBanSiChoKhachHang\LapHoaDonBanSi_DAL.cs" />
     <Compile Include="PhongKeHoach\HoaDonPhiaNhaCungCap\LapHoaDonNhaCungCap_DAL.cs" />
     <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDeNghiNhapKho_DAL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDeNghiXuatKho_DAL.cs" />
+    <Compile Include="PhongKeHoach\SanPhamLap\SanPham_DAL.cs" />
     <Compile Include="PhongKeHoach\TheThanhVien\LapTheThanhVien_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -107,8 +109,6 @@
     <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
-    <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
-    <Folder Include="PhongKeHoach\SanPham\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">

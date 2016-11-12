@@ -45,3 +45,14 @@ D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\UnitTest\bin\Debug\Microsof
 D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.dll
 D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\BusinessEntities.dll
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\BusinessLogicTier.dll
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\DataAccessLayer.dll
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\BusinessEntities.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\BusinessLogicTier.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\bin\Debug\DataAccessLayer.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache

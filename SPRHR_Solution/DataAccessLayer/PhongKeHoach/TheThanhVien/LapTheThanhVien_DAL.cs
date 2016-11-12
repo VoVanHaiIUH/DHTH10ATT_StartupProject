@@ -8,6 +8,10 @@ namespace DataAccessLayer.PhongKeHoach.TheThanhVien
 {
     public class LapTheThanhVien_DAL
     {
-
+        SPRHR_SolutionDataContext sr = new SPRHR_SolutionDataContext();
+        public void abc()
+        {
+            var c = from i in sr.BangGiaBanSis 
+           }
     }
 }

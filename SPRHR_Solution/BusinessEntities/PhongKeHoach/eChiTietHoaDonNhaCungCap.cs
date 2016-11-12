@@ -23,14 +23,13 @@ namespace BusinessEntities.PhongKeHoach
             this.GhiChu = "";
             this.TenSp = "";
         }
-        public eChiTietHoaDonNhaCungCap(string masp, string mahdncc, int soluong, decimal giaban, string ghichu, string tensp)
+        public eChiTietHoaDonNhaCungCap(string masp, string mahdncc, int soluong, decimal giaban, string ghichu)
         {
             this.MaHoaDonNhaCungCap = mahdncc;
             this.MaSp = masp;
             this.SoLuong = soluong;
             this.GiaMuaBenNhaCungCap = giaban;
             this.GhiChu = ghichu;
-            this.TenSp = tensp;
         }
         public override bool Equals(object obj)
         {

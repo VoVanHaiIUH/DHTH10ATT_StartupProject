@@ -62,6 +62,7 @@
     <Compile Include="NhanSu\eNhanVien.cs" />
     <Compile Include="NhanSu\ePhongBan.cs" />
     <Compile Include="NhanSu\eQuaTrinhDaoTao.cs" />
+    <Compile Include="PhongKeHoach\eBangGiaSi.cs" />
     <Compile Include="PhongKeHoach\eChiTietChuongTrinhKhuyenMai.cs" />
     <Compile Include="PhongKeHoach\eChiTietHoaDonBanSi.cs" />
     <Compile Include="PhongKeHoach\eChiTietHoaDonNhaCungCap.cs" />

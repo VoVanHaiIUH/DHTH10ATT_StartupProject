@@ -62,7 +62,7 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonBanSiChoKhachHang
                 {
                     ChiTietHoaDonBanSi ChitietHDBS = new ChiTietHoaDonBanSi();
                     ChitietHDBS.MaHoaDonBanSi = Ct.MaHoaDonoBanSi;
-                    ChitietHDBS.MaChiTietHoaDonBanSi = TaoMachiTietHoaDonBanSi(Ct.MaHoaDonoBanSi);
+                    ChitietHDBS.MaHoaDonBanSi = TaoMachiTietHoaDonBanSi(Ct.MaHoaDonoBanSi);
                     ChitietHDBS.MaSP = Ct.MaSP;
                     ChitietHDBS.SoLuong = Ct.soluong;
                     ChitietHDBS.GhiChu = Ct.GhiChu;

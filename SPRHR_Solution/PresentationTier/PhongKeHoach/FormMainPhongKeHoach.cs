@@ -16,38 +16,60 @@ namespace PresentationTier.PhongKeHoach
         {
             InitializeComponent();
         }
-        private void LoadLapKeHoachForm()
+        private void LoadForm()
         {
-            if (CBKH.SelectedItem.ToString() == "Lập Kế Hoạch Sản Phẩm")
+            if (CbQl.SelectedItem.ToString() == "Quản Lý Hóa Đơn Nhà Cung Cấp")
             {
                 this.Hide();
-                LapKeHoach F = new LapKeHoach();
-                F.ShowDialog();
+                FormQuanLyHoaDonNhaCungCap f = new FormQuanLyHoaDonNhaCungCap();
+                f.ShowDialog();
                 this.Show();
+
             }
-            else
-            {
-                this.Show();
-            }
-        }
-        private void LoadHienThiPDNNK()
-        {
-            if(CBHT.SelectedItem.ToString() == "Hiển Thị PDNNK")
+            else if (CbQl.SelectedItem.ToString() == "Quản Lý Sản Phẩm")
             {
                 this.Hide();
-                ViewPDNNKPrint f = new ViewPDNNKPrint();
+                FormQuanLySanPham f = new FormQuanLySanPham();
                 f.ShowDialog();
                 this.Show();
             }
-            else
+            else if (CbQl.SelectedItem.ToString() == "Quản Lý Khiếu Đề Nghị Nhập Kho")
             {
+                this.Hide();
+                FormQuanLyKhieuDeNghiNhapKho f = new FormQuanLyKhieuDeNghiNhapKho();
+                f.ShowDialog();
+                this.Show();
+            }
+            else if (CbQl.SelectedItem.ToString() == "Quản Lý Hóa Đơn Bán Sĩ")
+            {
+                this.Hide();
+                FormQuanLyHoaDonBanSi f = new FormQuanLyHoaDonBanSi();
+                f.ShowDialog();
+                this.Show();
+            }
+            else if (CbQl.SelectedItem.ToString() == "Quản Lý Khiếu Đề Nghị Xuất Kho")
+            {
+                this.Hide();
+                FormQuanLyKhieuDeNghiXuatKho f = new FormQuanLyKhieuDeNghiXuatKho();
+                f.ShowDialog();
+                this.Show();
+            }
+            else if (CbQl.SelectedItem.ToString() == "Quản Lý Thẻ Thành Viên")
+            {
+                this.Hide();
+                FormQuanLyTheThanhVien f = new FormQuanLyTheThanhVien();
+                f.ShowDialog();
                 this.Show();
             }
         }
         private void FormMainPhongKeHoach_Load(object sender, EventArgs e)
         {
-            LoadLapKeHoachForm();
-            LoadHienThiPDNNK();
+            LoadForm();
+        }
+
+        private void CbQl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
