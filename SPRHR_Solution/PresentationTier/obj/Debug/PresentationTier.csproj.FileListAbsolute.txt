@@ -165,3 +165,26 @@ D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Nha
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemLichNhanvien.resources
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemThongTinNhanVien.resources
 D:\SPRHR_Solution\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.ViewPDNNKPrint.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csprojResolveAssemblyReference.cache
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.BanHang.FormMainBanHang.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.CongNo.FormMainCongNo.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Kho.FormMainKho.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmChucVu.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmChuongTrinhDaoTao.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmKyLuat.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmLichLamViec.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.FormMainNhanSu.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.FormNhanVien.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmPhongBan.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmThaiDoiChucVu.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmThuyenChuyen.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemLichNhanvien.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.NhanSu.frmXemThongTinNhanVien.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormMainPhongKeHoach.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.LapKeHoach.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.ViewPDNNKPrint.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Properties.Resources.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.AddUser.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.FormAdmin.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.Login.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache

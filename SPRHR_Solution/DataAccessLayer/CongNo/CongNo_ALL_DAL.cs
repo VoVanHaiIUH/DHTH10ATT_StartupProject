@@ -358,7 +358,7 @@ namespace DataAccessLayer.CongNo
         public List<eCongNoKhachHang> GetListNoKHToiHan()
         {
             List<eCongNoKhachHang> l = new List<eCongNoKhachHang>();
-            foreach (CongNoKH congNo in db.CongNoKHs.Where(e => e.NgayDaoHan.CompareTo(DateTime.Now) == 0))
+            foreach (CongNoKH congNo in db.CongnoKHs.Where(e => e.NgayDaoHan.CompareTo(DateTime.Now) == 0))
             {
                 l.Add(new eCongNoKhachHang(congNo.MaSoCNKH, congNo.MaHoaDonBanSi, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
             }

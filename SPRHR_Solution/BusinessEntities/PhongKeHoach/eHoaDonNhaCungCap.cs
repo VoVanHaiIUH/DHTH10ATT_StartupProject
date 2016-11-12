@@ -13,6 +13,7 @@ namespace BusinessEntities.PhongKeHoach
         public string MaNhanVien { get; set; }
         public DateTime NgayLap { get; set; }
         public decimal TongTien { get; set; }
+        public decimal SoTienDaTra { get; set; }
         public eHoaDonNhaCungCap()
         {
             this.MaHoaDonNCC = "";
@@ -20,15 +21,16 @@ namespace BusinessEntities.PhongKeHoach
             this.MaNhanVien = "";
             this.NgayLap = DateTime.Now;
             this.TongTien = 0;
+            this.SoTienDaTra = 0;
         }
-        public eHoaDonNhaCungCap(string mahoadonncc, string manhacungcap, string manhanvien, DateTime ngaylap, decimal tongtien)
+        public eHoaDonNhaCungCap(string mahoadonncc, string manhacungcap, string manhanvien, DateTime ngaylap, decimal tongtien,decimal tiendatra)
         {
             this.MaHoaDonNCC = mahoadonncc;
             this.MaNhaCungCap = manhacungcap;
             this.MaNhanVien = manhanvien;
             this.NgayLap = ngaylap;
             this.TongTien = tongtien;
-
+            this.SoTienDaTra = tiendatra;
         }
         public override bool Equals(object obj)
         {

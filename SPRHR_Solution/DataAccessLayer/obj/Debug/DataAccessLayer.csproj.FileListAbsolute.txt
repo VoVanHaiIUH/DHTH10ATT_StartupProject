@@ -46,3 +46,6 @@ D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\bin\Debug\B
 D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

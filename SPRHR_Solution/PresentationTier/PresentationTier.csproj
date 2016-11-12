@@ -144,17 +144,41 @@
     <Compile Include="PhongKeHoach\FormMainPhongKeHoach.Designer.cs">
       <DependentUpon>FormMainPhongKeHoach.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhongKeHoach\LapKeHoach.cs">
+    <Compile Include="PhongKeHoach\FormQuanLyHoaDonBanSi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhongKeHoach\LapKeHoach.Designer.cs">
-      <DependentUpon>LapKeHoach.cs</DependentUpon>
+    <Compile Include="PhongKeHoach\FormQuanLyHoaDonBanSi.Designer.cs">
+      <DependentUpon>FormQuanLyHoaDonBanSi.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhongKeHoach\ViewPDNNKPrint.cs">
+    <Compile Include="PhongKeHoach\FormQuanLyHoaDonNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhongKeHoach\ViewPDNNKPrint.Designer.cs">
-      <DependentUpon>ViewPDNNKPrint.cs</DependentUpon>
+    <Compile Include="PhongKeHoach\FormQuanLyHoaDonNhaCungCap.Designer.cs">
+      <DependentUpon>FormQuanLyHoaDonNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLyKhieuDeNghiNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLyKhieuDeNghiNhapKho.Designer.cs">
+      <DependentUpon>FormQuanLyKhieuDeNghiNhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLyKhieuDeNghiXuatKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLyKhieuDeNghiXuatKho.Designer.cs">
+      <DependentUpon>FormQuanLyKhieuDeNghiXuatKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLySanPham.Designer.cs">
+      <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLyTheThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhongKeHoach\FormQuanLyTheThanhVien.Designer.cs">
+      <DependentUpon>FormQuanLyTheThanhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,11 +248,8 @@
     <EmbeddedResource Include="PhongKeHoach\FormMainPhongKeHoach.resx">
       <DependentUpon>FormMainPhongKeHoach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhongKeHoach\LapKeHoach.resx">
-      <DependentUpon>LapKeHoach.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PhongKeHoach\ViewPDNNKPrint.resx">
-      <DependentUpon>ViewPDNNKPrint.cs</DependentUpon>
+    <EmbeddedResource Include="PhongKeHoach\FormQuanLyHoaDonNhaCungCap.resx">
+      <DependentUpon>FormQuanLyHoaDonNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -249,11 +270,6 @@
     <EmbeddedResource Include="TichHop\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.eChiTietPhieuDeNghiNhapKho1.datasource" />
-    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.eCuaHang.datasource" />
-    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.eKeHoach.datasource" />
-    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.ePhieuDeNghiNhapKho.datasource" />
-    <None Include="Properties\DataSources\BusinessEntities.PhongKeHoach.ePhieuDeNghiXuatKho.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -279,6 +295,9 @@
       <Project>{5d2cd972-ad3b-4ac2-89f9-6da58129b2c2}</Project>
       <Name>BusinessLogicTier</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

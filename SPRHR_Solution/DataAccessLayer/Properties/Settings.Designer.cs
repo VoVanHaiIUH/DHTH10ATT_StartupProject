@@ -86,5 +86,16 @@ namespace DataAccessLayer.Properties {
                 return ((string)(this["SPRHR_SolutionConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-F32KOUU\\SQLEXPRESS;Initial Catalog=SPRHR_Solution;Integrated " +
+            "Security=True")]
+        public string SPRHR_SolutionConnectionString4 {
+            get {
+                return ((string)(this["SPRHR_SolutionConnectionString4"]));
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace BusinessEntities.PhongKeHoach
         private string _MaSP, _TenSP, _DonViTinh, _KieuDang, _MauSac, _MaLoaiSP, _MoTa;
         private DateTime _NgaySX, _NgayHetHan;
         private double _Trongluong;
-        
+
 
         public string DonViTinh
         {
@@ -142,8 +142,6 @@ namespace BusinessEntities.PhongKeHoach
                 _Trongluong = value;
             }
         }
-
-        
         public eSanPham()
         {
             this._MaSP = "";
