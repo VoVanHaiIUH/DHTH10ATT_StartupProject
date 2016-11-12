@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessEntities.PhongKeHoach;
-
+using BusinessEntities.NhanSu;
 namespace DataAccessLayer.PhongKeHoach.SanPhamLap
 {
     class SanPham_DAL
@@ -56,5 +56,17 @@ namespace DataAccessLayer.PhongKeHoach.SanPhamLap
             max++;
             return "NCC" + string.Format("{0:0000}", max);
         }
+        public List<eNhanVien> GetAllNhanVien()
+        {
+            var q = from x in db.NhanViens
+                    select x;
+            List<eNhanVien> ls = new List<eNhanVien>();
+            foreach (NhanVien a in q.ToList())
+            {
+                ls.Add(new eNhanVien(a.maNhanVien, a.hoTenNhanVien, (DateTime)a.ngayBatDauLamViec, a.tinhTrang, a.soTKNganHang, a.soDT, a.queQuan, a.Email, a.soCMND, a.diaChi, a.gioiTinh, (DateTime)a.ngaySinh));
+            }
+            return ls;
+        }
+
     }
 }

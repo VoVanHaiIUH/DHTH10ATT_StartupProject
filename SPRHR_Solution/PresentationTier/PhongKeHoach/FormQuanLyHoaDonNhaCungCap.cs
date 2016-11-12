@@ -26,5 +26,10 @@ namespace PresentationTier.PhongKeHoach
         {
 
         }
+
+        private void btThemhoadon_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -42,42 +42,80 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
             Hd.MaNhanVien = HoaDon.MaNhanVien;
             Hd.NgayLap = DateTime.Now;
             Hd.TongTien = 0;
+            Hd.sotienDatra = HoaDon.SoTienDaTra;
+            db.HoaDonNhaCungCaps.InsertOnSubmit(Hd);
+            db.SubmitChanges();
         }
-        public int InsertChiTietHoaDonNhaCungCap(eChiTietHoaDonNhaCungCap Ct)
+        public bool InsertChiTietHoaDonNhaCungCap(string mahd,string masp, int soluong, decimal  giamua,string ghichu)
         {
-            var SanPham = from i in db.SanPhams
-                          where i.MaSP == Ct.MaSp
-                          select i;
-            if (SanPham.Any())
+            var c = from i in db.ChiTietHoaDonNhaCungCaps
+                    where i.MaHoaDonNhaCungCap == mahd && i.MaSPNCC == masp
+                    select i;
+            if (c.Any())
             {
-                var ChiTiet = from i in db.ChiTietHoaDonNhaCungCaps
-                              where i.MaHoaDonNhaCungCap == Ct.MaHoaDonNhaCungCap && i.MaSp == Ct.MaSp
-                              select i;
-                if (ChiTiet.Any())
-                {
-                    return 0;
-                }
-                else
-                {
-                    ChiTietHoaDonNhaCungCap ChitietHDNCC = new ChiTietHoaDonNhaCungCap();
-                    ChitietHDNCC.MaHoaDonNhaCungCap = Ct.MaHoaDonNhaCungCap;
-                    ChitietHDNCC.MaSp = Ct.MaSp;
-                    ChitietHDNCC.SoLuong = Ct.SoLuong;
-                    ChitietHDNCC.GhiChu = Ct.GhiChu;
-                    ChitietHDNCC.GiaMuaBenNhaCungCap = Ct.GiaMuaBenNhaCungCap;
-                    decimal Money = Ct.SoLuong * Ct.GiaMuaBenNhaCungCap;
-                    UpdateTongTienHoaDonNhaCungCapI(Ct.MaHoaDonNhaCungCap, Money);
-                    db.ChiTietHoaDonNhaCungCaps.InsertOnSubmit(ChitietHDNCC);
-                    db.SubmitChanges();
-                    return 1;
-                }
+                throw new Exception("There Already Have");
             }
             else
             {
-                return 2;
+                ChiTietHoaDonNhaCungCap ct = new ChiTietHoaDonNhaCungCap();
+                ct.MaHoaDonNhaCungCap = mahd;
+                ct.SoLuong = soluong;
+                ct.MaSPNCC = masp;
+                ct.GiaMuaBenNhaCungCap = giamua;
+                ct.GhiChu = ghichu;
+                db.ChiTietHoaDonNhaCungCaps.InsertOnSubmit(ct);
+                db.SubmitChanges();
+                InsertSanPhamNhaCungCap(masp, soluong);
+                decimal n = giamua*(decimal)1.05;
+                InsertOfUpdateBangGiaSi(masp,giamua.ToString());
+                return true;
             }
         }
-
+        private void InsertSanPhamNhaCungCap(string MaSp,int soluong)
+        {
+            foreach(SanPham sp in db.SanPhams.ToList())
+            {
+                if(sp.MaSP == MaSp)
+                {
+                    sp.soluong += soluong;
+                }
+                else
+                {
+                    SanPham s = new SanPham();
+                    s.MaSP = MaSp;
+                    s.soluong = soluong;
+                    s.KieuDang ="";
+                    s.MauSac ="";
+                    s.NgayHetHan =Convert.ToDateTime("");
+                    s.NgaySanXuat =Convert.ToDateTime("");
+                    s.TrongLuong = float.Parse("");
+                    s.Mota ="";
+                    s.MaLoaiSanPham = "";
+                    s.TenSp = "";
+                    s.DonViTinh = "";
+                    db.SanPhams.InsertOnSubmit(s);
+                    db.SubmitChanges();
+                }
+            }
+        }
+        private void InsertOfUpdateBangGiaSi(string masp,string Gia)
+        {
+            foreach(BangGiaBanSi ba in db.BangGiaBanSis.ToList())
+            {
+                if(ba.maSP == masp)
+                {
+                    ba.giaBan = Gia;
+                }
+                else
+                {
+                    BangGiaBanSi s = new BangGiaBanSi();
+                    s.maSP = masp;
+                    s.giaBan = Gia;
+                    db.BangGiaBanSis.InsertOnSubmit(s);
+                    db.SubmitChanges();
+                }
+            }
+        }
         private void UpdateTongTienHoaDonNhaCungCapI(string MaHoaDon, decimal Gia)
         {
             HoaDonNhaCungCap HoaDon = db.HoaDonNhaCungCaps.Where(x => x.MaHoaDonNCC == MaHoaDon).FirstOrDefault();
@@ -126,6 +164,43 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
                 db.SubmitChanges();
                 return 1;
             }
+        }
+        public List<eHoaDonNhaCungCap> GetAllHoaDonNCC()
+        {
+            var q = from i in db.HoaDonNhaCungCaps join j in db.PhieuDNNKs 
+                                                   on i.MaHoaDonNCC equals j.MaHoaDonNCC
+                                                   where i.MaHoaDonNCC != j.MaHoaDonNCC
+                                                   select i;
+            List<eHoaDonNhaCungCap> ls = new List<eHoaDonNhaCungCap>();
+            foreach (HoaDonNhaCungCap a in q.ToList())
+            {
+                ls.Add(new eHoaDonNhaCungCap (a.MaHoaDonNCC,a.MaNhaCungCap,a.MaNhanVien,(DateTime)a.NgayLap,(decimal)a.TongTien,(decimal)a.sotienDatra));
+            }
+            return ls;
+        }
+        public List<eHoaDonNhaCungCap> GetHoaDonByMa(string mahdncc)
+        {
+            var q = from i in db.HoaDonNhaCungCaps
+                    where i.MaHoaDonNCC == mahdncc
+                    select i;
+            List<eHoaDonNhaCungCap> ls = new List<eHoaDonNhaCungCap>();
+            foreach (HoaDonNhaCungCap a in q.ToList())
+            {
+                ls.Add(new eHoaDonNhaCungCap (a.MaHoaDonNCC,a.MaNhaCungCap,a.MaNhanVien,(DateTime)a.NgayLap,(decimal)a.TongTien,(decimal)a.sotienDatra));
+            }
+            return ls;
+        }
+        public List<eChiTietHoaDonNhaCungCap> GetALlChiTietNCCByMaHDNCC(string mahdncc)
+        {
+            var q = from x in db.ChiTietHoaDonNhaCungCaps
+                    where x.MaHoaDonNhaCungCap == mahdncc
+                    select x;
+            List<eChiTietHoaDonNhaCungCap> ls = new List<eChiTietHoaDonNhaCungCap> ();
+            foreach (ChiTietHoaDonNhaCungCap a in q.ToList())
+            {
+                ls.Add(new eChiTietHoaDonNhaCungCap(a.MaSPNCC,a.MaHoaDonNhaCungCap,(int)a.SoLuong,(decimal)a.GiaMuaBenNhaCungCap,a.GhiChu));
+            }
+            return ls;
         }
     }
 }
