@@ -39,5 +39,9 @@ namespace BusinessLogicTier.Kho
         {
             return pnkDAL.TaoPNK(pnk);
         }
+        public bool ktranv(string manv)
+        {
+            return pnkDAL.ktranv(manv);
+        }
     }
 }

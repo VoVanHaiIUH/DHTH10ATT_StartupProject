@@ -16,5 +16,23 @@ namespace PresentationTier.Kho
         {
             InitializeComponent();
         }
+
+        private void mnNhanVien_Click(object sender, EventArgs e)
+        {
+            frmQuanLyKho ql = new frmQuanLyKho();
+            ql.ShowDialog();
+        }
+
+        private void mnSanPham_Click(object sender, EventArgs e)
+        {
+            frmThongTinKho_dal sp = new frmThongTinKho_dal();
+            sp.ShowDialog();
+        }
+
+        private void mnNhapKho_Click(object sender, EventArgs e)
+        {
+            frmPhieuNhapKho nk = new frmPhieuNhapKho();
+            nk.ShowDialog();
+        }
     }
 }

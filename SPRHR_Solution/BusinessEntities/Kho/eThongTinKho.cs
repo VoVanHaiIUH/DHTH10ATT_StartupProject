@@ -29,6 +29,10 @@ namespace BusinessEntities.Kho
             {
                 return _maKho;
             }
+            set
+            {
+                _maKho = value;
+            }
         }
 
         public string SDT
@@ -57,12 +61,17 @@ namespace BusinessEntities.Kho
             }
         }
 
-        public eThongTinKho(string _maKho, string _tenKho, string _diaChi, string _sDT)
+        public eThongTinKho(string _maKho, string _tenKho, string _sDT, string _diaChi)
         {
             this._maKho = _maKho;
             this._tenKho = _tenKho;
             this._diaChi = _diaChi;
             this._sDT = _sDT;
+        }
+
+        public eThongTinKho()
+        {
+
         }
     }
 }

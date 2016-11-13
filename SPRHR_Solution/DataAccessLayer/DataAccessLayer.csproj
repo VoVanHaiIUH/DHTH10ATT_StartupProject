@@ -43,6 +43,7 @@
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_DAL.cs" />
     <Compile Include="CongNo\CongNo_ALL_DAL.cs" />
     <Compile Include="CongNo\CongNo_ThongKe_DAL.cs" />
+    <Compile Include="Kho\ChiTietKho_dal.cs" />
     <Compile Include="Kho\PhieuNhapKho_dal.cs" />
     <Compile Include="Kho\PhieuXuatKho_dal.cs" />
     <Compile Include="Kho\QuanLyKho_dal.cs" />

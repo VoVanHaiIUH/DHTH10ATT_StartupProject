@@ -44,7 +44,10 @@
     <Compile Include="BanHang\NhanHangTuKho\NhanHangTuKho_BUS.cs" />
     <Compile Include="CongNo\CongNo_ALL_BUS.cs" />
     <Compile Include="CongNo\CongNo_ThongKe_BUS.cs" />
+    <Compile Include="Kho\ChiTietKho_BUS.cs" />
     <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
+    <Compile Include="Kho\QuanLyKho_BUS.cs" />
+    <Compile Include="Kho\ThongTinKho_BUS.cs" />
     <Compile Include="NhanSu\KyLuat\BangKyLuat_BUS.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_BUL.cs" />
     <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_BUL.cs" />

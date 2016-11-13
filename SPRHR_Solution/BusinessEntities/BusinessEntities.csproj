@@ -47,6 +47,7 @@
     <Compile Include="CongNo\eCongNoNCC.cs" />
     <Compile Include="CongNo\ePhieuTraNoKhachHang.cs" />
     <Compile Include="CongNo\ePhieuTraNoNCC.cs" />
+    <Compile Include="Kho\eChiTietKho.cs" />
     <Compile Include="Kho\ePhieuNhapKho.cs" />
     <Compile Include="Kho\ePhieuXuatKho.cs" />
     <Compile Include="Kho\eQuanLyKho.cs" />

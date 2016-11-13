@@ -29,3 +29,8 @@ D:\SPRHR_Solution\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.csp
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.dll
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.pdb
+E:\BT\PTUD\SPRHR_Solution\BusinessEntities\bin\Debug\BusinessEntities.dll
+E:\BT\PTUD\SPRHR_Solution\BusinessEntities\bin\Debug\BusinessEntities.pdb
+E:\BT\PTUD\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+E:\BT\PTUD\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.dll
+E:\BT\PTUD\SPRHR_Solution\BusinessEntities\obj\Debug\BusinessEntities.pdb
