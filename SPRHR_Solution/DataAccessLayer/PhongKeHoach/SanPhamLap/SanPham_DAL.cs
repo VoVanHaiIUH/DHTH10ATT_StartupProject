@@ -7,7 +7,7 @@ using BusinessEntities.PhongKeHoach;
 using BusinessEntities.NhanSu;
 namespace DataAccessLayer.PhongKeHoach.SanPhamLap
 {
-    class SanPham_DAL
+   public class SanPham_DAL
     {
         SPRHR_SolutionDataContext db = new SPRHR_SolutionDataContext();
         public List<eSanPham> GetALLSanPham()

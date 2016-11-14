@@ -83,7 +83,6 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
                 {
                     SanPham s = new SanPham();
                     s.MaSP = MaSp;
-                    s.soluong = soluong;
                     s.KieuDang ="";
                     s.MauSac ="";
                     s.NgayHetHan =Convert.ToDateTime("");

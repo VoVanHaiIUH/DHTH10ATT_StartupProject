@@ -70,7 +70,6 @@
             this.txtghichu = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.txtgiamua = new System.Windows.Forms.TextBox();
-            this.txtsoluong = new System.Windows.Forms.TextBox();
             this.txtmasanpham = new System.Windows.Forms.TextBox();
             this.txttensanpham = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -78,7 +77,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.cbMahoaDon = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -86,6 +84,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,6 +92,7 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,6 +113,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(445, 229);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btThemhoadon
             // 
@@ -264,6 +265,7 @@
             this.btThemNhaCC.TabIndex = 2;
             this.btThemNhaCC.Text = "T&hêm";
             this.btThemNhaCC.UseVisualStyleBackColor = true;
+            this.btThemNhaCC.Click += new System.EventHandler(this.btThemNhaCC_Click);
             // 
             // label25
             // 
@@ -442,7 +444,6 @@
             this.panel5.Controls.Add(this.txtghichu);
             this.panel5.Controls.Add(this.textBox13);
             this.panel5.Controls.Add(this.txtgiamua);
-            this.panel5.Controls.Add(this.txtsoluong);
             this.panel5.Controls.Add(this.txtmasanpham);
             this.panel5.Controls.Add(this.txttensanpham);
             this.panel5.Controls.Add(this.label27);
@@ -450,11 +451,11 @@
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.label13);
             this.panel5.Location = new System.Drawing.Point(-2, -2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(884, 276);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label17
             // 
@@ -486,10 +487,10 @@
             // 
             // txtghichu
             // 
-            this.txtghichu.Location = new System.Drawing.Point(332, 152);
+            this.txtghichu.Location = new System.Drawing.Point(332, 120);
             this.txtghichu.Multiline = true;
             this.txtghichu.Name = "txtghichu";
-            this.txtghichu.Size = new System.Drawing.Size(211, 40);
+            this.txtghichu.Size = new System.Drawing.Size(211, 46);
             this.txtghichu.TabIndex = 1;
             // 
             // textBox13
@@ -501,17 +502,10 @@
             // 
             // txtgiamua
             // 
-            this.txtgiamua.Location = new System.Drawing.Point(332, 123);
+            this.txtgiamua.Location = new System.Drawing.Point(332, 94);
             this.txtgiamua.Name = "txtgiamua";
             this.txtgiamua.Size = new System.Drawing.Size(211, 20);
             this.txtgiamua.TabIndex = 1;
-            // 
-            // txtsoluong
-            // 
-            this.txtsoluong.Location = new System.Drawing.Point(332, 94);
-            this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(211, 20);
-            this.txtsoluong.TabIndex = 1;
             // 
             // txtmasanpham
             // 
@@ -550,7 +544,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(284, 155);
+            this.label15.Location = new System.Drawing.Point(284, 123);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 13);
             this.label15.TabIndex = 0;
@@ -560,7 +554,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(282, 126);
+            this.label14.Location = new System.Drawing.Point(282, 94);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 13);
             this.label14.TabIndex = 0;
@@ -576,16 +570,6 @@
             this.label11.TabIndex = 0;
             this.label11.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(276, 97);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Số Lượng:";
-            this.label13.Click += new System.EventHandler(this.label4_Click);
-            // 
             // cbMahoaDon
             // 
             this.cbMahoaDon.FormattingEnabled = true;
@@ -593,6 +577,7 @@
             this.cbMahoaDon.Name = "cbMahoaDon";
             this.cbMahoaDon.Size = new System.Drawing.Size(230, 21);
             this.cbMahoaDon.TabIndex = 1;
+            this.cbMahoaDon.SelectedIndexChanged += new System.EventHandler(this.cbMahoaDon_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -650,17 +635,29 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PresentationTier.Properties.Resources.dddd;
+            this.pictureBox2.Location = new System.Drawing.Point(128, 451);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(211, 180);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormQuanLyHoaDonNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 624);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "FormQuanLyHoaDonNhaCungCap";
             this.Text = "QuanLyHoaDonNhaCungCap";
+            this.Load += new System.EventHandler(this.FormQuanLyHoaDonNhaCungCap_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -672,6 +669,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -699,13 +697,11 @@
         private System.Windows.Forms.TextBox txtManhacc;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtgiamua;
-        private System.Windows.Forms.TextBox txtsoluong;
         private System.Windows.Forms.TextBox txtmasanpham;
         private System.Windows.Forms.TextBox txttensanpham;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btTHemchitiet;
@@ -736,6 +732,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtSotiendatra;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.PictureBox pictureBox2;
 
     }
 }

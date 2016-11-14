@@ -50,9 +50,11 @@
     <Compile Include="Kho\ThongTinKho_BUS.cs" />
     <Compile Include="NhanSu\KyLuat\BangKyLuat_BUS.cs" />
     <Compile Include="PhongKeHoach\CuaHang\ThemCuaHang_BUL.cs" />
+    <Compile Include="PhongKeHoach\HoaDonPhiaNhaCungCap\LapHoaDonNhaCC_BUL.cs" />
     <Compile Include="PhongKeHoach\KeHoach\LapKeHoach_BUL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiNhapKho\LapPhieuDNNK_BUL.cs" />
     <Compile Include="PhongKeHoach\PhieuDeNghiXuatKho\LapPhieuDNXK_BUL.cs" />
+    <Compile Include="PhongKeHoach\SanPham\SanPham_BUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TichHop\BLL_User.cs" />
   </ItemGroup>
@@ -69,8 +71,6 @@
     <Folder Include="Kho\LapPhieuXuatKho\" />
     <Folder Include="PhongKeHoach\ChuongTrinhKhuyenMai\" />
     <Folder Include="PhongKeHoach\HoaDonBanSiChoKhachHang\" />
-    <Folder Include="PhongKeHoach\HoaDonPhiaNhaCungCap\" />
-    <Folder Include="PhongKeHoach\SanPham\" />
     <Folder Include="PhongKeHoach\TheThanhVien\" />
   </ItemGroup>
   <ItemGroup>
