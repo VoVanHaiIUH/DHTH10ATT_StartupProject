@@ -49,3 +49,4 @@ D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\DataAccessLayer\obj\Debug\D
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\BT\PTUD\SPRHR_Solution\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

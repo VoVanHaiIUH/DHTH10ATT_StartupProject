@@ -55,3 +55,4 @@ D:\RED\PTUD2\DHTH10ATT_StartupProject\SPRHR_Solution\BusinessLogicTier\obj\Debug
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.csprojResolveAssemblyReference.cache
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.dll
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.pdb
+E:\BT\PTUD\SPRHR_Solution\BusinessLogicTier\obj\Debug\BusinessLogicTier.csprojResolveAssemblyReference.cache

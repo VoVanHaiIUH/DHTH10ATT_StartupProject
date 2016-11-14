@@ -107,6 +107,11 @@ namespace BusinessEntities.NhanSu
             this._gioTinh = giotinh;
             this._ngaySinh = ngaysinh;
         }
+
+        public eNhanVien()
+        {
+        }
+
         public override int GetHashCode()
         {
             return this._soCMND.GetHashCode();

@@ -16,7 +16,7 @@ namespace DataAccessLayer.Kho
             List<eChiTietKho> ls = new List<eChiTietKho>();
             foreach (ChiTietKho item in db.ChiTietKhos.Where(e => e.maKho == makho))
             {
-                ls.Add(new eChiTietKho(item.maSp, item.maKho,  (int)item.soLuong));
+                ls.Add(new eChiTietKho(item.maSP, item.maKho,  (int)item.soLuong));
             }
             return ls;
         }

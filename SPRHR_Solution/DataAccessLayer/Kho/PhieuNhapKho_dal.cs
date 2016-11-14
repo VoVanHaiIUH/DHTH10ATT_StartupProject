@@ -34,7 +34,7 @@ namespace DataAccessLayer.Kho
             List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
             foreach (PhieuNhapKho pn in db.PhieuNhapKhos)
             {
-                ls.Add(new ePhieuNhapKho(pn.sopdnn, pn.manhanvien, pn.makho,pn.ghichu, pn.ngaylap));
+                ls.Add(new ePhieuNhapKho(pn.sopnk, pn.manhanvien, pn.makho,pn.ghichu, pn.ngaylap));
             }
             return ls;
         }
@@ -42,9 +42,9 @@ namespace DataAccessLayer.Kho
         public List<ePhieuNhapKho> GetPNKtheoMa(string ma)
         {
             List<ePhieuNhapKho> ls = new List<ePhieuNhapKho>();
-            foreach (PhieuNhapKho pn in db.PhieuNhapKhos.Where(p => p.sopdnn == ma))
+            foreach (PhieuNhapKho pn in db.PhieuNhapKhos.Where(p => p.sopnk == ma))
             {
-                ls.Add(new ePhieuNhapKho(pn.sopdnn, pn.manhanvien, pn.makho,pn.ghichu, pn.ngaylap));
+                ls.Add(new ePhieuNhapKho(pn.sopnk, pn.manhanvien, pn.makho,pn.ghichu, pn.ngaylap));
             }
             return ls;
         }
@@ -109,12 +109,12 @@ namespace DataAccessLayer.Kho
             {
                 foreach (ChiTietPhieuDNNK ctdn in db.ChiTietPhieuDNNKs.Where(e => e.MaPhieuDNNK == maphieu))
                 {
-                    ChiTietKho ctkho = db.ChiTietKhos.Where(k => k.maSp == ctdn.MaSP).FirstOrDefault();
+                    ChiTietKho ctkho = db.ChiTietKhos.Where(k => k.maSP == ctdn.MaSP).FirstOrDefault();
                     if(ctkho==null)
                     {
                         ChiTietKho ct = new ChiTietKho();
                         ct.maKho = pdn.MaKho;
-                        ct.maSp = ctdn.MaSP;
+                        ct.maSP = ctdn.MaSP;
                         ct.soLuong = ctdn.SoLuong;
 
                         db.ChiTietKhos.InsertOnSubmit(ct);
@@ -136,7 +136,7 @@ namespace DataAccessLayer.Kho
                 return 0;
 
             PhieuNhapKho pn = new PhieuNhapKho();
-            pn.sopdnn = pnk.SoPDNN;
+            pn.sopnk = pnk.SoPDNN;
             pn.manhanvien = pnk.MaNV;
             pn.makho = pnk.MaKho;
             pn.ghichu = pnk.GhiChu;
