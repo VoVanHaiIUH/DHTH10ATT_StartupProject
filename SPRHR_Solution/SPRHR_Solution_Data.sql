@@ -689,6 +689,7 @@ CREATE TABLE [dbo].[PhieuNhapKho](
 	[manhanvien] [varchar](20) NOT NULL,
 	[ngaylap] [date] NOT NULL,
 	[makho] [varchar](15) NOT NULL,
+	[ghichu] [varchar](50) NULL,
  CONSTRAINT [PK_PhieuNhapKho_1] PRIMARY KEY CLUSTERED 
 (
 	[sopnk] ASC
