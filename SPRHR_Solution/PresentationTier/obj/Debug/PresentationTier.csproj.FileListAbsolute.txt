@@ -213,3 +213,9 @@ E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.Ad
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.FormAdmin.resources
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.TichHop.Login.resources
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.csproj.GenerateResource.Cache
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Kho.frmPhieuNhapKho.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Kho.frmQuanLyKho.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.Kho.frmThongTinKho_dal.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLyHoaDonNhaCungCap.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLySanPham.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormThemLoaiSanPham.resources

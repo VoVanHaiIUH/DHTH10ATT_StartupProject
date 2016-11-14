@@ -7,7 +7,7 @@ using BusinessEntities.PhongKeHoach;
 using BusinessEntities.NhanSu;
 namespace DataAccessLayer.PhongKeHoach.SanPhamLap
 {
-   public class SanPham_DAL
+    public class SanPham_DAL
     {
         SPRHR_SolutionDataContext db = new SPRHR_SolutionDataContext();
         public List<eSanPham> GetALLSanPham()
@@ -67,6 +67,111 @@ namespace DataAccessLayer.PhongKeHoach.SanPhamLap
             }
             return ls;
         }
+        public List<eLoaiSanPham> GetalloaiSp()
+        {
+            var c = from i in db.LoaiSanPhams
+                    select i;
+            List<eLoaiSanPham> ls = new List<eLoaiSanPham>();
+            foreach (LoaiSanPham e in c.ToList())
+            {
+                eLoaiSanPham newe = new eLoaiSanPham();
+                newe.MaLoaiSP = e.MaLoaiSanPham;
+                newe.TenLoaiSP = e.TenLoaiSanPham;
+                newe.Style = e.Style;
+                newe.MoTa = e.Mota;
+                ls.Add(newe);
+            }
+            return ls;
+        }
+        public List<eSanPham> GetAllSpCanUpdateThongTin()
+        {
+            List<eSanPham> ls = new List<eSanPham>();
+            foreach (LoaiSanPham e in db.LoaiSanPhams.ToList())
+            {
+                var c = from i in db.SanPhams
+                        where i.MaLoaiSanPham != e.MaLoaiSanPham
+                        select i;
 
+                foreach (SanPham sp in c.ToList())
+                {
+                    eSanPham esp = new eSanPham();
+                    esp.MaLoaiSP = sp.MaLoaiSanPham;
+                    esp.TenSP = sp.TenSp;
+                    esp.KieuDang = sp.KieuDang;
+                    esp.NgaySX = Convert.ToDateTime(sp.NgaySanXuat);
+                    esp.NgayHetHan = Convert.ToDateTime(sp.NgayHetHan);
+                    esp.MauSac = sp.MauSac;
+                    esp.MaLoaiSP = sp.MaLoaiSanPham;
+                    esp.Trongluong = Convert.ToDouble(sp.TrongLuong);
+                    esp.DonViTinh = sp.DonViTinh;
+                    esp.MoTa = sp.Mota;
+                    ls.Add(esp);
+                }
+            } return ls;
+        }
+        public List<eSanPham> GetAllSpByMaSP(string Masp)
+        {
+
+            var c = from i in db.SanPhams
+                    where i.MaSP == Masp
+                    select i;
+            List<eSanPham> ls = new List<eSanPham>();
+            foreach (SanPham sp in c.ToList())
+            {
+                eSanPham esp = new eSanPham();
+                esp.MaLoaiSP = sp.MaLoaiSanPham;
+                esp.TenSP = sp.TenSp;
+                esp.KieuDang = sp.KieuDang;
+                esp.NgaySX = Convert.ToDateTime(sp.NgaySanXuat);
+                esp.NgayHetHan = Convert.ToDateTime(sp.NgayHetHan);
+                esp.MauSac = sp.MauSac;
+                esp.MaLoaiSP = sp.MaLoaiSanPham;
+                esp.Trongluong = Convert.ToDouble(sp.TrongLuong);
+                esp.DonViTinh = sp.DonViTinh;
+                esp.MoTa = sp.Mota;
+                ls.Add(esp);
+            }
+            return ls;
+        }
+        public decimal GiaBanSi(string masp)
+        {
+            BangGiaBanSi gia = db.BangGiaBanSis.Where(x => x.maSP == masp).FirstOrDefault();
+            return Convert.ToDecimal(gia.giaBan);
+        }
+        public void CapNhatLaiThongTinSP(string masp, string maloaisp, string kieudang, string donvitinh, string mausac, string mota, DateTime ngaysanxuat, DateTime ngayhethan, decimal trongluong)
+        {
+            SanPham sp = db.SanPhams.Where(x => x.MaSP == masp).FirstOrDefault();
+            sp.MaLoaiSanPham = maloaisp;
+            sp.KieuDang = kieudang;
+            sp.DonViTinh = donvitinh;
+            sp.MaLoaiSanPham = mausac;
+            sp.Mota = mota;
+            sp.NgaySanXuat = ngaysanxuat;
+            sp.NgayHetHan = ngayhethan;
+            sp.TrongLuong = Convert.ToDouble(trongluong);
+            db.SubmitChanges();
+        }
+        public bool themLoaisp(eLoaiSanPham loai)
+        {
+            var c = from i in db.LoaiSanPhams
+                    where i.MaLoaiSanPham == loai.MaLoaiSP
+                    select i;
+            if(c.Any())
+            {
+                throw new Exception("There Already Have");
+            }
+            else
+            {
+                LoaiSanPham l = new LoaiSanPham();
+                l.MaLoaiSanPham = loai.MaLoaiSP;
+                l.TenLoaiSanPham = loai.TenLoaiSP;
+                l.Style = loai.Style;
+                l.Mota = loai.MoTa;
+                db.LoaiSanPhams.InsertOnSubmit(l);
+                db.SubmitChanges();
+                return true;
+            }
+        }
     }
 }
+

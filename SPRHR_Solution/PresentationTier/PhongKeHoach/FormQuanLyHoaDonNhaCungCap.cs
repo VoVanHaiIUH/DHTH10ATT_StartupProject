@@ -101,7 +101,18 @@ namespace PresentationTier.PhongKeHoach
         {
 
         }
-
+        private void update1()
+        {
+            lshdncc = Hdncc.GetHoaDonByMa(cbMahoaDon.SelectedValue.ToString());
+            foreach (eHoaDonNhaCungCap a in lshdncc)
+            {
+                txtmanhanvien.Text = a.MaNhanVien;
+                txtManhacc.Text = a.MaNhaCungCap;
+                txtSotiendatra.Text = a.SoTienDaTra.ToString();
+                txtngaylap.Text = a.NgayLap.ToString();
+                txttongtien.Text = a.TongTien.ToString();
+            }
+        }
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
@@ -136,7 +147,7 @@ namespace PresentationTier.PhongKeHoach
         {
             try
             {
-                lshdncc = Hdncc.GetHoaDonByMa(cbMahoaDon.ValueMember);
+                lshdncc = Hdncc.GetHoaDonByMa(cbMahoaDon.SelectedValue.ToString());
                 foreach (eHoaDonNhaCungCap a in lshdncc)
                 {
                     txtmanhanvien.Text = a.MaNhanVien;
@@ -154,7 +165,7 @@ namespace PresentationTier.PhongKeHoach
         }
         private void loaddvg()
         {
-            lscthdncc = Hdncc.LayChitTiethoaDonNhaCC(cbMahoaDon.ValueMember);
+            lscthdncc = Hdncc.LayChitTiethoaDonNhaCC(cbMahoaDon.SelectedValue.ToString());
             if (lscthdncc.Count() == 0)
             {
                 MessageBox.Show("Hóa đơn này chưa có chi tiết");
@@ -168,7 +179,7 @@ namespace PresentationTier.PhongKeHoach
         }
         private void loaddvg1()
         {
-            lscthdncc = Hdncc.LayChitTiethoaDonNhaCC(cbMahoaDon.ValueMember);
+            lscthdncc = Hdncc.LayChitTiethoaDonNhaCC(cbMahoaDon.SelectedValue.ToString());
 
 
             Sr = new BindingSource();
@@ -178,15 +189,19 @@ namespace PresentationTier.PhongKeHoach
         }
         private void btTHemchitiet_Click(object sender, EventArgs e)
         {
+            if(Convert.ToInt32(txtSoluong.Text) <= 100 ||Convert.ToInt32(txtSoluong.Text) > 1000)
+            {
+                throw new Exception("Số Lượng Phải Trong Khoảng 100 -> 1000");
+            }
             try
             {
-                if (txtmasanpham.Text == null || txttensanpham == null || txtSoluong == null || txtgiamua == null || cbMahoaDon.ValueMember == null)
+                if (txtmasanpham.Text == null || txttensanpham == null || txtSoluong == null || txtgiamua == null || cbMahoaDon.SelectedValue.ToString() == null)
                 {
                     MessageBox.Show("Ghi Chú Có Thể Để Trống Nhưng Các Thông Tin khác Phải Nhập");
                 }
                 else
                 {
-                    if (Hdncc.ThemChiTietHoaDonNCC(cbMahoaDon.ValueMember.ToString(), txtmasanpham.Text, Convert.ToInt32(txtSoluong.Text), Convert.ToDecimal(txtgiamua.Text), txtghichu.Text, txttensanpham.Text))
+                    if (Hdncc.ThemChiTietHoaDonNCC(cbMahoaDon.SelectedValue.ToString(), txtmasanpham.Text, Convert.ToInt32(txtSoluong.Text), Convert.ToDecimal(txtgiamua.Text), txtghichu.Text, txttensanpham.Text))
                     {
                         txtmasanpham.Clear();
                         txttensanpham.Clear();
@@ -194,6 +209,7 @@ namespace PresentationTier.PhongKeHoach
                         txtgiamua.Clear();
                         txtghichu.Clear();
                         loaddvg1();
+                        update1();
                     }
                 }
             }
@@ -208,7 +224,7 @@ namespace PresentationTier.PhongKeHoach
         {
             try
             {
-                if(Hdncc.XoaChiTietHoaDon(cbMahoaDon.ValueMember,DGV.CurrentRow.Cells[0].Value.ToString()))
+                if(Hdncc.XoaChiTietHoaDon(cbMahoaDon.SelectedValue.ToString(),DGV.CurrentRow.Cells[0].Value.ToString()))
                 {
                     loaddvg1();
                 }

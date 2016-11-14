@@ -64,6 +64,8 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
                 ct.TenSPNCC = tensp;
                 ct.GiaMuaBenNhaCungCap = giamua;
                 ct.GhiChu = ghichu;
+                decimal money =Convert.ToDecimal(soluong * giamua);
+                UpdateTongTienHoaDonNhaCungCapI(mahd, money);
                 db.ChiTietHoaDonNhaCungCaps.InsertOnSubmit(ct);
                 db.SubmitChanges();
                 InsertSanPhamNhaCungCap(masp);
@@ -142,7 +144,7 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
         }
         private void DeleteChiTietHoaDonNhaCungCap(string MaHoaDonNhaCungCap, string MaSp)
         {
-            ChiTietHoaDonNhaCungCap Chitiet = db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaHoaDonNhaCungCap == MaHoaDonNhaCungCap && x.MaSp == MaSp).FirstOrDefault();
+            ChiTietHoaDonNhaCungCap Chitiet = db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaHoaDonNhaCungCap == MaHoaDonNhaCungCap && x.MaSPNCC == MaSp).FirstOrDefault();
             decimal Money = Convert.ToDecimal(Chitiet.GiaMuaBenNhaCungCap * Chitiet.SoLuong);
             db.ChiTietHoaDonNhaCungCaps.DeleteOnSubmit(Chitiet);
             db.SubmitChanges();
