@@ -20,10 +20,11 @@ namespace PresentationTier.PhongKeHoach
         List<eNhaCungCap> lsncc = new List<eNhaCungCap>();
         List<eNhanVien> lsnv = new List<eNhanVien>();
         List<eHoaDonNhaCungCap> lshdncc = new List<eHoaDonNhaCungCap>();
-
+        List<eChiTietHoaDonNhaCungCap> lscthdncc = new List<eChiTietHoaDonNhaCungCap>();
+        private BindingSource Sr;
         public FormQuanLyHoaDonNhaCungCap()
         {
-            
+
             InitializeComponent();
         }
 
@@ -55,9 +56,9 @@ namespace PresentationTier.PhongKeHoach
                     LoadcmbMaHoaDOn();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("error: "  + ex.Message.ToString());
+                MessageBox.Show("error: " + ex.Message.ToString());
             }
         }
         private void LoadcmbMaHoaDOn()
@@ -70,7 +71,7 @@ namespace PresentationTier.PhongKeHoach
         private void LoadCBNCC()
         {
             lsncc = Sp.LayNCC();
-            foreach(eNhaCungCap e in lsncc)
+            foreach (eNhaCungCap e in lsncc)
             {
                 cbMaNcc.Items.Add(e);
                 cbMaNcc.DisplayMember = e.TenNCC;
@@ -89,6 +90,8 @@ namespace PresentationTier.PhongKeHoach
         }
         private void FormQuanLyHoaDonNhaCungCap_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sPRHR_SolutionDataSet.ChiTietHoaDonNhaCungCap' table. You can move, or remove it, as needed.
+            this.chiTietHoaDonNhaCungCapTableAdapter.Fill(this.sPRHR_SolutionDataSet.ChiTietHoaDonNhaCungCap);
             LoadCBNCC();
             LoadCBNV();
             LoadcmbMaHoaDOn();
@@ -106,9 +109,10 @@ namespace PresentationTier.PhongKeHoach
 
         private void btThemNhaCC_Click(object sender, EventArgs e)
         {
+            loaddvg();
             try
             {
-                if(txtTenncc.Text == null || txtphone.Text == null || txtdiachi.Text == null)
+                if (txtTenncc.Text == null || txtphone.Text == null || txtdiachi.Text == null)
                 {
                     MessageBox.Show("Các Thông Tin Băt Buộc Phải Nhập");
                 }
@@ -117,12 +121,12 @@ namespace PresentationTier.PhongKeHoach
                     eNhaCungCap newncc = new eNhaCungCap();
                     newncc.TenNCC = txtTenncc.Text;
                     newncc.DiaChi = txtdiachi.Text;
-                    newncc.Phone =Convert.ToInt32(txtphone.Text);
+                    newncc.Phone = Convert.ToInt32(txtphone.Text);
                     Sp.ThemNcc(newncc);
                     LoadCBNCC();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message.ToString());
             }
@@ -133,7 +137,7 @@ namespace PresentationTier.PhongKeHoach
             try
             {
                 lshdncc = Hdncc.GetHoaDonByMa(cbMahoaDon.ValueMember);
-                foreach (eHoaDonNhaCungCap  a in lshdncc)
+                foreach (eHoaDonNhaCungCap a in lshdncc)
                 {
                     txtmanhanvien.Text = a.MaNhanVien;
                     txtManhacc.Text = a.MaNhaCungCap;
@@ -145,7 +149,73 @@ namespace PresentationTier.PhongKeHoach
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("error: "  + ex.Message.ToString());                
+                MessageBox.Show("error: " + ex.Message.ToString());
+            }
+        }
+        private void loaddvg()
+        {
+            lscthdncc = Hdncc.LayChitTiethoaDonNhaCC(cbMahoaDon.ValueMember);
+            if (lscthdncc.Count() == 0)
+            {
+                MessageBox.Show("Hóa đơn này chưa có chi tiết");
+            }
+            else
+            {
+                Sr = new BindingSource();
+                Sr.DataSource = lscthdncc;
+                DGV.DataSource = Sr;
+            }
+        }
+        private void loaddvg1()
+        {
+            lscthdncc = Hdncc.LayChitTiethoaDonNhaCC(cbMahoaDon.ValueMember);
+
+
+            Sr = new BindingSource();
+            Sr.DataSource = lscthdncc;
+            DGV.DataSource = Sr;
+
+        }
+        private void btTHemchitiet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtmasanpham.Text == null || txttensanpham == null || txtSoluong == null || txtgiamua == null || cbMahoaDon.ValueMember == null)
+                {
+                    MessageBox.Show("Ghi Chú Có Thể Để Trống Nhưng Các Thông Tin khác Phải Nhập");
+                }
+                else
+                {
+                    if (Hdncc.ThemChiTietHoaDonNCC(cbMahoaDon.ValueMember.ToString(), txtmasanpham.Text, Convert.ToInt32(txtSoluong.Text), Convert.ToDecimal(txtgiamua.Text), txtghichu.Text, txttensanpham.Text))
+                    {
+                        txtmasanpham.Clear();
+                        txttensanpham.Clear();
+                        txtSoluong.Clear();
+                        txtgiamua.Clear();
+                        txtghichu.Clear();
+                        loaddvg1();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("error: " + ex.Message.ToString());
+            }
+        }
+
+        private void butXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(Hdncc.XoaChiTietHoaDon(cbMahoaDon.ValueMember,DGV.CurrentRow.Cells[0].Value.ToString()))
+                {
+                    loaddvg1();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message.ToString()); 
             }
         }
     }

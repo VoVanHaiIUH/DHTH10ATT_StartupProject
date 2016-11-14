@@ -23,5 +23,17 @@ namespace BusinessLogicTier.PhongKeHoach.HoaDonPhiaNhaCungCap
         {
             return z.GetHoaDonByMa(mahdncc);
         }
+        public List<eChiTietHoaDonNhaCungCap> LayChitTiethoaDonNhaCC(string Ma)
+        {
+            return z.GetALlChiTietNCCByMaHDNCC(Ma);
+        }
+         public bool ThemChiTietHoaDonNCC(string mahd,string masp, int soluong, decimal  giamua,string ghichu,string tensp)
+        {
+            return z.InsertChiTietHoaDonNhaCungCap(mahd, masp, soluong, giamua, ghichu, tensp);
+        }
+        public bool XoaChiTietHoaDon(string Mahd,string Masp)
+         {
+             return z.DeleteChiTietHDNCC(mahd, masp);
+         }
     }
 }

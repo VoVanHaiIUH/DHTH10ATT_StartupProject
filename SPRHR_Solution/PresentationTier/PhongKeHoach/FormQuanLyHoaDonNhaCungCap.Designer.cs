@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btThemhoadon = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,6 +86,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.sPRHR_SolutionDataSet = new PresentationTier.SPRHR_SolutionDataSet();
+            this.chiTietHoaDonNhaCungCapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chiTietHoaDonNhaCungCapTableAdapter = new PresentationTier.SPRHR_SolutionDataSetTableAdapters.ChiTietHoaDonNhaCungCapTableAdapter();
+            this.txtSoluong = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.butXoa = new System.Windows.Forms.Button();
+            this.maSPNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaMuaBenNhaCungCapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,6 +105,8 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPRHR_SolutionDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonNhaCungCapBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -320,6 +334,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.butXoa);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
@@ -420,10 +435,20 @@
             // 
             // DGV
             // 
+            this.DGV.AutoGenerateColumns = false;
+            this.DGV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maSPNCCDataGridViewTextBoxColumn,
+            this.tenSPNCCDataGridViewTextBoxColumn,
+            this.soLuongDataGridViewTextBoxColumn,
+            this.giaMuaBenNhaCungCapDataGridViewTextBoxColumn,
+            this.ghiChuDataGridViewTextBoxColumn});
+            this.DGV.DataSource = this.chiTietHoaDonNhaCungCapBindingSource;
+            this.DGV.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGV.Location = new System.Drawing.Point(6, 445);
             this.DGV.Name = "DGV";
-            this.DGV.Size = new System.Drawing.Size(884, 176);
+            this.DGV.Size = new System.Drawing.Size(884, 142);
             this.DGV.TabIndex = 3;
             // 
             // panel4
@@ -443,12 +468,14 @@
             this.panel5.Controls.Add(this.btTHemchitiet);
             this.panel5.Controls.Add(this.txtghichu);
             this.panel5.Controls.Add(this.textBox13);
+            this.panel5.Controls.Add(this.txtSoluong);
             this.panel5.Controls.Add(this.txtgiamua);
             this.panel5.Controls.Add(this.txtmasanpham);
             this.panel5.Controls.Add(this.txttensanpham);
             this.panel5.Controls.Add(this.label27);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Location = new System.Drawing.Point(-2, -2);
@@ -484,10 +511,11 @@
             this.btTHemchitiet.TabIndex = 2;
             this.btTHemchitiet.Text = "Th&êm";
             this.btTHemchitiet.UseVisualStyleBackColor = true;
+            this.btTHemchitiet.Click += new System.EventHandler(this.btTHemchitiet_Click);
             // 
             // txtghichu
             // 
-            this.txtghichu.Location = new System.Drawing.Point(332, 120);
+            this.txtghichu.Location = new System.Drawing.Point(332, 147);
             this.txtghichu.Multiline = true;
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(211, 46);
@@ -526,9 +554,9 @@
             this.label27.AutoSize = true;
             this.label27.Location = new System.Drawing.Point(252, 45);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(74, 13);
+            this.label27.Size = new System.Drawing.Size(77, 13);
             this.label27.TabIndex = 0;
-            this.label27.Text = "Mã Sản Phẩm";
+            this.label27.Text = "Mã Sản Phẩm:";
             this.label27.Click += new System.EventHandler(this.label4_Click);
             // 
             // label12
@@ -544,7 +572,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(284, 123);
+            this.label15.Location = new System.Drawing.Point(284, 151);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 13);
             this.label15.TabIndex = 0;
@@ -645,6 +673,81 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // sPRHR_SolutionDataSet
+            // 
+            this.sPRHR_SolutionDataSet.DataSetName = "SPRHR_SolutionDataSet";
+            this.sPRHR_SolutionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chiTietHoaDonNhaCungCapBindingSource
+            // 
+            this.chiTietHoaDonNhaCungCapBindingSource.DataMember = "ChiTietHoaDonNhaCungCap";
+            this.chiTietHoaDonNhaCungCapBindingSource.DataSource = this.sPRHR_SolutionDataSet;
+            // 
+            // chiTietHoaDonNhaCungCapTableAdapter
+            // 
+            this.chiTietHoaDonNhaCungCapTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtSoluong
+            // 
+            this.txtSoluong.Location = new System.Drawing.Point(332, 120);
+            this.txtSoluong.Name = "txtSoluong";
+            this.txtSoluong.Size = new System.Drawing.Size(211, 20);
+            this.txtSoluong.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(276, 118);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Số Lượng:";
+            this.label13.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // butXoa
+            // 
+            this.butXoa.Location = new System.Drawing.Point(771, 589);
+            this.butXoa.Name = "butXoa";
+            this.butXoa.Size = new System.Drawing.Size(113, 32);
+            this.butXoa.TabIndex = 10;
+            this.butXoa.Text = "Xóa";
+            this.butXoa.UseVisualStyleBackColor = true;
+            this.butXoa.Click += new System.EventHandler(this.butXoa_Click);
+            // 
+            // maSPNCCDataGridViewTextBoxColumn
+            // 
+            this.maSPNCCDataGridViewTextBoxColumn.DataPropertyName = "MaSPNCC";
+            this.maSPNCCDataGridViewTextBoxColumn.HeaderText = "Mã Sản Phẩm";
+            this.maSPNCCDataGridViewTextBoxColumn.Name = "maSPNCCDataGridViewTextBoxColumn";
+            this.maSPNCCDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tenSPNCCDataGridViewTextBoxColumn
+            // 
+            this.tenSPNCCDataGridViewTextBoxColumn.DataPropertyName = "TenSPNCC";
+            this.tenSPNCCDataGridViewTextBoxColumn.HeaderText = "Tên Sản Phẩm";
+            this.tenSPNCCDataGridViewTextBoxColumn.Name = "tenSPNCCDataGridViewTextBoxColumn";
+            this.tenSPNCCDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // soLuongDataGridViewTextBoxColumn
+            // 
+            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
+            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            // 
+            // giaMuaBenNhaCungCapDataGridViewTextBoxColumn
+            // 
+            this.giaMuaBenNhaCungCapDataGridViewTextBoxColumn.DataPropertyName = "GiaMuaBenNhaCungCap";
+            this.giaMuaBenNhaCungCapDataGridViewTextBoxColumn.HeaderText = "Giá Mua";
+            this.giaMuaBenNhaCungCapDataGridViewTextBoxColumn.Name = "giaMuaBenNhaCungCapDataGridViewTextBoxColumn";
+            this.giaMuaBenNhaCungCapDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // ghiChuDataGridViewTextBoxColumn
+            // 
+            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
+            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "Ghi Chú";
+            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
+            this.ghiChuDataGridViewTextBoxColumn.Width = 200;
+            // 
             // FormQuanLyHoaDonNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -670,6 +773,8 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPRHR_SolutionDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietHoaDonNhaCungCapBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -733,6 +838,17 @@
         private System.Windows.Forms.TextBox txtSotiendatra;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private SPRHR_SolutionDataSet sPRHR_SolutionDataSet;
+        private System.Windows.Forms.BindingSource chiTietHoaDonNhaCungCapBindingSource;
+        private SPRHR_SolutionDataSetTableAdapters.ChiTietHoaDonNhaCungCapTableAdapter chiTietHoaDonNhaCungCapTableAdapter;
+        private System.Windows.Forms.TextBox txtSoluong;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button butXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSPNCCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPNCCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaMuaBenNhaCungCapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ghiChuDataGridViewTextBoxColumn;
 
     }
 }

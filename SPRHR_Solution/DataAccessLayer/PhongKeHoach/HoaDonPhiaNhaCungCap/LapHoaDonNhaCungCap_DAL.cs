@@ -46,7 +46,7 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
             db.HoaDonNhaCungCaps.InsertOnSubmit(Hd);
             db.SubmitChanges();
         }
-        public bool InsertChiTietHoaDonNhaCungCap(string mahd,string masp, int soluong, decimal  giamua,string ghichu)
+        public bool InsertChiTietHoaDonNhaCungCap(string mahd,string masp, int soluong, decimal  giamua,string ghichu,string tensp)
         {
             var c = from i in db.ChiTietHoaDonNhaCungCaps
                     where i.MaHoaDonNhaCungCap == mahd && i.MaSPNCC == masp
@@ -61,23 +61,24 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
                 ct.MaHoaDonNhaCungCap = mahd;
                 ct.SoLuong = soluong;
                 ct.MaSPNCC = masp;
+                ct.TenSPNCC = tensp;
                 ct.GiaMuaBenNhaCungCap = giamua;
                 ct.GhiChu = ghichu;
                 db.ChiTietHoaDonNhaCungCaps.InsertOnSubmit(ct);
                 db.SubmitChanges();
-                InsertSanPhamNhaCungCap(masp, soluong);
+                InsertSanPhamNhaCungCap(masp);
                 decimal n = giamua*(decimal)1.05;
                 InsertOfUpdateBangGiaSi(masp,giamua.ToString());
                 return true;
             }
         }
-        private void InsertSanPhamNhaCungCap(string MaSp,int soluong)
+        private void InsertSanPhamNhaCungCap(string MaSp)
         {
             foreach(SanPham sp in db.SanPhams.ToList())
             {
                 if(sp.MaSP == MaSp)
                 {
-                    sp.soluong += soluong;
+                    throw new Exception("There Already Have");
                 }
                 else
                 {
@@ -197,9 +198,23 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
             List<eChiTietHoaDonNhaCungCap> ls = new List<eChiTietHoaDonNhaCungCap> ();
             foreach (ChiTietHoaDonNhaCungCap a in q.ToList())
             {
-                ls.Add(new eChiTietHoaDonNhaCungCap(a.MaSPNCC,a.MaHoaDonNhaCungCap,(int)a.SoLuong,(decimal)a.GiaMuaBenNhaCungCap,a.GhiChu));
+                ls.Add(new eChiTietHoaDonNhaCungCap(a.MaSPNCC,a.MaHoaDonNhaCungCap,(int)a.SoLuong,(decimal)a.GiaMuaBenNhaCungCap,a.GhiChu,a.TenSPNCC));
             }
             return ls;
+        }
+        public bool DeleteChiTietHDNCC(string mahd,string masp)
+        {
+            ChiTietHoaDonNhaCungCap ct = db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaSPNCC == masp && x.MaHoaDonNhaCungCap == mahd).FirstOrDefault();
+            if(ct != null)
+            {
+                db.ChiTietHoaDonNhaCungCaps.DeleteOnSubmit(ct);
+                db.SubmitChanges();
+                return true;
+            }
+            else
+            {
+                throw new Exception("Invalid ID");
+            }
         }
     }
 }
