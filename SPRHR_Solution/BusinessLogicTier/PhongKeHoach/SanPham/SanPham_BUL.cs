@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BusinessEntities.PhongKeHoach;
 using DataAccessLayer.PhongKeHoach.SanPhamLap;
 using BusinessEntities.NhanSu;
+using BusinessEntities.Kho;
 
 namespace BusinessLogicTier.PhongKeHoach.SanPham
 {
@@ -48,6 +49,26 @@ namespace BusinessLogicTier.PhongKeHoach.SanPham
         public bool ThemLoaiSpMoi(eLoaiSanPham loai)
         {
             return z.themLoaisp(loai);
+        }
+        public List<eSanPham> GetALLSpTrongHD(string Mahd)
+        {
+            return z.GetALLSpTrongHD(Mahd);
+        }
+        public List<eThongTinKho> GetALlKho()
+        {
+            return z.GetALlKho();
+        }
+        public List<eThongTinKho> GetALlKhobyMa(string maphieu)
+        {
+            return z.GetKhoByMa(maphieu);
+        }
+        public int GetSoLuongbyOneSanPham(string mahd, string masp)
+        {
+            return z.GetSoLuongbyOneSanPham(mahd, masp);
+        }
+        public int GetSoLuong1SpDaNhap(string mahoadon, string masp)
+        {
+            return z.GetSoLuong1SpDaNhap(mahoadon, masp);
         }
     }
 }

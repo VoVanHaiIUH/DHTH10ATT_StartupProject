@@ -218,7 +218,7 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
                 throw new Exception("Invalid ID of Null ID");
             }
         }
-        public List<eHoaDonNhaCungCap> Getallhdncc()
+        public List<eHoaDonNhaCungCap> GetallhdnccNotnull()
         {
             var c = from i in db.HoaDonNhaCungCaps
                     where i.MaHoaDonNCC != "null"

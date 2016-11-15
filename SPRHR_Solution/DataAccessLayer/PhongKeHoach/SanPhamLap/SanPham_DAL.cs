@@ -241,9 +241,9 @@ namespace DataAccessLayer.PhongKeHoach.SanPhamLap
                 throw new Exception("Invalid ID or Null ID");
             }
         }
-        public int GetSoLuong1SpDaNhap(string mahoadon,string masp,string maphieu)
+        public int GetSoLuong1SpDaNhap(string mahoadon,string masp)
         {
-            int n =0;
+            int n = 0;
             var c = from i in db.HoaDonNhaCungCaps
                     join j in db.PhieuDNNKs on i.MaHoaDonNCC equals j.MaHoaDonNCC
                     where i.MaHoaDonNCC == mahoadon
@@ -255,10 +255,6 @@ namespace DataAccessLayer.PhongKeHoach.SanPhamLap
                     if (ct.MaSP == masp)
                     {
                         n += ct.SoLuong;
-                    }
-                    else
-                    {
-                        n = n;
                     }
                 }
             }

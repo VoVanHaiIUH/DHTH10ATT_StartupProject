@@ -63,5 +63,9 @@ namespace BusinessLogicTier.PhongKeHoach.PhieuDeNghiNhapKho
         {
             return NK.LayMaNhanVien(MaNV);
         }
+        public void GetChitietCotenSp(string maphieu)
+        {
+            NK.GetALLChiTietCoTen(maphieu);
+        }
     }
 }

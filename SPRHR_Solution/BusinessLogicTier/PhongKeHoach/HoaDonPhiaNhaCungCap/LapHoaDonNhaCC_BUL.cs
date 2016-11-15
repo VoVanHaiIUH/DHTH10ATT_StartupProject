@@ -11,6 +11,7 @@ namespace BusinessLogicTier.PhongKeHoach.HoaDonPhiaNhaCungCap
     public class LapHoaDonNhaCC_BUL
     {
         LapHoaDonNhaCungCap_DAL z = new LapHoaDonNhaCungCap_DAL();
+
         public void ThemHoaDonNcc(eHoaDonNhaCungCap e)
         {
             z.InsertHoaDonNhaCungCap(e);
@@ -33,7 +34,12 @@ namespace BusinessLogicTier.PhongKeHoach.HoaDonPhiaNhaCungCap
         }
         public bool XoaChiTietHoaDon(string Mahd,string Masp)
          {
-             return z.DeleteChiTietHDNCC(mahd, masp);
+             return z.DeleteChiTietHDNCC(Mahd, Masp);
          }
+        public List<eHoaDonNhaCungCap> Getallhdnccnotnull()
+        {
+            return z.GetallhdnccNotnull();
+        }
+      
     }
 }

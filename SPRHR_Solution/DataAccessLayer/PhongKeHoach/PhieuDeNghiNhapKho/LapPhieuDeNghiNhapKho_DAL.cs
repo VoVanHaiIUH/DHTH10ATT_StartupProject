@@ -45,9 +45,10 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             return ls;
         }
-        public void GetALLChiTietCoTen()
+        public void GetALLChiTietCoTen(string maphieu)
         {
             var c = from i in db.ChiTietPhieuDNNKs join j in db.SanPhams on i.MaSP equals j.MaSP
+                    where i.MaPhieuDNNK == maphieu
                     select new
                     {
                         i.MaSP,j.TenSp,i.SoLuong,i.GhiChu
@@ -222,7 +223,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             else
             {
-                throw new Exception("Invaild SanPham");
+                throw new Exception("Invaild SanPham ID");
             }
         }
 

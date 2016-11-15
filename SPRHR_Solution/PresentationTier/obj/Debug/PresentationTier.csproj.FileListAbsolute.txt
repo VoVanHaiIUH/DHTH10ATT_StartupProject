@@ -219,3 +219,4 @@ C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\Pre
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLyHoaDonNhaCungCap.resources
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLySanPham.resources
 C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormThemLoaiSanPham.resources
+C:\Users\DinhAn\Desktop\New folder\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLyKhieuDeNghiNhapKho.resources
