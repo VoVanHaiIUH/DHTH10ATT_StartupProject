@@ -1,6 +1,6 @@
 USE [SPRHR_Solution]
 GO
-/****** Object:  Table [dbo].[BangGiaBan]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[BangGiaBan]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[BangGiaBan](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[BangGiaBanSi]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[BangGiaBanSi]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31,7 +31,7 @@ CREATE TABLE [dbo].[BangGiaBanSi](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietHoaDonBanHang]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietHoaDonBanHang]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -51,7 +51,7 @@ CREATE TABLE [dbo].[ChiTietHoaDonBanHang](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietHoaDonBanSi]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietHoaDonBanSi]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -70,7 +70,7 @@ CREATE TABLE [dbo].[ChiTietHoaDonBanSi](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietHoaDonNhaCungCap]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietHoaDonNhaCungCap]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[ChiTietHoaDonNhaCungCap](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietKho]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietKho]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[ChiTietKho](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChiTietKhuyenMai]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietKhuyenMai]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,7 +130,7 @@ CREATE TABLE [dbo].[ChiTietKhuyenMai](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietKyLuat]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietKyLuat]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -155,7 +155,7 @@ CREATE TABLE [dbo].[ChiTietKyLuat](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChiTietLich]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietLich]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -179,7 +179,7 @@ CREATE TABLE [dbo].[ChiTietLich](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChiTietPhieuDNNK]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietPhieuDNNK]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -197,7 +197,7 @@ CREATE TABLE [dbo].[ChiTietPhieuDNNK](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietPhieuDNXK]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietPhieuDNXK]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -215,7 +215,7 @@ CREATE TABLE [dbo].[ChiTietPhieuDNXK](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ChiTietPhieuTraNoKhachHang]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietPhieuTraNoKhachHang]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -228,13 +228,17 @@ CREATE TABLE [dbo].[ChiTietPhieuTraNoKhachHang](
 	[MaHoaDonBanSi] [nvarchar](50) NOT NULL,
 	[MaChiTietPhieuTraNoKH] [nvarchar](50) NOT NULL,
 	[SoTien] [money] NOT NULL,
-	[GhiChu] [nvarchar](250) NULL
+	[GhiChu] [nvarchar](250) NULL,
+ CONSTRAINT [PK_ChiTietPhieuTraNoKhachHang] PRIMARY KEY CLUSTERED 
+(
+	[MaChiTietPhieuTraNoKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChiTietPhieuTraNoNCC]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChiTietPhieuTraNoNCC]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -257,7 +261,7 @@ CREATE TABLE [dbo].[ChiTietPhieuTraNoNCC](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChucVu]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChucVu]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -277,7 +281,7 @@ CREATE TABLE [dbo].[ChucVu](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChuongTrinhDaoTao]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChuongTrinhDaoTao]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -298,7 +302,7 @@ CREATE TABLE [dbo].[ChuongTrinhDaoTao](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ChuongTrinhKhuyenMai]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ChuongTrinhKhuyenMai]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -316,7 +320,7 @@ CREATE TABLE [dbo].[ChuongTrinhKhuyenMai](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[CongNoKH]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[CongNoKH]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -333,7 +337,7 @@ CREATE TABLE [dbo].[CongNoKH](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[CongNoNCC]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[CongNoNCC]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -350,7 +354,7 @@ CREATE TABLE [dbo].[CongNoNCC](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[DanhGia]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[DanhGia]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -372,7 +376,7 @@ CREATE TABLE [dbo].[DanhGia](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[DanhMucCuaHang]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[DanhMucCuaHang]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -394,7 +398,7 @@ CREATE TABLE [dbo].[DanhMucCuaHang](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[HoaDonBanHang]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[HoaDonBanHang]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -417,7 +421,7 @@ CREATE TABLE [dbo].[HoaDonBanHang](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[HoaDonBanSi]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[HoaDonBanSi]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -441,7 +445,7 @@ CREATE TABLE [dbo].[HoaDonBanSi](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[HoaDonNhaCungCap]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[HoaDonNhaCungCap]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -464,7 +468,7 @@ CREATE TABLE [dbo].[HoaDonNhaCungCap](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -494,7 +498,7 @@ CREATE TABLE [dbo].[KhachHang](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[KyLuat]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[KyLuat]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -514,7 +518,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LichLamViec]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[LichLamViec]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -536,7 +540,7 @@ CREATE TABLE [dbo].[LichLamViec](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LichSuLamViec]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[LichSuLamViec]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -560,7 +564,7 @@ CREATE TABLE [dbo].[LichSuLamViec](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LoaiSanPham]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[LoaiSanPham]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -577,7 +581,7 @@ CREATE TABLE [dbo].[LoaiSanPham](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[NhaCungCap]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[NhaCungCap]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -595,7 +599,7 @@ CREATE TABLE [dbo].[NhaCungCap](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[NhanVien]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[NhanVien]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -624,7 +628,7 @@ CREATE TABLE [dbo].[NhanVien](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PhieuDNNK]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[PhieuDNNK]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -648,7 +652,7 @@ CREATE TABLE [dbo].[PhieuDNNK](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PhieuDNXK]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[PhieuDNXK]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -673,7 +677,7 @@ CREATE TABLE [dbo].[PhieuDNXK](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PhieuNhapKho]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[PhieuNhapKho]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -694,7 +698,7 @@ CREATE TABLE [dbo].[PhieuNhapKho](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PhieuXuatKho]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[PhieuXuatKho]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -716,7 +720,7 @@ CREATE TABLE [dbo].[PhieuXuatKho](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PhongBan]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[PhongBan]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -736,7 +740,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PhuongThucThanhToan]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[PhuongThucThanhToan]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -756,7 +760,7 @@ CREATE TABLE [dbo].[PhuongThucThanhToan](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[QuanLyKho]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[QuanLyKho]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -780,7 +784,7 @@ CREATE TABLE [dbo].[QuanLyKho](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[QuaTrinhDaoTao]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[QuaTrinhDaoTao]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -804,7 +808,7 @@ CREATE TABLE [dbo].[QuaTrinhDaoTao](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[SanPham]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[SanPham]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -827,7 +831,7 @@ CREATE TABLE [dbo].[SanPham](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ThanhToan]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ThanhToan]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -848,7 +852,7 @@ CREATE TABLE [dbo].[ThanhToan](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[TheThanhVien]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[TheThanhVien]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -865,7 +869,7 @@ CREATE TABLE [dbo].[TheThanhVien](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ThongTinKho]    Script Date: 11/15/2016 1:08:49 PM ******/
+/****** Object:  Table [dbo].[ThongTinKho]    Script Date: 11/15/2016 1:17:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
