@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessEntities.PhongKeHoach;
 using BusinessEntities.NhanSu;
+using BusinessEntities.Kho;
 namespace DataAccessLayer.PhongKeHoach.SanPhamLap
 {
     public class SanPham_DAL
@@ -171,6 +172,97 @@ namespace DataAccessLayer.PhongKeHoach.SanPhamLap
                 db.SubmitChanges();
                 return true;
             }
+        }
+        public List<eSanPham> GetALLSpTrongHD(string Mahd)
+        {
+            var c = from i in db.HoaDonNhaCungCaps
+                    join j in db.ChiTietHoaDonNhaCungCaps on i.MaHoaDonNCC equals j.MaHoaDonNhaCungCap
+                    join z in db.SanPhams on j.MaSPNCC equals z.MaSP
+                    where i.MaHoaDonNCC == Mahd
+                    select z;
+            List<eSanPham> ls = new List<eSanPham>();
+            foreach (SanPham sp in c.ToList())
+            {
+                eSanPham esp = new eSanPham();
+                esp.MaLoaiSP = sp.MaLoaiSanPham;
+                esp.TenSP = sp.TenSp;
+                esp.KieuDang = sp.KieuDang;
+                esp.NgaySX = Convert.ToDateTime(sp.NgaySanXuat);
+                esp.NgayHetHan = Convert.ToDateTime(sp.NgayHetHan);
+                esp.MauSac = sp.MauSac;
+                esp.MaLoaiSP = sp.MaLoaiSanPham;
+                esp.Trongluong = Convert.ToDouble(sp.TrongLuong);
+                esp.DonViTinh = sp.DonViTinh;
+                esp.MoTa = sp.Mota;
+                ls.Add(esp);
+            }
+            return ls;
+        }
+        public List<eThongTinKho> GetALlKho()
+        {
+            var c = from i in db.ThongTinKhos
+                    select i;
+            List<eThongTinKho> ls = new List<eThongTinKho>();
+            foreach (ThongTinKho t in c.ToList())
+            {
+                eThongTinKho e = new eThongTinKho();
+                e.MaKho = t.maKho;
+                e.TenKho = t.tenKho;
+                e.SDT = t.soDienThoai;
+                e.DiaChi = t.diaChi;
+            }
+            return ls;
+        }
+        public List<eThongTinKho> GetKhoByMa(string MaphieuDNNK)
+        {
+            var c = from i in db.ThongTinKhos join j in db.PhieuDNNKs on i.maKho equals j.MaKho
+                    where j.MaPhieuDNNK == MaphieuDNNK
+                    select i;
+            List<eThongTinKho> ls = new List<eThongTinKho>();
+            foreach (ThongTinKho t in c.ToList())
+            {
+                eThongTinKho e = new eThongTinKho();
+                e.MaKho = t.maKho;
+                e.TenKho = t.tenKho;
+                e.SDT = t.soDienThoai;
+                e.DiaChi = t.diaChi;
+            }
+            return ls;
+        }
+        public int GetSoLuongbyOneSanPham(string mahd,string masp)
+        {
+            ChiTietHoaDonNhaCungCap chitiet = db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaSPNCC == masp && x.MaHoaDonNhaCungCap == mahd).FirstOrDefault();
+            if(chitiet != null)
+            {
+                return chitiet.SoLuong;
+            }
+            else
+            {
+                throw new Exception("Invalid ID or Null ID");
+            }
+        }
+        public int GetSoLuong1SpDaNhap(string mahoadon,string masp,string maphieu)
+        {
+            int n =0;
+            var c = from i in db.HoaDonNhaCungCaps
+                    join j in db.PhieuDNNKs on i.MaHoaDonNCC equals j.MaHoaDonNCC
+                    where i.MaHoaDonNCC == mahoadon
+                    select j;
+            foreach(PhieuDNNK phieu in c.ToList())
+            {
+                foreach(ChiTietPhieuDNNK ct in db.ChiTietPhieuDNNKs.Where(x=>x.MaPhieuDNNK == phieu.MaPhieuDNNK).ToList())
+                {
+                    if (ct.MaSP == masp)
+                    {
+                        n += ct.SoLuong;
+                    }
+                    else
+                    {
+                        n = n;
+                    }
+                }
+            }
+            return n;
         }
     }
 }

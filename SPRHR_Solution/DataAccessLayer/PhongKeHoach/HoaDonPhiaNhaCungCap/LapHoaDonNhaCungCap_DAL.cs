@@ -215,8 +215,27 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
             }
             else
             {
-                throw new Exception("Invalid ID");
+                throw new Exception("Invalid ID of Null ID");
             }
         }
+        public List<eHoaDonNhaCungCap> Getallhdncc()
+        {
+            var c = from i in db.HoaDonNhaCungCaps
+                    where i.MaHoaDonNCC != "null"
+                    select i;
+            List<eHoaDonNhaCungCap> ls = new List<eHoaDonNhaCungCap>();
+            foreach(HoaDonNhaCungCap hd in c.ToList())
+            {
+                eHoaDonNhaCungCap e = new eHoaDonNhaCungCap();
+                e.MaHoaDonNCC = hd.MaHoaDonNCC;
+                e.MaNhanVien = hd.MaNhanVien;
+                e.NgayLap = Convert.ToDateTime(hd.NgayLap);
+                e.MaNhaCungCap = hd.MaNhaCungCap;
+                e.TongTien = hd.TongTien;
+                e.SoTienDaTra = hd.sotienDatra;
+            }
+            return ls;
+        }
+
     }
 }

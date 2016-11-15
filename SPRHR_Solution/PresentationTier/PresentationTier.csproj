@@ -211,6 +211,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SPRHR_SolutionDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SPRHR_SolutionDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPRHR_SolutionDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SPRHR_SolutionDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPRHR_SolutionDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TichHop\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +299,9 @@
     <EmbeddedResource Include="PhongKeHoach\FormQuanLyHoaDonNhaCungCap.resx">
       <DependentUpon>FormQuanLyHoaDonNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhongKeHoach\FormQuanLyKhieuDeNghiNhapKho.resx">
+      <DependentUpon>FormQuanLyKhieuDeNghiNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhongKeHoach\FormQuanLySanPham.resx">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +346,28 @@
     </None>
     <None Include="SPRHR_SolutionDataSet.xss">
       <DependentUpon>SPRHR_SolutionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPRHR_SolutionDataSet1.xsc">
+      <DependentUpon>SPRHR_SolutionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SPRHR_SolutionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPRHR_SolutionDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPRHR_SolutionDataSet1.xss">
+      <DependentUpon>SPRHR_SolutionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SPRHR_SolutionDataSet2.xsc">
+      <DependentUpon>SPRHR_SolutionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SPRHR_SolutionDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPRHR_SolutionDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPRHR_SolutionDataSet2.xss">
+      <DependentUpon>SPRHR_SolutionDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

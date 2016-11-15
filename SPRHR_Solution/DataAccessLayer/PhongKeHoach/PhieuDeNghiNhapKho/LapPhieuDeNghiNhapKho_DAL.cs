@@ -45,6 +45,14 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             return ls;
         }
+        public void GetALLChiTietCoTen()
+        {
+            var c = from i in db.ChiTietPhieuDNNKs join j in db.SanPhams on i.MaSP equals j.MaSP
+                    select new
+                    {
+                        i.MaSP,j.TenSp,i.SoLuong,i.GhiChu
+                    };
+        }
         //Get ALL PDNNK by NhanVien,By Kho ...... pending
         public List<ePhieuDeNghiNhapKho> GetPDNNKByMa(string SoPhieu)
         {
@@ -181,7 +189,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             PDNNK.MaNhanVien = Phieu.MaNhanVien;
             PDNNK.MoTa = Phieu.MoTa;
             PDNNK.NgayLap = Phieu.NgayLap;
-            PDNNK.tinhtrang = Convert.ToInt32(Phieu.TinhTrang);
+            PDNNK.tinhtrang = 0;
             db.PhieuDNNKs.InsertOnSubmit(PDNNK);
             db.SubmitChanges();
         }
@@ -198,7 +206,6 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
                         select i;
                 if(c.Any())
                 {
-                    return 0;
                     throw new Exception("There have already");
                 }
                 else
@@ -215,7 +222,6 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             else
             {
-                return 2;
                 throw new Exception("Invaild SanPham");
             }
         }
@@ -223,7 +229,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
         public bool DeLetePDNNK(string SoPhieu)
         {
             var c = from i in db.PhieuNhapKhos
-                    where i.sopdnn == SoPhieu
+                    where i.sopnk == SoPhieu
                     select i;
             if (c.Any())
             {
@@ -255,7 +261,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             else
             {
-                throw new Exception("Invalid Details");
+                throw new Exception("Invalid Details of Null Information");
             }
         }
 

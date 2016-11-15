@@ -16,5 +16,14 @@ namespace PresentationTier.PhongKeHoach
         {
             InitializeComponent();
         }
+
+        private void FormQuanLyKhieuDeNghiNhapKho_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sPRHR_SolutionDataSet2.SanPham' table. You can move, or remove it, as needed.
+            this.sanPhamTableAdapter.Fill(this.sPRHR_SolutionDataSet2.SanPham);
+            // TODO: This line of code loads data into the 'sPRHR_SolutionDataSet1.ChiTietPhieuDNNK' table. You can move, or remove it, as needed.
+            this.chiTietPhieuDNNKTableAdapter.Fill(this.sPRHR_SolutionDataSet1.ChiTietPhieuDNNK);
+
+        }
     }
 }
