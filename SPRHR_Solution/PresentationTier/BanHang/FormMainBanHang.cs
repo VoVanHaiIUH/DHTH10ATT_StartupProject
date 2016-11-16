@@ -15,6 +15,13 @@ namespace PresentationTier.BanHang
         public FormMainBanHang()
         {
             InitializeComponent();
+
+        }
+
+        private void btnLapPhieu_Click(object sender, EventArgs e)
+        {
+            frmLapPhieu _frmLapPhieu = new frmLapPhieu();
+            _frmLapPhieu.ShowDialog();
         }
     }
 }
