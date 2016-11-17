@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_DAL.cs" />
+    <Compile Include="CongNo\CongNo_ALL_DAL.cs" />
     <Compile Include="Kho\ChiTietKho_dal.cs" />
     <Compile Include="Kho\PhieuNhapKho_dal.cs" />
     <Compile Include="Kho\PhieuXuatKho_dal.cs" />
@@ -109,7 +110,6 @@
     <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
-    <Folder Include="CongNo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj">

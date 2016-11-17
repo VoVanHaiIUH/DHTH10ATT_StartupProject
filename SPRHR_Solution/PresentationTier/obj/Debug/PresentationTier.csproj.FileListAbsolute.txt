@@ -225,3 +225,4 @@ E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\WindowsFormsApplication1.fr
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLyKhieuDeNghiNhapKho.resources
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormQuanLySanPham.resources
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormThemLoaiSanPham.resources
+C:\Users\KuAnh\Desktop\GitALL\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
