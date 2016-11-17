@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessEntities.Kho;
 using BusinessLogicTier.Kho;
+using BusinessEntities.NhanSu;
 
 namespace PresentationTier.Kho
 {
@@ -16,11 +17,13 @@ namespace PresentationTier.Kho
     {
         List<ePhieuNhapKho> ePN;
         PhieuNhapKho_BUS pnkBUS;
+        QuanLyKho_BUS qlkBUS;
         public frmPhieuNhapKho()
         {
             InitializeComponent();
             ePN = new List<ePhieuNhapKho>();
             pnkBUS = new PhieuNhapKho_BUS();
+            qlkBUS = new QuanLyKho_BUS();
         }
 
         private void frmPhieuNhapKho_Load(object sender, EventArgs e)
@@ -93,7 +96,6 @@ namespace PresentationTier.Kho
             LoadDgv(maphieu);
             //txtMaPhieu.Text = maphieu;
             lbsoPhieunk.Text = maphieu;
-            //txtMaKho.Text = e.Node.Nodes[1].Tag.ToString();
             lbMakho.Text = e.Node.Nodes[1].Tag.ToString();
         }
 
@@ -107,11 +109,6 @@ namespace PresentationTier.Kho
             if(txtManv.Text =="")
             {
                 MessageBox.Show("Mã nhân viên không thể để trống");
-                return false;
-            }
-            else if(pnkBUS.ktranv(txtManv.Text))
-            {
-                MessageBox.Show("Bạn không phải là nhân viên kho");
                 return false;
             }
             return true;
@@ -129,17 +126,25 @@ namespace PresentationTier.Kho
                     ePNK.NgayLap = DateTime.Now;
                     ePNK.MaKho = lbMakho.Text;
                     ePNK.GhiChu = txtghichu.Text;
-                    //KtraTextbox();
+
                     pnkBUS.taophieunhapkho(ePNK);
                     MessageBox.Show("Đã chuyển thành phiếu Nhập Kho");
                     LoadTreeView();
                     dGVCT.DataSource = null;
                     btnThem_Click(btnThem, new EventArgs());
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể lưu");
+                    MessageBox.Show(ex.Message,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void txtManv_Leave(object sender, EventArgs e)
+        {
+            foreach (eNhanVien nv in qlkBUS.GetTTNhanVien(txtManv.Text))
+            {
+                lbtennv.Text = nv.HoTenNhanVien;
             }
         }
     }

@@ -25,12 +25,44 @@ namespace DataAccessLayer.Kho
             return eql;
         }
 
+        public List<eChucVu> GetChucVu()
+        {
+            List<eChucVu> c = new List<eChucVu>();
+            foreach (ChucVu cv in db.ChucVus)
+            {
+                c.Add(new eChucVu(cv.maChucVu,cv.tenChucVU,cv.moTa));
+            }
+            return c;
+        }
+        public List<eChucVu> GetChucVubyMa(string ma)
+        {
+            List<eChucVu> cv = new List<eChucVu>();
+            foreach (ChucVu c in db.ChucVus.Where(e => e.maChucVu == ma))
+            {
+                cv.Add(new eChucVu(c.maChucVu, c.tenChucVU, c.moTa));
+            }
+            return cv;
+        }
+        //private bool ClosestDate(DateTime date)
+        //{
+        //    foreach(QuanLyKho ql in db.QuanLyKhos.Where(e=>e.thoiGianBatDau == date))
+        //    {
+
+        //    }
+        //    return false;
+        //}
         public List<eQuanLyKho> GetNv(string ma)
         {
             List<eQuanLyKho> eql = new List<eQuanLyKho>();
-            foreach(QuanLyKho ql in db.QuanLyKhos.Where(e=>e.maKho == ma))
+            foreach (QuanLyKho ql in db.QuanLyKhos.Where(e => e.maKho == ma && e.thoiGianKetThuc == null))
             {
-                eql.Add(new eQuanLyKho(ql.maKho, ql.manhanvien, ql.chucVu));
+                eQuanLyKho t = new eQuanLyKho();
+                t.MaNV = ql.manhanvien;
+                t.ChucVu = ql.chucVu;
+                t.MaKho = ql.maKho;
+
+                eql.Add(t);
+
             }
             return eql;
         }
@@ -56,15 +88,32 @@ namespace DataAccessLayer.Kho
             return false;
         }
 
+        private bool KtraNv(string manv, string makho)
+        {
+            QuanLyKho ql = db.QuanLyKhos.Where(n => n.manhanvien == manv && n.maKho == makho).FirstOrDefault();
+            if (ql != null)
+            {
+                if (ql.thoiGianKetThuc == DateTime.Now)
+                    throw new Exception("Hiện tại không thể thêm nhân viên này");
+                if(ql.thoiGianKetThuc == null)
+                    return true;
+            }
+            return false;
+        }
+
         public int TaoNvKho(eQuanLyKho ql)
         {
             if (KtraTinhTrangNV(ql.MaNV))
-                return 0;
+                throw new Exception("Nhân viên đã nghỉ hoặc không có nhân viên này");
+            if (KtraNv(ql.MaNV,ql.MaKho))
+                throw new Exception("Nhân viên này đang làm ở kho " + ql.MaKho);
+            if (ql.ChucVu == "")
+                throw new Exception("Chức vụ không thể trống");
             QuanLyKho eql = new QuanLyKho();
             eql.maKho = ql.MaKho;
-            eql.manhanvien = ql.MaNV;
-            eql.chucVu = ql.ChucVu;
-
+            eql.manhanvien = ql.MaNV.ToUpper();
+            eql.chucVu = ql.ChucVu.ToUpper();
+            eql.thoiGianBatDau = DateTime.Now;
             db.QuanLyKhos.InsertOnSubmit(eql);
             db.SubmitChanges();
             return 1;
@@ -72,10 +121,11 @@ namespace DataAccessLayer.Kho
 
         public bool XoaNVKho(string manv, string makho)
         {
-            QuanLyKho ql = db.QuanLyKhos.Where(n => n.manhanvien == manv && n.maKho == makho).FirstOrDefault();
+            QuanLyKho ql = db.QuanLyKhos.Where(n => n.manhanvien == manv && n.maKho == makho && n.thoiGianKetThuc==null).FirstOrDefault();
             if(ql!=null)
             {
-                db.QuanLyKhos.DeleteOnSubmit(ql);
+                ql.thoiGianKetThuc = DateTime.Now;//không xóa nhân viên này, chỉ cập nhật ngày đã nghỉ việc
+
                 db.SubmitChanges();
                 return true;
             }
@@ -84,10 +134,18 @@ namespace DataAccessLayer.Kho
 
         public void SuaThongtinNvKho(eQuanLyKho update)
         {
-            QuanLyKho p = db.QuanLyKhos.Where(e => e.maKho == update.MaKho || e.manhanvien == update.MaNV).FirstOrDefault();
-            p.maKho = update.MaKho;
-            p.chucVu = update.ChucVu;
+            if (update.ChucVu == "")
+                throw new Exception("Chức vụ không thể trống");
+            QuanLyKho ql = new QuanLyKho();
+            ql.maKho = update.MaKho;
+            ql.manhanvien = update.MaNV.ToUpper();
+            ql.chucVu = update.ChucVu.ToUpper();
+            ql.thoiGianBatDau = DateTime.Now;
+
+            db.QuanLyKhos.InsertOnSubmit(ql);//tạo nhân viên mới với 1 chức vụ khác, chức vụ cũ của nhân viên này không bị ghi đè lên
             db.SubmitChanges();
+
+
         }
     }
 }

@@ -31,6 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tvDSkho = new System.Windows.Forms.TreeView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbmakho = new System.Windows.Forms.ComboBox();
             this.txttennv = new System.Windows.Forms.TextBox();
             this.txtchucvu = new System.Windows.Forms.TextBox();
             this.txtmanv = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
-            this.cbmakho = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,6 +86,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin nhân viên";
             // 
+            // cbmakho
+            // 
+            this.cbmakho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmakho.Enabled = false;
+            this.cbmakho.FormattingEnabled = true;
+            this.cbmakho.Location = new System.Drawing.Point(337, 55);
+            this.cbmakho.Name = "cbmakho";
+            this.cbmakho.Size = new System.Drawing.Size(135, 21);
+            this.cbmakho.TabIndex = 3;
+            // 
             // txttennv
             // 
             this.txttennv.Enabled = false;
@@ -109,6 +119,7 @@
             this.txtmanv.Name = "txtmanv";
             this.txtmanv.Size = new System.Drawing.Size(134, 20);
             this.txtmanv.TabIndex = 1;
+            this.txtmanv.Leave += new System.EventHandler(this.txtmanv_Leave);
             // 
             // label2
             // 
@@ -208,19 +219,9 @@
             this.btnxoa.UseVisualStyleBackColor = true;
             this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
-            // cbmakho
-            // 
-            this.cbmakho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmakho.Enabled = false;
-            this.cbmakho.FormattingEnabled = true;
-            this.cbmakho.Location = new System.Drawing.Point(337, 55);
-            this.cbmakho.Name = "cbmakho";
-            this.cbmakho.Size = new System.Drawing.Size(135, 21);
-            this.cbmakho.TabIndex = 3;
-            this.cbmakho.SelectedIndexChanged += new System.EventHandler(this.cbmakho_SelectedIndexChanged);
-            // 
             // frmQuanLyKho
             // 
+            this.AcceptButton = this.btnLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 337);

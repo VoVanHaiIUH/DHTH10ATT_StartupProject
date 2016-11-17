@@ -42,6 +42,8 @@
             this.lbMakho = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtghichu = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbtennv = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCT)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,9 +72,10 @@
             this.txtManv.Enabled = false;
             this.txtManv.Location = new System.Drawing.Point(306, 64);
             this.txtManv.Name = "txtManv";
-            this.txtManv.Size = new System.Drawing.Size(343, 20);
+            this.txtManv.Size = new System.Drawing.Size(116, 20);
             this.txtManv.TabIndex = 25;
             this.txtManv.Text = "NV0012";
+            this.txtManv.Leave += new System.EventHandler(this.txtManv_Leave);
             // 
             // label3
             // 
@@ -174,11 +177,31 @@
             this.txtghichu.TabIndex = 31;
             this.txtghichu.Text = "TEST";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(438, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Tên nhân viên:";
+            // 
+            // lbtennv
+            // 
+            this.lbtennv.AutoSize = true;
+            this.lbtennv.Location = new System.Drawing.Point(533, 71);
+            this.lbtennv.Name = "lbtennv";
+            this.lbtennv.Size = new System.Drawing.Size(0, 13);
+            this.lbtennv.TabIndex = 33;
+            this.lbtennv.Text = "Đào Bình Minh";
+            // 
             // frmPhieuNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 383);
+            this.Controls.Add(this.lbtennv);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtghichu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbMakho);
@@ -218,5 +241,7 @@
         private System.Windows.Forms.Label lbMakho;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox txtghichu;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbtennv;
     }
 }

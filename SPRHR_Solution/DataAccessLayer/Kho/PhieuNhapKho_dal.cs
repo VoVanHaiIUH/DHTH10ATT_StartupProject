@@ -73,9 +73,9 @@ namespace DataAccessLayer.Kho
             return true;
         }
 
-        public bool ktranv(string manv)
+        public bool ktranv(string manv,string mk)
         {
-            QuanLyKho ql = db.QuanLyKhos.Where(q => q.manhanvien == manv && q.chucVu == "Thủ Kho").FirstOrDefault();
+            QuanLyKho ql = db.QuanLyKhos.Where(q => q.manhanvien == manv && q.maKho == mk && q.thoiGianKetThuc == null).FirstOrDefault();
             if (ql != null)
                 return false;
             return true;
@@ -103,13 +103,13 @@ namespace DataAccessLayer.Kho
         //    }
         //}
 
-        public int TaoChiTietKho(string maphieu)
+        private int TaoChiTietKho(string maphieu)
         {
             foreach(PhieuDNNK pdn in db.PhieuDNNKs.Where(p=>p.MaPhieuDNNK == maphieu))
             {
                 foreach (ChiTietPhieuDNNK ctdn in db.ChiTietPhieuDNNKs.Where(e => e.MaPhieuDNNK == maphieu))
                 {
-                    ChiTietKho ctkho = db.ChiTietKhos.Where(k => k.maSP == ctdn.MaSP).FirstOrDefault();
+                    ChiTietKho ctkho = db.ChiTietKhos.Where(k => k.maSP == ctdn.MaSP && k.maKho == pdn.MaKho).FirstOrDefault();
                     if(ctkho==null)
                     {
                         ChiTietKho ct = new ChiTietKho();
@@ -133,8 +133,9 @@ namespace DataAccessLayer.Kho
         public int TaoPNK(ePhieuNhapKho pnk)
         {
             if (KtraTonTai(pnk.SoPDNN))
-                return 0;
-
+                throw new Exception("Không có phiếu đề nghị này");
+            if (ktranv(pnk.MaNV,pnk.MaKho))
+                throw new Exception("Bạn không phải nhân viên kho này");
             PhieuNhapKho pn = new PhieuNhapKho();
             pn.sopnk = pnk.SoPDNN;
             pn.manhanvien = pnk.MaNV;
@@ -145,7 +146,7 @@ namespace DataAccessLayer.Kho
             db.SubmitChanges();
 
             UpdateTinhTrang(pnk);//Chuyen tinh trang phieu DNNK da nhap
-            TaoChiTietKho(pnk.SoPDNN);//Tao chi tiet kho, them maSp va soLuong
+            TaoChiTietKho(pnk.SoPDNN);//Tao chi tiet kho, them maSp va soLuong theo kho đó
             return 1;
         }
     }

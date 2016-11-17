@@ -8,32 +8,19 @@ namespace BusinessEntities.Kho
 {
     public class ePhieuXuatKho
     {
-        private string _soPX, _soPDNX, _maNV, _maKho;
+        private string _soPXK, _maNV, _ghiChu, _maKho;
         private DateTime _ngayLap;
 
-        public string SoPX
+        public string SoPXK
         {
             get
             {
-                return _soPX;
+                return _soPXK;
             }
 
             set
             {
-                _soPX = value;
-            }
-        }
-
-        public string SoPDNX
-        {
-            get
-            {
-                return _soPDNX;
-            }
-
-            set
-            {
-                _soPDNX = value;
+                _soPXK = value;
             }
         }
 
@@ -47,6 +34,19 @@ namespace BusinessEntities.Kho
             set
             {
                 _maNV = value;
+            }
+        }
+
+        public string GhiChu
+        {
+            get
+            {
+                return _ghiChu;
+            }
+
+            set
+            {
+                _ghiChu = value;
             }
         }
 
@@ -76,22 +76,27 @@ namespace BusinessEntities.Kho
             }
         }
 
-        public ePhieuXuatKho(string _soPX, string _soPDNX, string _maNV, string _maKho, DateTime _ngayLap)
+        public ePhieuXuatKho(string _soPXK, string _maNV, string _ghiChu, string _maKho, DateTime _ngayLap)
         {
-            this._soPX = _soPX;
-            this._soPDNX = _soPDNX;
-            this._maNV = _maNV;
-            this._maKho = _maKho;
-            this._ngayLap = _ngayLap;
+            this.SoPXK = _soPXK;
+            this.MaNV = _maNV;
+            this.GhiChu = _ghiChu;
+            this.MaKho = _maKho;
+            this.NgayLap = _ngayLap;
         }
+
+        public ePhieuXuatKho()
+        {
+        }
+
         public override bool Equals(object obj)
         {
             ePhieuXuatKho epx = (ePhieuXuatKho)obj;
-            return epx._soPX.ToLower().Equals(_soPX.ToLower());
+            return epx.SoPXK.ToLower().Equals(SoPXK.ToLower());
         }
         public override int GetHashCode()
         {
-            return this._soPX.GetHashCode();
+            return this.SoPXK.GetHashCode();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Kho;
+using System.Windows.Forms;
 namespace BusinessLogicTier.Kho
 {
     public class ChiTietKho_BUS
@@ -22,6 +23,14 @@ namespace BusinessLogicTier.Kho
         public List<eSanPham> GetThongTinSp(string masp)
         {
             return ct.GetThongTinSp(masp);
+        }
+        //public void GetTTSP(string makho, DataGridView dgv)
+        //{
+        //    ct.GetTTSP(makho,dgv);
+        //}
+        public void search(string makho, string tensp,DataGridView dgv)
+        {
+            ct.search(makho, tensp,dgv);
         }
     }
 }

@@ -57,10 +57,16 @@ namespace PresentationTier.Kho
 
         private void LoaddsKho()
         {
-            
             cbmakho.DataSource = ttkBUS.GetThongTinKho();
             cbmakho.DisplayMember = "tenKho";
             cbmakho.ValueMember = "maKho";
+        }
+
+        private void ClearTextbox()
+        {
+            txtchucvu.Text = null;
+            txtmanv.Text = null;
+            txttennv.Text = null;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -68,6 +74,7 @@ namespace PresentationTier.Kho
 
             if(btnThem.Text == "Thêm")
             {
+                //ClearTextbox();
                 txtchucvu.Enabled = true;
                 cbmakho.Enabled = true;
                 txtmanv.Enabled = true;
@@ -94,9 +101,22 @@ namespace PresentationTier.Kho
 
         private void tvDSkho_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            string makho = e.Node.Tag.ToString();
-            cbmakho.SelectedValue = makho;
-            LoadDgv(makho);
+            if (int.Parse(btnsua.Tag.ToString()) == 0 && flagluu==0)
+            {
+                string makho = e.Node.Tag.ToString();
+                cbmakho.SelectedValue = makho;
+                LoadDgv(makho);
+            }
+            else 
+            {
+                if (MessageBox.Show("Bạn chưa nhập xong, có muốn hủy không", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if(flagluu ==1)
+                        btnThem_Click(btnThem, new EventArgs());
+                    else
+                        btnsua_Click(btnsua, new EventArgs());
+                }
+            }
         }
 
         private void LoadDgv(string ma)
@@ -107,9 +127,8 @@ namespace PresentationTier.Kho
                 tb.Columns.Add("manv",typeof(string));
                 tb.Columns.Add("ten", typeof(string));
                 tb.Columns.Add("chucvu",typeof(string));
-                tb.Columns.Add("makho",typeof(string));
                 tb.Columns.Add("sdt", typeof(string));
-                
+                tb.Columns.Add("makho",typeof(string));
                 foreach (eQuanLyKho eql in qlkBUS.GetNv(ma))
                 {
                     DataRow r = tb.NewRow();
@@ -168,7 +187,6 @@ namespace PresentationTier.Kho
                     btnsua.Text = "Hủy";
                     btnsua.Tag = 1;
                     txtchucvu.Enabled = true;
-                    cbmakho.Enabled = true;
                     flagluu = 2;
                 }
             }
@@ -198,11 +216,8 @@ namespace PresentationTier.Kho
                     if(qlkBUS.TaoNvKho(eql) == 1)
                     {
                         MessageBox.Show("Tạo thành công");
-                        LoadDgv(cbmakho.Text);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nhân viên đã nghỉ hoặc không có nhân viên này");
+                        LoadDgv(cbmakho.SelectedValue.ToString());
+                        
                     }
                     btnThem_Click(btnThem, new EventArgs());
                 }
@@ -210,7 +225,10 @@ namespace PresentationTier.Kho
                 {
                     eQuanLyKho ql = new eQuanLyKho();
                     ql.MaKho = cbmakho.SelectedValue.ToString();
+                    ql.MaNV = txtmanv.Text;
                     ql.ChucVu = txtchucvu.Text;
+                    //xóa nhân viên, để nhập lại chức vụ, lưu trong database thời gian giữ chức 
+                    qlkBUS.XoaNVKho(txtmanv.Text, cbmakho.SelectedValue.ToString());
 
                     qlkBUS.SuaThongtinNvKho(ql);
                     MessageBox.Show("Thành công");
@@ -220,9 +238,9 @@ namespace PresentationTier.Kho
                     btnsua_Click(btnsua, new EventArgs());
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -235,13 +253,15 @@ namespace PresentationTier.Kho
                     MessageBox.Show("Đã xóa nhân viên mã" + txtmanv.Text);
                 }
             }
+            LoadDgv(cbmakho.SelectedValue.ToString());
         }
 
-        private void cbmakho_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtmanv_Leave(object sender, EventArgs e)
         {
-
+            foreach(eNhanVien nv in qlkBUS.GetTTNhanVien(txtmanv.Text))
+            {
+                txttennv.Text = nv.HoTenNhanVien;
+            }
         }
-
-        
     }
 }

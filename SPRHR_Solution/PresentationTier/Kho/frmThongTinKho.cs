@@ -35,36 +35,39 @@ namespace PresentationTier.Kho
 
         private void LoadDgv(string makho)
         {
+            //ctkBUS.GetTTSP(makho,dg);
             try
             {
                 DataTable tb = new DataTable();
-            tb.Columns.Add("masp", typeof(string));
-            tb.Columns.Add("tensp", typeof(string));
-            tb.Columns.Add("loaisp", typeof(string));
-            tb.Columns.Add("mota", typeof(string));
-            tb.Columns.Add("soluong", typeof(string));
+                tb.Columns.Add("masp", typeof(string));
+                tb.Columns.Add("tensp", typeof(string));
+                tb.Columns.Add("loaisp", typeof(string));
+                tb.Columns.Add("soluong", typeof(string));
+                tb.Columns.Add("mausac", typeof(string));
+                tb.Columns.Add("ngaysanxuat", typeof(string));
 
-            foreach (eChiTietKho ect in ctkBUS.GetSpByMakho(makho))
+                foreach (eChiTietKho ect in ctkBUS.GetSpByMakho(makho))
                 {
-                DataRow r = tb.NewRow();
-                r["masp"] = ect.Masp;
-                r["soluong"] = ect.SoLuong;
-                foreach (eSanPham sp in ctkBUS.GetThongTinSp(ect.Masp))
-                {
-                    r["tensp"] = sp.TenSP;
-                    r["loaisp"] = sp.MaLoaiSP;
-                    r["mota"] = sp.MoTa;
+                    DataRow r = tb.NewRow();
+                    r["masp"] = ect.Masp;
+                    r["soluong"] = ect.SoLuong;
+                    foreach (eSanPham sp in ctkBUS.GetThongTinSp(ect.Masp))
+                    {
+                        r["tensp"] = sp.TenSP;
+                        r["loaisp"] = sp.MaLoaiSP;
+                        r["mausac"] = sp.MauSac;
+                        r["ngaysanxuat"] = sp.NgaySX.ToShortDateString();
+                    }
+                    tb.Rows.Add(r);
                 }
-                tb.Rows.Add(r);
+                dGVSP.DataSource = tb;
             }
-            dGVSP.DataSource = tb;
-        }
             catch
             {
                 MessageBox.Show("Không thể load dGV");
             }
 
-}
+        }
 
         private void LoadTreeView()
         {
@@ -108,7 +111,18 @@ namespace PresentationTier.Kho
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dGVSP.ClearSelection();
+                ctkBUS.search(txtmakho.Text, txttensp.Text,dGVSP);
 
+                //LoadDgv(txtmakho.Text,txttensp.Text);
+                
+            }
+            catch 
+            {
+                MessageBox.Show("Lỗi");
+            }
         }
     }
 }

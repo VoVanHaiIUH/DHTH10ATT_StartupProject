@@ -15,6 +15,14 @@ namespace BusinessLogicTier.Kho
         {
             qlkDAL = new QuanLyKho_dal();
         }
+        public List<eChucVu> GetChucVu()
+        {
+            return qlkDAL.GetChucVu();
+        }
+        public List<eChucVu> GetChucVubyMa(string ma)
+        {
+            return qlkDAL.GetChucVubyMa(ma);
+        }
         public List<eThongTinKho> GetKho()
         {
             return qlkDAL.GetKho();

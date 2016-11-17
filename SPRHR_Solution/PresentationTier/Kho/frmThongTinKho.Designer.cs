@@ -42,7 +42,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dGVSP = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txttensp = new System.Windows.Forms.TextBox();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             this.tvDSkho.Location = new System.Drawing.Point(6, 19);
             this.tvDSkho.Name = "tvDSkho";
-            this.tvDSkho.Size = new System.Drawing.Size(146, 188);
+            this.tvDSkho.Size = new System.Drawing.Size(146, 146);
             this.tvDSkho.TabIndex = 0;
             this.tvDSkho.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvDSkho_AfterSelect);
             // 
@@ -63,7 +63,7 @@
             this.groupBox1.Controls.Add(this.tvDSkho);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(158, 213);
+            this.groupBox1.Size = new System.Drawing.Size(158, 171);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách kho";
@@ -160,9 +160,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dGVSP);
-            this.groupBox3.Location = new System.Drawing.Point(12, 231);
+            this.groupBox3.Location = new System.Drawing.Point(12, 189);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(649, 205);
+            this.groupBox3.Size = new System.Drawing.Size(649, 247);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách sản phẩm tồn kho";
@@ -173,7 +173,7 @@
             this.dGVSP.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dGVSP.Location = new System.Drawing.Point(6, 19);
             this.dGVSP.Name = "dGVSP";
-            this.dGVSP.Size = new System.Drawing.Size(637, 180);
+            this.dGVSP.Size = new System.Drawing.Size(637, 222);
             this.dGVSP.TabIndex = 0;
             // 
             // label5
@@ -185,12 +185,12 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Tìm kiếm:";
             // 
-            // textBox1
+            // txttensp
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 5;
+            this.txttensp.Location = new System.Drawing.Point(238, 148);
+            this.txttensp.Name = "txttensp";
+            this.txttensp.Size = new System.Drawing.Size(188, 20);
+            this.txttensp.TabIndex = 5;
             // 
             // btntimkiem
             // 
@@ -204,11 +204,12 @@
             // 
             // frmThongTinKho_dal
             // 
+            this.AcceptButton = this.btntimkiem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 448);
             this.Controls.Add(this.btntimkiem);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txttensp);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -242,7 +243,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dGVSP;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txttensp;
         private System.Windows.Forms.Button btntimkiem;
     }
 }

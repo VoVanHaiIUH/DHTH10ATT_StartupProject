@@ -34,5 +34,16 @@ namespace PresentationTier.Kho
             frmPhieuNhapKho nk = new frmPhieuNhapKho();
             nk.ShowDialog();
         }
+
+        private void FormMainKho_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnXuatKho_Click(object sender, EventArgs e)
+        {
+            frmPhieuXuatKho xk = new frmPhieuXuatKho();
+            xk.ShowDialog();
+        }
     }
 }

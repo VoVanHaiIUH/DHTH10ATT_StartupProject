@@ -48,7 +48,7 @@
             this.lậpPhiếuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(362, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(367, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,6 +96,7 @@
             this.mnXuatKho.Name = "mnXuatKho";
             this.mnXuatKho.Size = new System.Drawing.Size(182, 22);
             this.mnXuatKho.Text = "Lập Phiếu Xuất Kho";
+            this.mnXuatKho.Click += new System.EventHandler(this.mnXuatKho_Click);
             // 
             // label1
             // 
@@ -109,6 +110,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 27);
@@ -121,12 +123,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(362, 113);
+            this.ClientSize = new System.Drawing.Size(367, 115);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormMainKho";
             this.Text = "Kho";
+            this.Load += new System.EventHandler(this.FormMainKho_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

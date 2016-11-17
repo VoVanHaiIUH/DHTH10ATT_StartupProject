@@ -44,6 +44,7 @@
     <Compile Include="BanHang\NhanHangTuKho\NhanHangTuKho_BUS.cs" />
     <Compile Include="Kho\ChiTietKho_BUS.cs" />
     <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
+    <Compile Include="Kho\PhieuXuatKho_BUS.cs" />
     <Compile Include="Kho\QuanLyKho_BUS.cs" />
     <Compile Include="Kho\ThongTinKho_BUS.cs" />
     <Compile Include="NhanSu\KyLuat\BangKyLuat_BUS.cs" />
