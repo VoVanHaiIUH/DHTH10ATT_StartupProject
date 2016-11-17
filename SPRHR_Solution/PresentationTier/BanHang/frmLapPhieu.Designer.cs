@@ -39,18 +39,18 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
+            this.btnXoaSP = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radYVAT = new System.Windows.Forms.RadioButton();
+            this.radNVAT = new System.Windows.Forms.RadioButton();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnThanhToan = new System.Windows.Forms.Button();
             this.lblTIme = new System.Windows.Forms.Label();
             this.grbHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).BeginInit();
@@ -75,7 +75,7 @@
             this.txtMaKH.Location = new System.Drawing.Point(98, 47);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(162, 20);
-            this.txtMaKH.TabIndex = 3;
+            this.txtMaKH.TabIndex = 1;
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             this.txtMaNV.Location = new System.Drawing.Point(98, 21);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(162, 20);
-            this.txtMaNV.TabIndex = 3;
+            this.txtMaNV.TabIndex = 0;
             // 
             // label1
             // 
@@ -116,8 +116,8 @@
             this.grbChiTiet.Controls.Add(this.txtSoLuong);
             this.grbChiTiet.Controls.Add(this.label10);
             this.grbChiTiet.Controls.Add(this.txtDonGia);
-            this.grbChiTiet.Controls.Add(this.label5);
             this.grbChiTiet.Controls.Add(this.label3);
+            this.grbChiTiet.Controls.Add(this.label5);
             this.grbChiTiet.Controls.Add(this.label4);
             this.grbChiTiet.Controls.Add(this.txtMaSP);
             this.grbChiTiet.Location = new System.Drawing.Point(12, 286);
@@ -129,7 +129,7 @@
             // 
             // txtKM
             // 
-            this.txtKM.Location = new System.Drawing.Point(307, 23);
+            this.txtKM.Location = new System.Drawing.Point(300, 50);
             this.txtKM.Name = "txtKM";
             this.txtKM.ReadOnly = true;
             this.txtKM.Size = new System.Drawing.Size(117, 20);
@@ -137,16 +137,16 @@
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(307, 49);
+            this.txtSoLuong.Location = new System.Drawing.Point(300, 24);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(77, 20);
-            this.txtSoLuong.TabIndex = 3;
+            this.txtSoLuong.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(239, 26);
+            this.label10.Location = new System.Drawing.Point(232, 53);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 13);
             this.label10.TabIndex = 2;
@@ -160,15 +160,6 @@
             this.txtDonGia.Size = new System.Drawing.Size(144, 20);
             this.txtDonGia.TabIndex = 3;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(252, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Số lượng";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -177,6 +168,15 @@
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Sản Phẩm";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(245, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Số lượng";
             // 
             // label4
             // 
@@ -193,27 +193,28 @@
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.ReadOnly = true;
             this.txtMaSP.Size = new System.Drawing.Size(144, 20);
-            this.txtMaSP.TabIndex = 3;
+            this.txtMaSP.TabIndex = 0;
             // 
-            // button1
+            // btnThemSP
             // 
-            this.button1.Location = new System.Drawing.Point(99, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Tag = "0";
-            this.button1.Text = "Thêm sản phẩm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnThemSP.Location = new System.Drawing.Point(99, 378);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(113, 23);
+            this.btnThemSP.TabIndex = 3;
+            this.btnThemSP.Tag = "0";
+            this.btnThemSP.Text = "Thêm sản phẩm";
+            this.btnThemSP.UseVisualStyleBackColor = true;
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
-            // button2
+            // btnXoaSP
             // 
-            this.button2.Location = new System.Drawing.Point(283, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Xóa khỏi giỏ hàng";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnXoaSP.Location = new System.Drawing.Point(283, 378);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(113, 23);
+            this.btnXoaSP.TabIndex = 3;
+            this.btnXoaSP.Tag = "0";
+            this.btnXoaSP.Text = "Xóa khỏi giỏ hàng";
+            this.btnXoaSP.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -224,27 +225,27 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Thuế VAT";
             // 
-            // radioButton1
+            // radYVAT
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(99, 412);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(38, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Có";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radYVAT.AutoSize = true;
+            this.radYVAT.Location = new System.Drawing.Point(99, 412);
+            this.radYVAT.Name = "radYVAT";
+            this.radYVAT.Size = new System.Drawing.Size(38, 17);
+            this.radYVAT.TabIndex = 5;
+            this.radYVAT.TabStop = true;
+            this.radYVAT.Text = "Có";
+            this.radYVAT.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radNVAT
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(151, 412);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(56, 17);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Không";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radNVAT.AutoSize = true;
+            this.radNVAT.Location = new System.Drawing.Point(151, 412);
+            this.radNVAT.Name = "radNVAT";
+            this.radNVAT.Size = new System.Drawing.Size(56, 17);
+            this.radNVAT.TabIndex = 5;
+            this.radNVAT.TabStop = true;
+            this.radNVAT.Text = "Không";
+            this.radNVAT.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
@@ -263,15 +264,15 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Tổng tiền:";
             // 
-            // button3
+            // btnThanhToan
             // 
-            this.button3.Location = new System.Drawing.Point(334, 438);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Xuất Hóa Đơn";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnThanhToan.Location = new System.Drawing.Point(334, 438);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(115, 23);
+            this.btnThanhToan.TabIndex = 8;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // lblTIme
             // 
@@ -290,18 +291,19 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(464, 469);
             this.Controls.Add(this.lblTIme);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radNVAT);
+            this.Controls.Add(this.radYVAT);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnXoaSP);
+            this.Controls.Add(this.btnThemSP);
             this.Controls.Add(this.grbChiTiet);
             this.Controls.Add(this.dgvChiTiet);
             this.Controls.Add(this.grbHD);
             this.Name = "frmLapPhieu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập Hóa Đơn Bán Hàng";
             this.Load += new System.EventHandler(this.frmLapPhieu_Load);
             this.grbHD.ResumeLayout(false);
@@ -329,14 +331,14 @@
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnThemSP;
+        private System.Windows.Forms.Button btnXoaSP;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radYVAT;
+        private System.Windows.Forms.RadioButton radNVAT;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Label lblTIme;
         private System.Windows.Forms.TextBox txtKM;
         private System.Windows.Forms.Label label10;

@@ -33,6 +33,23 @@ namespace DataAccessLayer.BanHang.LapPhieuBanHang
             return true;
         }
 
+        public BusinessEntities.BanHang.eGiaBan SearchSP(string masp)
+        {
+            try
+            {
+                var giaban = (from sp in db.BangGiaBans
+                              where sp.maSP == masp
+                              select sp).First();
+                BusinessEntities.BanHang.eGiaBan gia = new BusinessEntities.BanHang.eGiaBan(giaban.maSP, giaban.giaBan, giaban.ngayApDung);
+                return gia;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+        }
+
+
         public void themHoaDon(string manv, string makh, DateTime ngaylap,decimal tongtien,bool vat)
         {
             HoaDonBanHang hdbh = new HoaDonBanHang();

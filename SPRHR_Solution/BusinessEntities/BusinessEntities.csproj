@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BanHang\eChiTietHoaDonBanHang.cs" />
+    <Compile Include="BanHang\eGiaBan.cs" />
     <Compile Include="BanHang\eHoaDonBanHang.cs" />
     <Compile Include="CongNo\eChiTietPhieuTraNoKhachHang.cs" />
     <Compile Include="CongNo\eChiTietPhieuTraNoNCC.cs" />

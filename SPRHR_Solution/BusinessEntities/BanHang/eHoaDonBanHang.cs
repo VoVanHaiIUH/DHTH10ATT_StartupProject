@@ -31,18 +31,19 @@ namespace BusinessEntities.BanHang
             set { _maNV = value; }
         }
 
-        private decimal _tongTien = 0;
+        private decimal _tongTien;
 
         public decimal TongTien
         {
             get { return _tongTien; }
         }
 
-        private System.DateTime _ngayLap = DateTime.Now;
+        private System.DateTime _ngayLap;
 
         public System.DateTime NgayLap
         {
             get { return _ngayLap; }
+            set { _ngayLap = value; }
         }
 
         private bool _VAT;
@@ -54,10 +55,11 @@ namespace BusinessEntities.BanHang
         }
 
         List<eChiTietHoaDonBanHang> list;
-
-        public eHoaDonBanHang(string mahdgannhat,string makh,string manv,bool VAT)
+       
+        public eHoaDonBanHang(string makh,string manv,bool VAT,DateTime ngaylap)
         {
-            this._soHD = NgayLap.ToShortDateString() + "_" + (int.Parse(mahdgannhat) + 1).ToString();
+            this._tongTien = 0;
+            this._ngayLap = ngaylap;
             this._maKH = makh;
             this._maNV = manv;
             this._VAT = VAT;
@@ -87,34 +89,6 @@ namespace BusinessEntities.BanHang
         {
             // TODO: write your implementation of GetHashCode() here
             return GetHashCode();
-        }
-        public bool AddList(eChiTietHoaDonBanHang cthd)
-        {
-            if (list.Contains(cthd)) return false;
-            eChiTietHoaDonBanHang temp = new eChiTietHoaDonBanHang(cthd.MaSP, cthd.SoLuong, cthd.Gia, cthd.GiaKhuyenMai);
-            foreach (var item in list)
-            {
-                if(item.MaSP==temp.MaSP)
-                {
-                    item.SoLuong += temp.SoLuong;
-                    this._tongTien += temp.SoLuong * (temp.Gia - temp.GiaKhuyenMai);
-                    return true;
-                }
-            }
-            temp.SoHD = this._soHD;
-            temp.SoCTHD = list.Count + 1;
-            list.Add(temp);
-            this._tongTien = temp.Gia * (temp.SoLuong - temp.GiaKhuyenMai);
-            return true;
-        }
-
-        public void DeleteList(int index)
-        {
-            list.RemoveAt(index);
-        }
-        public int Count()
-        {
-            return list.Count;
         }
     }
 }

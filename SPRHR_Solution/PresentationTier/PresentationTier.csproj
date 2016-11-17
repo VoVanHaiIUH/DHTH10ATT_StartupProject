@@ -51,10 +51,13 @@
     <Compile Include="BanHang\FormMainBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BanHang\FormMainBanHang.designer.cs">
+      <DependentUpon>FormMainBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="BanHang\frmLapPhieu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BanHang\frmLapPhieu.Designer.cs">
+    <Compile Include="BanHang\frmLapPhieu.designer.cs">
       <DependentUpon>frmLapPhieu.cs</DependentUpon>
     </Compile>
     <Compile Include="BanHang\frmThanhToan.cs">
@@ -254,6 +257,9 @@
     <Compile Include="TichHop\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BanHang\FormMainBanHang.resx">
+      <DependentUpon>FormMainBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BanHang\frmLapPhieu.resx">
       <DependentUpon>frmLapPhieu.cs</DependentUpon>
     </EmbeddedResource>

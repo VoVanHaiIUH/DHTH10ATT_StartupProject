@@ -81,6 +81,7 @@
             this.Controls.Add(this.btnNhanHang);
             this.Controls.Add(this.btnLapPhieu);
             this.Name = "FormMainBanHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BanHang";
             this.ResumeLayout(false);
 

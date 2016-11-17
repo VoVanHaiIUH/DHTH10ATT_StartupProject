@@ -89,7 +89,7 @@ namespace BusinessEntities.BanHang
             //   http://go.microsoft.com/fwlink/?LinkId=85238
             //
 
-            if (obj == null || this._soHD.ToLower() != ((eChiTietHoaDonBanHang)obj).SoHD.ToLower() || this._soCTHD != ((eChiTietHoaDonBanHang)obj)._soCTHD || !(obj is eChiTietHoaDonBanHang))
+            if (obj == null || this._soHD.ToLower() != ((eChiTietHoaDonBanHang)obj).SoHD.ToLower() || this._maSP != ((eChiTietHoaDonBanHang)obj)._maSP || !(obj is eChiTietHoaDonBanHang))
             {
                 return false;
             }
