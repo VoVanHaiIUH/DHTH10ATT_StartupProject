@@ -51,8 +51,17 @@
     <Compile Include="BanHang\FormMainBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BanHang\FormMainBanHang.Designer.cs">
-      <DependentUpon>FormMainBanHang.cs</DependentUpon>
+    <Compile Include="BanHang\frmLapPhieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\frmLapPhieu.Designer.cs">
+      <DependentUpon>frmLapPhieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanHang\frmThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanHang\frmThanhToan.designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="CongNo\FormMainCongNo.cs">
       <SubType>Form</SubType>
@@ -239,8 +248,11 @@
     <Compile Include="TichHop\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BanHang\FormMainBanHang.resx">
-      <DependentUpon>FormMainBanHang.cs</DependentUpon>
+    <EmbeddedResource Include="BanHang\frmLapPhieu.resx">
+      <DependentUpon>frmLapPhieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanHang\frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CongNo\FormMainCongNo.resx">
       <DependentUpon>FormMainCongNo.cs</DependentUpon>
