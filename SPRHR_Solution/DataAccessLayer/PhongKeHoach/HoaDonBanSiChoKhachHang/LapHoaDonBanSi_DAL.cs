@@ -52,7 +52,7 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonBanSiChoKhachHang
             if(SanPham.Any())
             {
                 var ChiTiet = from i in db.ChiTietHoaDonBanSis
-                              where i.MaHoaDonBanSi == Ct.MaHoaDonoBanSi && i.MaSP == Ct.MaSP && i.MaChiTietHoaDonBanSi == Ct.MaChiTietHoaDonBanSi
+                              where i.MaHoaDonBanSi == Ct.MaHoaDonoBanSi && i.MaSP == Ct.MaSP 
                               select i;
                 if(ChiTiet.Any())
                 {
@@ -62,7 +62,6 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonBanSiChoKhachHang
                 {
                     ChiTietHoaDonBanSi ChitietHDBS = new ChiTietHoaDonBanSi();
                     ChitietHDBS.MaHoaDonBanSi = Ct.MaHoaDonoBanSi;
-                    ChitietHDBS.MaHoaDonBanSi = TaoMachiTietHoaDonBanSi(Ct.MaHoaDonoBanSi);
                     ChitietHDBS.MaSP = Ct.MaSP;
                     ChitietHDBS.SoLuong = Ct.soluong;
                     ChitietHDBS.GhiChu = Ct.GhiChu;
@@ -104,24 +103,10 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonBanSiChoKhachHang
             max++;
             return "HDBS" + string.Format("{0:0000}", max);
         }
-        private string TaoMachiTietHoaDonBanSi(string MaHoaDonBanSi)
-        {
-            var Chitiet = from i in db.ChiTietHoaDonBanSis
-                          where i.MaHoaDonBanSi == MaHoaDonBanSi
-                          select i;
-            int max = 0;
-            foreach(ChiTietHoaDonBanSi Ct in Chitiet.ToList())
-            {
-                int t = int.Parse(Ct.MaChiTietHoaDonBanSi.Substring(2));
-                if (t >= max)
-                    max = t;
-            }
-            max++;
-            return "CT" + string.Format("{0:0000}", max);         
-        }
+      
         public void DeleteChiTietHoaDonBanSi(string MaHoaDonBanSi,string MaSp,string MaChiTietHoaDonBanSi)
         {
-            ChiTietHoaDonBanSi Chitiet = db.ChiTietHoaDonBanSis.Where(x => x.MaHoaDonBanSi == MaHoaDonBanSi && x.MaChiTietHoaDonBanSi == MaChiTietHoaDonBanSi && x.MaSP == MaSp).FirstOrDefault();
+            ChiTietHoaDonBanSi Chitiet = db.ChiTietHoaDonBanSis.Where(x => x.MaHoaDonBanSi == MaHoaDonBanSi &&  x.MaSP == MaSp).FirstOrDefault();
             decimal Money = Convert.ToDecimal(Chitiet.GiaBanSi * Chitiet.SoLuong);
             db.ChiTietHoaDonBanSis.DeleteOnSubmit(Chitiet);
             db.SubmitChanges();

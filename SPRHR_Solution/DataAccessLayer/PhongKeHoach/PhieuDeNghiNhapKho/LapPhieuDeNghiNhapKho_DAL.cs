@@ -45,15 +45,6 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             }
             return ls;
         }
-        public void GetALLChiTietCoTen(string maphieu)
-        {
-            var c = from i in db.ChiTietPhieuDNNKs join j in db.SanPhams on i.MaSP equals j.MaSP
-                    where i.MaPhieuDNNK == maphieu
-                    select new
-                    {
-                        i.MaSP,j.TenSp,i.SoLuong,i.GhiChu
-                    };
-        }
         //Get ALL PDNNK by NhanVien,By Kho ...... pending
         public List<ePhieuDeNghiNhapKho> GetPDNNKByMa(string SoPhieu)
         {
@@ -139,10 +130,14 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             return ls;
         }
 
-
+        private string SetTensp(string masp)
+        {
+            SanPham sp = db.SanPhams.Where(x => x.MaSP == masp).FirstOrDefault();
+            return sp.TenSp;
+        }
         public List<eChiTietPhieuDeNghiNhapKho> GetALLCTPDNNKByMa(string SoPhieu)
         {
-            var c = from i in db.ChiTietPhieuDNNKs
+            var c = from i in db.ChiTietPhieuDNNKs join j in db.SanPhams on i.MaSP equals j.MaSP
                     where i.MaPhieuDNNK == SoPhieu
                     select i;
             List<eChiTietPhieuDeNghiNhapKho> ls = new List<eChiTietPhieuDeNghiNhapKho>();
@@ -150,7 +145,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
             {
                 eChiTietPhieuDeNghiNhapKho ct = new eChiTietPhieuDeNghiNhapKho();
                 ct.SoPDNNK = CT.MaPhieuDNNK;
-                ct.MaSP = CT.MaSP;
+                ct.MaSP = SetTensp(CT.MaSP);
                 ct.SoLuong = Convert.ToInt32(CT.SoLuong);
                 ct.GhiChu = ct.GhiChu;
                 ls.Add(ct);
@@ -226,7 +221,11 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
                 throw new Exception("Invaild SanPham ID");
             }
         }
-
+        private string SetMaSp(string ten)
+        {
+            SanPham sp = db.SanPhams.Where(x => x.TenSp == ten).FirstOrDefault();
+            return sp.MaSP;
+        }
         public bool DeLetePDNNK(string SoPhieu)
         {
             var c = from i in db.PhieuNhapKhos
@@ -254,6 +253,7 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
 
         public void DeletePDNNKChiTiet(string SoPhieu,string MaSP)
         {
+            MaSP = SetMaSp(MaSP);
             ChiTietPhieuDNNK ct = db.ChiTietPhieuDNNKs.Where(x => x.MaPhieuDNNK == SoPhieu && x.MaSP == MaSP).FirstOrDefault();
             if (ct != null)
             {
@@ -265,7 +265,6 @@ namespace DataAccessLayer.PhongKeHoach.PhieuDeNghiNhapKho
                 throw new Exception("Invalid Details of Null Information");
             }
         }
-
         private string TaoMaPDNNK()
         {
             int max = 0;

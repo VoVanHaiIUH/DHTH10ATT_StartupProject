@@ -209,6 +209,8 @@ namespace DataAccessLayer.PhongKeHoach.HoaDonPhiaNhaCungCap
             ChiTietHoaDonNhaCungCap ct = db.ChiTietHoaDonNhaCungCaps.Where(x => x.MaSPNCC == masp && x.MaHoaDonNhaCungCap == mahd).FirstOrDefault();
             if(ct != null)
             {
+                decimal money = ct.SoLuong * ct.GiaMuaBenNhaCungCap;
+                UpdateTongTienHoaDonNhaCungCapD(mahd, money);
                 db.ChiTietHoaDonNhaCungCaps.DeleteOnSubmit(ct);
                 db.SubmitChanges();
                 return true;

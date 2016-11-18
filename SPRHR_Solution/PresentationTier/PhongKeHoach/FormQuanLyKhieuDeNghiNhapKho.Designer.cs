@@ -52,16 +52,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.cbsp2 = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.slsp = new System.Windows.Forms.TextBox();
             this.txtghichu = new System.Windows.Forms.TextBox();
             this.xoa = new System.Windows.Forms.Button();
             this.drvchitiet = new System.Windows.Forms.DataGridView();
-            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chiTietPhieuDNNKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sPRHR_SolutionDataSet1 = new PresentationTier.SPRHR_SolutionDataSet1();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -83,6 +77,9 @@
             this.sPRHR_SolutionDataSet2 = new PresentationTier.SPRHR_SolutionDataSet2();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sanPhamTableAdapter = new PresentationTier.SPRHR_SolutionDataSet2TableAdapters.SanPhamTableAdapter();
+            this.maSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -200,6 +197,7 @@
             this.thempdnnk.TabIndex = 5;
             this.thempdnnk.Text = "Thêm Phiếu DNNK";
             this.thempdnnk.UseVisualStyleBackColor = true;
+            this.thempdnnk.Click += new System.EventHandler(this.thempdnnk_Click);
             // 
             // label16
             // 
@@ -272,8 +270,6 @@
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.cbsp2);
-            this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.slsp);
             this.panel5.Controls.Add(this.txtghichu);
             this.panel5.Location = new System.Drawing.Point(523, 171);
@@ -300,6 +296,7 @@
             this.themctpdnnk.TabIndex = 5;
             this.themctpdnnk.Text = "Thêm Chi Tiết Phiếu DNNK";
             this.themctpdnnk.UseVisualStyleBackColor = true;
+            this.themctpdnnk.Click += new System.EventHandler(this.themctpdnnk_Click);
             // 
             // label13
             // 
@@ -315,7 +312,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(52, 109);
+            this.label19.Location = new System.Drawing.Point(52, 86);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 13);
             this.label19.TabIndex = 4;
@@ -324,40 +321,22 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(52, 82);
+            this.label18.Location = new System.Drawing.Point(52, 55);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 13);
             this.label18.TabIndex = 4;
             this.label18.Text = "Số Lượng";
             // 
-            // cbsp2
-            // 
-            this.cbsp2.FormattingEnabled = true;
-            this.cbsp2.Location = new System.Drawing.Point(132, 47);
-            this.cbsp2.Name = "cbsp2";
-            this.cbsp2.Size = new System.Drawing.Size(121, 21);
-            this.cbsp2.TabIndex = 3;
-            this.cbsp2.Text = "Chọn Sản Phẩm...";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(52, 51);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 13);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Mã Sản Phẩm";
-            // 
             // slsp
             // 
-            this.slsp.Location = new System.Drawing.Point(131, 74);
+            this.slsp.Location = new System.Drawing.Point(131, 55);
             this.slsp.Name = "slsp";
             this.slsp.Size = new System.Drawing.Size(122, 20);
             this.slsp.TabIndex = 1;
             // 
             // txtghichu
             // 
-            this.txtghichu.Location = new System.Drawing.Point(131, 102);
+            this.txtghichu.Location = new System.Drawing.Point(131, 83);
             this.txtghichu.Multiline = true;
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(171, 44);
@@ -371,6 +350,7 @@
             this.xoa.TabIndex = 5;
             this.xoa.Text = "Xóa";
             this.xoa.UseVisualStyleBackColor = true;
+            this.xoa.Click += new System.EventHandler(this.xoa_Click);
             // 
             // drvchitiet
             // 
@@ -379,7 +359,6 @@
             this.drvchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvchitiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maSPDataGridViewTextBoxColumn,
-            this.TenSp,
             this.SoLuong,
             this.GhiChu});
             this.drvchitiet.DataSource = this.chiTietPhieuDNNKBindingSource;
@@ -387,32 +366,6 @@
             this.drvchitiet.Name = "drvchitiet";
             this.drvchitiet.Size = new System.Drawing.Size(679, 107);
             this.drvchitiet.TabIndex = 4;
-            // 
-            // maSPDataGridViewTextBoxColumn
-            // 
-            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
-            this.maSPDataGridViewTextBoxColumn.HeaderText = "Mã Sản Phẩm";
-            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
-            // 
-            // TenSp
-            // 
-            this.TenSp.DataPropertyName = "TenSp";
-            this.TenSp.HeaderText = "Tên Sản Phẩm";
-            this.TenSp.Name = "TenSp";
-            this.TenSp.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi Chú";
-            this.GhiChu.Name = "GhiChu";
-            this.GhiChu.Width = 300;
             // 
             // chiTietPhieuDNNKBindingSource
             // 
@@ -532,6 +485,7 @@
             // 
             this.slspdn.Location = new System.Drawing.Point(6, 270);
             this.slspdn.Name = "slspdn";
+            this.slspdn.ReadOnly = true;
             this.slspdn.Size = new System.Drawing.Size(122, 20);
             this.slspdn.TabIndex = 1;
             // 
@@ -539,6 +493,7 @@
             // 
             this.slspcn.Location = new System.Drawing.Point(7, 202);
             this.slspcn.Name = "slspcn";
+            this.slspcn.ReadOnly = true;
             this.slspcn.Size = new System.Drawing.Size(122, 20);
             this.slspcn.TabIndex = 1;
             // 
@@ -546,6 +501,7 @@
             // 
             this.slspdv.Location = new System.Drawing.Point(6, 133);
             this.slspdv.Name = "slspdv";
+            this.slspdv.ReadOnly = true;
             this.slspdv.Size = new System.Drawing.Size(122, 20);
             this.slspdv.TabIndex = 1;
             // 
@@ -582,6 +538,26 @@
             // sanPhamTableAdapter
             // 
             this.sanPhamTableAdapter.ClearBeforeFill = true;
+            // 
+            // maSPDataGridViewTextBoxColumn
+            // 
+            this.maSPDataGridViewTextBoxColumn.DataPropertyName = "MaSP";
+            this.maSPDataGridViewTextBoxColumn.HeaderText = "Tên Sản Phẩm";
+            this.maSPDataGridViewTextBoxColumn.Name = "maSPDataGridViewTextBoxColumn";
+            this.maSPDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi Chú";
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.Width = 300;
             // 
             // FormQuanLyKhieuDeNghiNhapKho
             // 
@@ -652,10 +628,6 @@
         private SPRHR_SolutionDataSet2 sPRHR_SolutionDataSet2;
         private System.Windows.Forms.BindingSource sanPhamBindingSource;
         private SPRHR_SolutionDataSet2TableAdapters.SanPhamTableAdapter sanPhamTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private System.Windows.Forms.TextBox txtthongbaopdnnk;
         private System.Windows.Forms.Button thempdnnk;
         private System.Windows.Forms.Label label16;
@@ -668,9 +640,10 @@
         private System.Windows.Forms.Button themctpdnnk;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox cbsp2;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox slsp;
         private System.Windows.Forms.TextBox txtghichu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }

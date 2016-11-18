@@ -37,12 +37,12 @@
             // 
             this.CbQl.FormattingEnabled = true;
             this.CbQl.Items.AddRange(new object[] {
-            "Quản Lý Hóa Đơn Nhà Cung Cấp\t\t",
+            "Quản Lý Hóa Đơn Nhà Cung Cấp",
             "Quản Lý Sản Phẩm",
             "Quản Lý Khiếu Đề Nghị Nhập Kho",
-            "Quản Lý Hóa Đơn Bán Sĩ ",
+            "Quản Lý Hóa Đơn Bán Sĩ",
             "Quản Lý Khiếu Đề Nghị Xuất Kho",
-            "Quản Lý Thẻ Thành Viên "});
+            "Quản Lý Thẻ Thành Viên"});
             this.CbQl.Location = new System.Drawing.Point(4, 43);
             this.CbQl.Name = "CbQl";
             this.CbQl.Size = new System.Drawing.Size(376, 21);
