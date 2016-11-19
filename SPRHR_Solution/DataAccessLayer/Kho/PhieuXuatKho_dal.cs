@@ -15,6 +15,27 @@ namespace DataAccessLayer.Kho
         {
             db = new SPRHR_SolutionDataContext();
         }
+
+        public List<ePhieuXuatKho> GetPXK()
+        {
+            List<ePhieuXuatKho> px = new List<ePhieuXuatKho>();
+            foreach (PhieuXuatKho item in db.PhieuXuatKhos)
+            {
+                px.Add(new ePhieuXuatKho(item.soPXK, item.manhanvien, item.ghiChu, item.makho, item.ngaylap));
+            }
+            return px;
+        }
+
+        public List<ePhieuXuatKho> GetPXKbyMa(string ma)
+        {
+            List<ePhieuXuatKho> px = new List<ePhieuXuatKho>();
+            foreach (PhieuXuatKho item in db.PhieuXuatKhos.Where(e=>e.soPXK == ma))
+            {
+                px.Add(new ePhieuXuatKho(item.soPXK, item.manhanvien, item.ghiChu, item.makho, item.ngaylap));
+            }
+            return px;
+        }
+
         public List<ePhieuDeNghiXuatKho> GetPDNXK()
         {
             List<ePhieuDeNghiXuatKho> ls = new List<ePhieuDeNghiXuatKho>();

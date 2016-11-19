@@ -45,5 +45,17 @@ namespace PresentationTier.Kho
             frmPhieuXuatKho xk = new frmPhieuXuatKho();
             xk.ShowDialog();
         }
+
+        private void xemPhiếuNhậpKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmXemPhieuNhap xn = new frmXemPhieuNhap();
+            xn.ShowDialog();
+        }
+
+        private void xemPhiếuXuấtKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmXemPhieuXuat xx = new frmXemPhieuXuat();
+            xx.ShowDialog();
+        }
     }
 }

@@ -25,6 +25,14 @@ namespace BusinessLogicTier.Kho
         {
             return pxBUS.GetPDNXKbyMa(ma);
         }
+        public List<ePhieuXuatKho> GetPXK()
+        {
+            return pxBUS.GetPXK();
+        }
+        public List<ePhieuXuatKho> GetPXKbyMa(string ma)
+        {
+            return pxBUS.GetPXKbyMa(ma);
+        }
         public int taophieuxuatkho(ePhieuXuatKho e)
         {
             return pxBUS.taophieuxuatkho(e);

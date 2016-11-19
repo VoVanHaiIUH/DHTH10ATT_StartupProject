@@ -108,6 +108,18 @@
     <Compile Include="Kho\frmThongTinKho.Designer.cs">
       <DependentUpon>frmThongTinKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kho\frmXemPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kho\frmXemPhieuNhap.Designer.cs">
+      <DependentUpon>frmXemPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kho\frmXemPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kho\frmXemPhieuXuat.Designer.cs">
+      <DependentUpon>frmXemPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanSu\frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kho\frmThongTinKho.resx">
       <DependentUpon>frmThongTinKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kho\frmXemPhieuNhap.resx">
+      <DependentUpon>frmXemPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kho\frmXemPhieuXuat.resx">
+      <DependentUpon>frmXemPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanSu\frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
