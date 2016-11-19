@@ -58,14 +58,11 @@
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\LapPhieuBanHang\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
-    <Folder Include="CongNo\XemThongTinNoDaTra\" />
-    <Folder Include="CongNo\XemThongTinNoKhachHang\" />
-    <Folder Include="CongNo\XemThongTinNoNhaCungCap\" />
-    <Folder Include="CongNo\XemThongTinNoQuaHan\" />
-    <Folder Include="CongNo\XemThongTinNoToiHanCanDoi\" />
+    <Folder Include="CongNo\" />
     <Folder Include="Kho\BaoCaoTinhTrangKho\" />
     <Folder Include="Kho\LapPhieuNhapKho\" />
     <Folder Include="Kho\LapPhieuXuatKho\" />
+    <Folder Include="Kho\XemThongTinNoToiHanCanDoi\" />
     <Folder Include="NhanSu\" />
     <Folder Include="PhongKeHoach\NhapHang\" />
     <Folder Include="PhongKeHoach\PhatHanhChuongTrinhKhuyenMai\" />

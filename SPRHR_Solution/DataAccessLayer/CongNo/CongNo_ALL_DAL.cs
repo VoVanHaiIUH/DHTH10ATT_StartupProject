@@ -16,7 +16,10 @@ namespace DataAccessLayer.CongNo
         {
             db = new SPRHR_SolutionDataContext();
         }
-
+        /// <summary>
+        /// Lấy danh sách nhà cung cấp có công nợ
+        /// </summary>
+        /// <returns>danh sách nhà cung cấp</returns>
         public List<eNhaCungCap> GetListNhaCungCapNo()
         {
             List<eNhaCungCap> l = new List<eNhaCungCap>();
@@ -35,6 +38,10 @@ namespace DataAccessLayer.CongNo
             }
             return l;
         }
+        /// <summary>
+        /// Lấy danh sách khách hàng nợ 
+        /// </summary>
+        /// <returns>danh sách khách hàng</returns>
         public List<eKhachHang> GetListKhachHangNo()
         {
             List<eKhachHang> l = new List<eKhachHang>();
@@ -59,6 +66,11 @@ namespace DataAccessLayer.CongNo
             }
             return l;
         }
+        /// <summary>
+        /// lấy danh sách nợ của 1 nhà cung cấp nào đó
+        /// </summary>
+        /// <param name="pMaNhaCungCap">mã của nhà cung cấp cần lấy</param>
+        /// <returns>danh sách công nợ của nhà cung cấp đó</returns>
         public List<eCongNoNCC> GetListNoCuaNoCungCap(string pMaNhaCungCap)
         {
             List<eCongNoNCC> l = new List<eCongNoNCC>();
@@ -76,6 +88,11 @@ namespace DataAccessLayer.CongNo
             }
             return l;
         }
+        /// <summary>
+        /// lấy danh sách nợ của 1 khách hàng nào đó
+        /// </summary>
+        /// <param name="pMaKhachHang">mã khách hàng</param>
+        /// <returns>danh sách công nợ của khách hàng</returns>
         public List<eCongNoKhachHang> GetListNoCuaNoKhachHang(string pMaKhachHang)
         {
             List<eCongNoKhachHang> l = new List<eCongNoKhachHang>();
@@ -93,6 +110,11 @@ namespace DataAccessLayer.CongNo
             }
             return l;
         }
+        /// <summary>
+        /// Lấy danh sách chi tiét trả nợ của nhà cung cấp cho 1 khoản nợ nào đó
+        /// </summary>
+        /// <param name="pMaHoaDon">mã hóa đơn nợ</param>
+        /// <returns>danh sách chi tiết phiếu trả nợ</returns>
         public List<eChiTietPhieuTraNoNCC> GetListChiTietTraNoNCC(string pMaHoaDon)
         {
             List<eChiTietPhieuTraNoNCC> l = new List<eChiTietPhieuTraNoNCC>();
@@ -110,6 +132,11 @@ namespace DataAccessLayer.CongNo
             }
             return l;
         }
+        /// <summary>
+        /// lấy danh sách chi tiết trả nợ của khách hàng cho 1 khoản nợ nào đó
+        /// </summary>
+        /// <param name="pMaHoaDon">mã hóa đơn nợ</param>
+        /// <returns>danh sách chi tiết phiểu trả nợ</returns>
         public List<eChiTietPhieuTraNoKhachHang> GetListChiTietTraNoKH(string pMaHoaDon)
         {
             List<eChiTietPhieuTraNoKhachHang> l = new List<eChiTietPhieuTraNoKhachHang>();
@@ -127,6 +154,10 @@ namespace DataAccessLayer.CongNo
             }
             return l;
         }
+        /// <summary>
+        /// Tạo mã cho chi tiết phiếu trả nợ
+        /// </summary>
+        /// <returns>Mã chi tiết phiếu trả nợ mới</returns>
         private string TaoMaChiTietPhieuTraNoNCC()
         {
             try
@@ -145,6 +176,10 @@ namespace DataAccessLayer.CongNo
                 throw ex;
             }
         }
+        /// <summary>
+        /// Tạo mã cho chi tiết phiếu trả nợ
+        /// </summary>
+        /// <returns>Mã chi tiết phiếu trả nợ mới</returns>
         private string TaoMaChiTietPhieuTraNoKH()
         {
             try
@@ -163,6 +198,7 @@ namespace DataAccessLayer.CongNo
                 throw ex;
             }
         }
+      
         private void KiemTraTraNoNCC(string pMaHoaDon, decimal pSoTienTra)
         {
             // kiểm tra
@@ -274,425 +310,7 @@ namespace DataAccessLayer.CongNo
                 return null;
             }
         }
-        //private string TaoMaCongNoKhachHang()
-        //{
-        //    // công nợ khách hàng có dạng CNKH_dd/MM/yy_xxxx
-        //    string maCongNoKHEnd = db.CongNoKHs.OrderByDescending(e => e.MaSoCNKH).FirstOrDefault().MaSoCNKH;
-        //    if (maCongNoKHEnd == null)
-        //    {
-
-        //        // trường hợp chưa có công nợ khách hàng nào
-        //        string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //        return "CNKH_" + ngay + "_0001";
-        //    }
-        //    else
-        //    {
-        //        //nếu có công nợ rồi
-        //        // kiểm tra phải ngày hôm nay không
-        //        string strDateEnd = maCongNoKHEnd.Substring(5, 10); // lấy ra ngày tháng năm có công nợ cuối cùng trong db
-        //        DateTime dateEnd = DateTime.Parse(strDateEnd);
-        //        if ((DateTime.Now - dateEnd).TotalDays == 0)
-        //        {
-        //            // dateEnd là ngày hôm nay
-        //            string strSoThuTuEnd = maCongNoKHEnd.Substring(16);
-        //            int soThuTuEnd = int.Parse(strSoThuTuEnd);
-        //            int soThuTuMoi = soThuTuEnd + 1;
-        //            string strSoThuTuMoi = string.Format("{0:0000}", soThuTuMoi);
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "CNKH_" + ngay + "_" + strSoThuTuMoi;
-        //        }
-        //        else
-        //        {
-        //            // dateEnd trước ngày hôm nay
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "CNKH_" + ngay + "_0001";
-        //        }
-        //    }
-        //}
-        //private string TaoMaCongNoNCC()
-        //{
-        //    // công nợ nhà cung cấp có dạng CNNCC_dd/MM/yy_xxxx
-        //    string maCongNoKHEnd = db.CongNoKHs.OrderByDescending(e => e.MaSoCNKH).FirstOrDefault().MaSoCNKH;
-        //    if (maCongNoKHEnd == null)
-        //    {
-        //        // trường hợp chưa có công nợ khách hàng nào
-        //        string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //        return "CNNCC_" + ngay + "_0001";
-        //    }
-        //    else
-        //    {
-        //        //nếu có công nợ rồi
-        //        // kiểm tra phải ngày hôm nay không
-        //        string strDateEnd = maCongNoKHEnd.Substring(6, 10); // lấy ra ngày tháng năm có công nợ cuối cùng trong db
-        //        DateTime dateEnd = DateTime.Parse(strDateEnd);
-        //        if ((DateTime.Now - dateEnd).TotalDays == 0)
-        //        {
-        //            // dateEnd là ngày hôm nay
-        //            string strSoThuTuEnd = maCongNoKHEnd.Substring(17);
-        //            int soThuTuEnd = int.Parse(strSoThuTuEnd);
-        //            int soThuTuMoi = soThuTuEnd + 1;
-        //            string strSoThuTuMoi = string.Format("{0:0000}", soThuTuMoi);
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "CNNCC_" + ngay + "_" + strSoThuTuMoi;
-        //        }
-        //        else
-        //        {
-        //            // dateEnd trước ngày hôm nay
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "CNNCC_" + ngay + "_0001";
-        //        }
-        //    }
-        //}
-        //private string TaoMaPhieuTraNoKhachHang()
-        //{
-        //    // số phiếu trả nợ khách hàng có dạng PTNKH_dd/MM/yy_xxxx
-        //    string maPhieuTraNoKHEnd = db.PhieuTraNoKHs.OrderByDescending(e => e.SoPhieuTraNo).FirstOrDefault().SoPhieuTraNo;
-        //    if (maPhieuTraNoKHEnd == null)
-        //    {
-        //        // trường hợp chưa có công nợ khách hàng nào
-        //        string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //        return "PTNKH_" + ngay + "_0001";
-        //    }
-        //    else
-        //    {
-        //        //nếu có khách hàng trả nợ rồi
-        //        // kiểm tra phải ngày hôm nay không
-        //        string strDateEnd = maPhieuTraNoKHEnd.Substring(6, 10); // lấy ra ngày tháng năm có công nợ cuối cùng trong db
-        //        DateTime dateEnd = DateTime.Parse(strDateEnd);
-        //        if ((DateTime.Now - dateEnd).TotalDays == 0)
-        //        {
-        //            // dateEnd là ngày hôm nay
-        //            string strSoThuTuEnd = maPhieuTraNoKHEnd.Substring(17);
-        //            int soThuTuEnd = int.Parse(strSoThuTuEnd);
-        //            int soThuTuMoi = soThuTuEnd + 1;
-        //            string strSoThuTuMoi = string.Format("{0:0000}", soThuTuMoi);
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "PTNKH_" + ngay + "_" + strSoThuTuMoi;
-        //        }
-        //        else
-        //        {
-        //            // dateEnd trước ngày hôm nay
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "PTNKH_" + ngay + "_0001";
-        //        }
-        //    }
-        //}
-        //private string TaoMaPhieuTraNoNCC()
-        //{
-        //    // số phiếu trả nợ khách hàng có dạng PTNKH_dd/MM/yy_xxxx
-        //    string maPhieuTraNoNCCEnd = db.PhieuTraNoNCCs.OrderByDescending(e => e.SoPhieuTraNo).FirstOrDefault().SoPhieuTraNo;
-        //    if (maPhieuTraNoNCCEnd == null)
-        //    {
-        //        // trường hợp chưa có công nợ khách hàng nào
-        //        string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //        return "PTNNCC_" + ngay + "_0001";
-        //    }
-        //    else
-        //    {
-        //        //nếu có khách hàng trả nợ rồi
-        //        // kiểm tra phải ngày hôm nay không
-        //        string strDateEnd = maPhieuTraNoNCCEnd.Substring(7, 10); // lấy ra ngày tháng năm có công nợ cuối cùng trong db
-        //        DateTime dateEnd = DateTime.Parse(strDateEnd);
-        //        if ((DateTime.Now - dateEnd).TotalDays == 0)
-        //        {
-        //            // dateEnd là ngày hôm nay
-        //            string strSoThuTuEnd = maPhieuTraNoNCCEnd.Substring(17);
-        //            int soThuTuEnd = int.Parse(strSoThuTuEnd);
-        //            int soThuTuMoi = soThuTuEnd + 1;
-        //            string strSoThuTuMoi = string.Format("{0:0000}", soThuTuMoi);
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "PTNNCC_" + ngay + "_" + strSoThuTuMoi;
-        //        }
-        //        else
-        //        {
-        //            // dateEnd trước ngày hôm nay
-        //            string ngay = DateTime.Now.ToString("dd/MM/yy");
-        //            return "PTNNCC_" + ngay + "_0001";
-        //        }
-        //    }
-        //}
-        //public List<eKhachHang> GetListKhachHangNo()
-        //{
-        //    List<eKhachHang> l = new List<eKhachHang>();
-        //    foreach (var cn in db.CongNoKHs)
-        //    {
-        //        string maKHNo = cn.HoaDonBanSi.MaKH;
-        //        KhachHang kh = db.KhachHangs.Where(e => e.MaKH == maKHNo).FirstOrDefault();
-        //        eKhachHang ekh = new eKhachHang();
-
-        //        ekh.MaKH = kh.MaKH;
-        //        ekh.DiaChi = kh.DiaChiKH;
-        //        ekh.SDTKH = kh.SDTKH;
-        //        ekh.GioiTinh = kh.GioiTinh;
-        //        ekh.TenKH = kh.TenKH;
-        //        ekh.MaSoThue = kh.MaSoThue;
-        //        ekh.TenCongTy = kh.TenCongTy;
-        //        ekh.DiaChiCongTy = kh.DiaChiCongTy;
-        //        ekh.SDTCongTy = kh.SDTCongTy;
-        //        ekh.EmailCongTy = kh.EmailCongTy;
-        //        ekh.SoTaiKhoanNH = kh.SoTaiKhoanNH;
-
-        //        l.Add(ekh);
-        //    }
-        //    return l;
-        //}
-        //public List<eNhaCungCap> GetListNCCNo()
-        //{
-        //    List<eNhaCungCap> l = new List<eNhaCungCap>();
-        //    foreach (var cnncc in db.CongNoNCCs)
-        //    {
-        //        string maNCC = cnncc.HoaDonNhaCungCap.MaNhaCungCap;
-
-        //        NhaCungCap ncc = db.NhaCungCaps.Where(e => e.MaNhaCungCap == maNCC).FirstOrDefault();
-        //        eNhaCungCap encc = new eNhaCungCap();
-
-        //        encc.MaNCC = ncc.MaNhaCungCap;
-        //        encc.TenNCC = ncc.TenNhaCungCap;
-        //        encc.DiaChi = ncc.DiaChi;
-        //        encc.Phone = ncc.Phone;
-        //        // 
-        //        l.Add(encc);
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoNCC> GetCongNoNCC(string pMaNCC)
-        //{
-        //    //NhaCungCap ncc = db.NhaCungCaps.Where(e => e.MaNhaCungCap == pMaNCC).FirstOrDefault();
-        //    //foreach (var hdncc in ncc.HoaDonNhaCungCaps)
-        //    //{
-        //    //    hdncc.CongNoNCCs;
-        //    //    string a;
-        //    //    a.Length
-        //    //}
-        //    return null;
-
-        //}
-        //public eCongNoKhachHang ThemMoiCongNoKhachHang(string pMaHoaDonBanSi, decimal pSoTienNo, DateTime pNgayDaoHan, string pGhiChu)
-        //{
-        //    CongNoKH congNoKhachHang = new CongNoKH();
-        //    congNoKhachHang.MaSoCNKH = TaoMaCongNoKhachHang();
-        //    congNoKhachHang.MaHoaDonBanSi = pMaHoaDonBanSi;
-        //    congNoKhachHang.SoTienNo = pSoTienNo;
-        //    congNoKhachHang.NgayDaoHan = pNgayDaoHan;
-        //    congNoKhachHang.GhiChu = pGhiChu;
-        //    db.CongNoKHs.InsertOnSubmit(congNoKhachHang);
-        //    db.SubmitChanges();
-        //    return new eCongNoKhachHang(congNoKhachHang.MaSoCNKH, congNoKhachHang.MaHoaDonBanSi, congNoKhachHang.SoTienNo, congNoKhachHang.NgayDaoHan, congNoKhachHang.GhiChu);
-        //}
-        //public eCongNoNCC ThemMoiCongNoNCC(string pMaHoaDonNCC, decimal pSoTienNo, DateTime pNgayDaoHan, string pGhiChu)
-        //{
-        //    CongNoNCC congNoNCC = new CongNoNCC();
-        //    congNoNCC.MaSoCongNoNCC = TaoMaCongNoNCC();
-        //    congNoNCC.MaHoaDonNCC = pMaHoaDonNCC;
-        //    congNoNCC.SoTienNo = pSoTienNo;
-        //    congNoNCC.NgayDaoHan = pNgayDaoHan;
-        //    congNoNCC.GhiChu = pGhiChu;
-        //    db.CongNoNCCs.InsertOnSubmit(congNoNCC);
-        //    db.SubmitChanges();
-        //    return new eCongNoNCC(congNoNCC.MaSoCongNoNCC, congNoNCC.MaHoaDonNCC, congNoNCC.SoTienNo, congNoNCC.NgayDaoHan, congNoNCC.GhiChu);
-        //}
-        //public List<string> GetListMaHoaDonBanSiNo()
-        //{
-        //    List<string> dsMaHoaDonBanSi = new List<string>();
-        //    foreach (CongNoKH cnKH in db.CongNoKHs)
-        //    {
-        //        decimal congNo = cnKH.SoTienNo;
-        //        foreach (ChiTietPhieuTraNoKhachHang item in cnKH.ChiTietPhieuTraNoKhachHangs)
-        //        {
-        //            congNo -= item.SoTien;
-        //        }
-        //        if (congNo > 0)
-        //        {
-        //            dsMaHoaDonBanSi.Add(cnKH.MaHoaDonBanSi);
-        //        }
-        //    }
-        //    return dsMaHoaDonBanSi;
-        //}
-        //public List<string> GetListMaHoaDonNCC()
-        //{
-        //    List<string> dsMaHoaDonNCC = new List<string>();
-        //    foreach (CongNoNCC cnNCC in db.CongNoNCCs)
-        //    {
-        //        decimal congNo = cnNCC.SoTienNo;
-        //        foreach (ChiTietPhieuTraNoNCC item in cnNCC.ChiTietPhieuTraNoNCCs)
-        //        {
-        //            congNo -= item.SoTien;
-        //        }
-        //        if (congNo > 0)
-        //        {
-        //            dsMaHoaDonNCC.Add(cnNCC.MaHoaDonNCC);
-        //        }
-        //    }
-        //    return dsMaHoaDonNCC;
-        //}
-        //public ePhieuTraNoKhachHang KhachHangTraNo(ePhieuTraNoKhachHang pPhieuTraNoKhachHang)
-        //{
-        //    try
-        //    {
-        //        using (TransactionScope ts = new TransactionScope())
-        //        {
-        //            PhieuTraNoKH phieuTraNoKH = new PhieuTraNoKH();
-        //            phieuTraNoKH.SoPhieuTraNo = pPhieuTraNoKhachHang.SoPhieuTraNo;
-        //            phieuTraNoKH.MaKH = pPhieuTraNoKhachHang.MaKH;
-        //            phieuTraNoKH.NgayTra = pPhieuTraNoKhachHang.NgayTra;
-        //            phieuTraNoKH.MaNhanVien = pPhieuTraNoKhachHang.MaNhanVien;
-        //            phieuTraNoKH.NoiDung = pPhieuTraNoKhachHang.NoiDung;
-        //            db.PhieuTraNoKHs.InsertOnSubmit(phieuTraNoKH);
-
-        //            db.SubmitChanges();
-        //            foreach (eChiTietPhieuTraNoKhachHang eChiTiet in pPhieuTraNoKhachHang.DSChiTietPhieuTraNo)
-        //            {
-        //                ChiTietPhieuTraNoKhachHang chiTietPhieuTraNoKH = new ChiTietPhieuTraNoKhachHang();
-        //                chiTietPhieuTraNoKH.SoPhieuTraNo = eChiTiet.SoPhieuTraNo;
-        //                chiTietPhieuTraNoKH.MaSoCNKH = eChiTiet.MaSoCNKH;
-        //                chiTietPhieuTraNoKH.SoTien = eChiTiet.SoTien;
-        //                chiTietPhieuTraNoKH.GhiChu = eChiTiet.GhiChu;
-        //                db.ChiTietPhieuTraNoKhachHangs.InsertOnSubmit(chiTietPhieuTraNoKH);
-        //                db.SubmitChanges();
-        //            }
-        //            ts.Complete();
-        //            return pPhieuTraNoKhachHang;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-        //public ePhieuTraNoNCC TraNoNCC(ePhieuTraNoNCC pPhieuTraNoNCC)
-        //{
-        //    try
-        //    {
-        //        using (TransactionScope ts = new TransactionScope())
-        //        {
-        //            PhieuTraNoNCC phieuTraNoNCC = new PhieuTraNoNCC();
-        //            phieuTraNoNCC.SoPhieuTraNo = pPhieuTraNoNCC.SoPhieuTraNo;
-        //            phieuTraNoNCC.MaNhaCungCap = pPhieuTraNoNCC.MaNhaCungCap;
-        //            phieuTraNoNCC.NgayTra = pPhieuTraNoNCC.NgayTra;
-        //            phieuTraNoNCC.MaNhanVien = pPhieuTraNoNCC.MaNhanVien;
-        //            phieuTraNoNCC.NoiDung = pPhieuTraNoNCC.NoiDung;
-        //            db.PhieuTraNoNCCs.InsertOnSubmit(phieuTraNoNCC);
-
-        //            db.SubmitChanges();
-        //            foreach (eChiTietPhieuTraNoNCC eChiTiet in pPhieuTraNoNCC.DSChiTietPhieuTraNo)
-        //            {
-        //                ChiTietPhieuTraNoNCC chiTietPhieuTraNoNCC = new ChiTietPhieuTraNoNCC();
-        //                chiTietPhieuTraNoNCC.SoPhieuTraNo = eChiTiet.SoPhieuTraNo;
-        //                chiTietPhieuTraNoNCC.MaSoCongNoNCC = eChiTiet.MaSoCongNoNCC;
-        //                chiTietPhieuTraNoNCC.SoTien = eChiTiet.SoTien;
-        //                chiTietPhieuTraNoNCC.GhiChu = eChiTiet.GhiChu;
-        //                db.ChiTietPhieuTraNoNCCs.InsertOnSubmit(chiTietPhieuTraNoNCC);
-        //                db.SubmitChanges();
-        //            }
-        //            ts.Complete();
-        //            return pPhieuTraNoNCC;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-        //public List<eChiTietPhieuTraNoKhachHang> GetDSNoKhachHangDaTra()
-        //{
-        //    List<eChiTietPhieuTraNoKhachHang> l = new List<eChiTietPhieuTraNoKhachHang>();
-        //    foreach (ChiTietPhieuTraNoKhachHang chiTietPhieuTraNoKhachHang in db.ChiTietPhieuTraNoKhachHangs)
-        //    {
-        //        eChiTietPhieuTraNoKhachHang eChiTiet = new eChiTietPhieuTraNoKhachHang();
-        //        eChiTiet.SoPhieuTraNo = chiTietPhieuTraNoKhachHang.SoPhieuTraNo;
-        //        eChiTiet.MaSoCNKH = chiTietPhieuTraNoKhachHang.MaSoCNKH;
-        //        eChiTiet.SoTien = chiTietPhieuTraNoKhachHang.SoTien;
-        //        eChiTiet.GhiChu = chiTietPhieuTraNoKhachHang.GhiChu;
-        //        l.Add(eChiTiet);
-        //    }
-        //    return l;
-        //}
-        //public List<eChiTietPhieuTraNoNCC> GetDSNoNCCDaTra()
-        //{
-        //    List<eChiTietPhieuTraNoNCC> l = new List<eChiTietPhieuTraNoNCC>();
-        //    foreach (ChiTietPhieuTraNoNCC chiTietPhieuTranoNCC in db.ChiTietPhieuTraNoNCCs)
-        //    {
-        //        eChiTietPhieuTraNoNCC eChiTiet = new eChiTietPhieuTraNoNCC();
-        //        eChiTiet.SoPhieuTraNo = chiTietPhieuTranoNCC.SoPhieuTraNo;
-        //        eChiTiet.MaSoCongNoNCC = chiTietPhieuTranoNCC.MaSoCongNoNCC;
-        //        eChiTiet.SoTien = chiTietPhieuTranoNCC.SoTien;
-        //        eChiTiet.GhiChu = chiTietPhieuTranoNCC.GhiChu;
-        //        l.Add(eChiTiet);
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoKhachHang> GetListCongNoKH(string maKH)
-        //{
-        //    List<eCongNoKhachHang> l = new List<eCongNoKhachHang>();
-        //    foreach (CongNoKH congNo in db.CongNoKHs.Where(e => e.HoaDonBanSi.MaKH == maKH))
-        //    {
-        //        l.Add(new eCongNoKhachHang(congNo.MaSoCNKH, congNo.MaHoaDonBanSi, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoKhachHang> GetListCongNoKH()
-        //{
-        //    List<eCongNoKhachHang> l = new List<eCongNoKhachHang>();
-        //    foreach (CongNoKH congNo in db.CongNoKHs)
-        //    {
-        //        l.Add(new eCongNoKhachHang(congNo.MaSoCNKH, congNo.MaHoaDonBanSi, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoNCC> GetListCongNoNCC(string maNCC)
-        //{
-        //    List<eCongNoNCC> l = new List<eCongNoNCC>();
-        //    foreach (CongNoNCC congNo in db.CongNoNCCs.Where(e => e.HoaDonNhaCungCap.MaNhaCungCap == maNCC))
-        //    {
-        //        l.Add(new eCongNoNCC(congNo.MaSoCongNoNCC, congNo.MaHoaDonNCC, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoNCC> GetListCongNoNCC()
-        //{
-        //    List<eCongNoNCC> l = new List<eCongNoNCC>();
-        //    foreach (CongNoNCC congNo in db.CongNoNCCs)
-        //    {
-        //        l.Add(new eCongNoNCC(congNo.MaSoCongNoNCC, congNo.MaHoaDonNCC, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoKhachHang> GetListNoKHQuaHan()
-        //{
-        //    List<eCongNoKhachHang> l = new List<eCongNoKhachHang>();
-        //    foreach (CongNoKH congNo in db.CongNoKHs.Where(e => e.NgayDaoHan.CompareTo(DateTime.Now) == 1))
-        //    {
-        //        l.Add(new eCongNoKhachHang(congNo.MaSoCNKH, congNo.MaHoaDonBanSi, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoNCC> GetListNoNCCQuaHan()
-        //{
-        //    List<eCongNoNCC> l = new List<eCongNoNCC>();
-        //    foreach (CongNoNCC congNo in db.CongNoNCCs.Where(e => e.NgayDaoHan.CompareTo(DateTime.Now) == 1))
-        //    {
-        //        l.Add(new eCongNoNCC(congNo.MaSoCongNoNCC, congNo.MaHoaDonNCC, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoKhachHang> GetListNoKHToiHan()
-        //{
-        //    List<eCongNoKhachHang> l = new List<eCongNoKhachHang>();
-        //    foreach (CongNoKH congNo in db.CongNoKHs.Where(e => e.NgayDaoHan.CompareTo(DateTime.Now) == 0))
-        //    {
-        //        l.Add(new eCongNoKhachHang(congNo.MaSoCNKH, congNo.MaHoaDonBanSi, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
-        //public List<eCongNoNCC> GetListNoNCCToiHan()
-        //{
-        //    List<eCongNoNCC> l = new List<eCongNoNCC>();
-        //    foreach (CongNoNCC congNo in db.CongNoNCCs.Where(e => e.NgayDaoHan.CompareTo(DateTime.Now) == 0))
-        //    {
-        //        l.Add(new eCongNoNCC(congNo.MaSoCongNoNCC, congNo.MaHoaDonNCC, congNo.SoTienNo, congNo.NgayDaoHan, congNo.GhiChu));
-        //    }
-        //    return l;
-        //}
+        
 
     }
 }
