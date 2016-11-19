@@ -61,6 +61,7 @@
             this.btnDinhGia.TabIndex = 0;
             this.btnDinhGia.Text = "Định Giá Sản Phẩm";
             this.btnDinhGia.UseVisualStyleBackColor = true;
+            this.btnDinhGia.Click += new System.EventHandler(this.btnDinhGia_Click);
             // 
             // btnInBarcode
             // 

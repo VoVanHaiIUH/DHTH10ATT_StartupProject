@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\DinhGia\DinhGia_DAL.cs" />
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_DAL.cs" />
     <Compile Include="CongNo\CongNo_ALL_DAL.cs" />
     <Compile Include="Kho\ChiTietKho_dal.cs" />
@@ -107,7 +108,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="BanHang\NhanHangTuKho\" />
   </ItemGroup>

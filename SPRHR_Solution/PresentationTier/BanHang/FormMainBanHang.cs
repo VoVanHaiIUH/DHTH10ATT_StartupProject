@@ -21,7 +21,14 @@ namespace PresentationTier.BanHang
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
             frmLapPhieu _frmLapPhieu = new frmLapPhieu();
-            _frmLapPhieu.ShowDialog();
+            Hide();
+            _frmLapPhieu.Show();
+        }
+
+        private void btnDinhGia_Click(object sender, EventArgs e)
+        {
+            PresentationTier.BanHang.frmDinhGia _frmDinhGia = new frmDinhGia();
+            _frmDinhGia.ShowDialog();
         }
     }
 }

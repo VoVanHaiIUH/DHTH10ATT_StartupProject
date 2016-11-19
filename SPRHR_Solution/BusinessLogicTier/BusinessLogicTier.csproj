@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanHang\DinhGia\DinhGia_BUS.cs" />
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_BUS.cs" />
     <Compile Include="BanHang\NhanHangTuKho\NhanHangTuKho_BUS.cs" />
     <Compile Include="CongNo\CongNo_ALL_BUS.cs" />
@@ -59,7 +60,6 @@
     <Compile Include="TichHop\BLL_User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BanHang\DinhGia\" />
     <Folder Include="BanHang\InDanBarCode\" />
     <Folder Include="Kho\BaoCaoTinhTrangKho\" />
     <Folder Include="Kho\LapPhieuNhapKho\" />

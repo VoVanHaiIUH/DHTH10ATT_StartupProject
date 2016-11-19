@@ -18,5 +18,15 @@ namespace BusinessLogicTier.BanHang.DinhGia
         {
             return db.LoadBangGia();
         }
+        //Hiển thị danh sách các sản phẩm chưa được định giá
+        public List<object> LoadSanPham()
+        {
+            return db.LoadListSP().ToList();
+        }
+        //Lấy thông tin về 1 Sản Phẩm 
+        public object GetSP(string masp)
+        {
+            return db.GetSP(masp);
+        }
     }
 }
