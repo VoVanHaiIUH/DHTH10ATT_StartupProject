@@ -78,12 +78,6 @@
     <Compile Include="CongNo\FormMainCongNo.Designer.cs">
       <DependentUpon>FormMainCongNo.cs</DependentUpon>
     </Compile>
-    <Compile Include="CongNo\frmTraNoKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CongNo\frmTraNoNCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Kho\FormMainKho.cs">
       <SubType>Form</SubType>
     </Compile>
