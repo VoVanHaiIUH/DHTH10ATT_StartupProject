@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationTier.BanHang
+namespace WindowsFormsApplication1
 {
     public partial class frmDinhGia : Form
     {
         BusinessLogicTier.BanHang.DinhGia.DinhGia_BUS db;
-
+ 
         public frmDinhGia()
         {
             InitializeComponent();
@@ -160,6 +160,20 @@ namespace PresentationTier.BanHang
                     else
                         txtNgayHetHan.Text = item.GetValue(temp).ToString();
                 }
+            }
+        }
+
+        private void btnDinhGia_Click(object sender, EventArgs e)
+        {
+            if(!db.DinhGiaSP(dgvSanPham.CurrentRow.Cells[0].Value.ToString()))
+            {
+                MessageBox.Show("Đã có lỗi xảy ra", "Lỗi giao dịch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Định giá sản phẩm thành công", "Giao dịch hoàn tất", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cboSelect.SelectedIndex = 1;
+                LoadGiaBan();
             }
         }
    

@@ -1,4 +1,4 @@
-﻿namespace PresentationTier.BanHang
+﻿namespace WindowsFormsApplication1
 {
     partial class frmDinhGia
     {
@@ -33,6 +33,8 @@
             this.grbSanPham = new System.Windows.Forms.GroupBox();
             this.txtNgayHetHan = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtLoaiSP = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtMauSac = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTrongLuong = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLoaiSP = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnDinhGia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.grbSanPham.SuspendLayout();
@@ -121,6 +121,23 @@
             this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Ngày hết hạn";
+            // 
+            // txtLoaiSP
+            // 
+            this.txtLoaiSP.Location = new System.Drawing.Point(349, 23);
+            this.txtLoaiSP.Name = "txtLoaiSP";
+            this.txtLoaiSP.ReadOnly = true;
+            this.txtLoaiSP.Size = new System.Drawing.Size(174, 20);
+            this.txtLoaiSP.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(272, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Loại sản phẩm";
             // 
             // txtMauSac
             // 
@@ -224,23 +241,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã sản phẩm";
             // 
-            // txtLoaiSP
-            // 
-            this.txtLoaiSP.Location = new System.Drawing.Point(349, 23);
-            this.txtLoaiSP.Name = "txtLoaiSP";
-            this.txtLoaiSP.ReadOnly = true;
-            this.txtLoaiSP.Size = new System.Drawing.Size(174, 20);
-            this.txtLoaiSP.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(272, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Loại sản phẩm";
-            // 
             // btnDinhGia
             // 
             this.btnDinhGia.Location = new System.Drawing.Point(403, 408);
@@ -249,6 +249,7 @@
             this.btnDinhGia.TabIndex = 3;
             this.btnDinhGia.Text = "Định Giá";
             this.btnDinhGia.UseVisualStyleBackColor = true;
+            this.btnDinhGia.Click += new System.EventHandler(this.btnDinhGia_Click);
             // 
             // frmDinhGia
             // 
