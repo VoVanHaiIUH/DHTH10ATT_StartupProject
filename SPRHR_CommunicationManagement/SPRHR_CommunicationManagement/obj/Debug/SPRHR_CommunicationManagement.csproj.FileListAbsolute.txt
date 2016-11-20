@@ -1,0 +1,14 @@
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\bin\Debug\SPRHR_CommunicationManagement.exe.config
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\bin\Debug\SPRHR_CommunicationManagement.exe
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\bin\Debug\SPRHR_CommunicationManagement.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\bin\Debug\Apache.NMS.ActiveMQ.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\bin\Debug\Apache.NMS.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.FormMain_Communication.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.frmSendPhieuDNXK.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.Properties.Resources.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.csproj.GenerateResource.Cache
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.exe
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.frmSendPhieuDNNK.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.frmSendThongBaoChung.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CommunicationManagement\obj\Debug\SPRHR_CommunicationManagement.csprojResolveAssemblyReference.cache

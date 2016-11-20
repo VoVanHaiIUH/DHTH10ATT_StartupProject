@@ -1,0 +1,5 @@
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\PhieuDeNghiEntity\bin\Debug\Entities.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\PhieuDeNghiEntity\bin\Debug\Entities.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\PhieuDeNghiEntity\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\PhieuDeNghiEntity\obj\Debug\Entities.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\PhieuDeNghiEntity\obj\Debug\Entities.pdb

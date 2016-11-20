@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QuanLyDataMessage">
+  <DataContextMoniker Name="/QuanLyDataMessageDataContext" />
+  <nestedChildShapes>
+    <classShape Id="df36739b-5369-4c37-8032-edceeb7a4e55" absoluteBounds="1.5, 2.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QuanLyDataMessageDataContext/PhieuDNXK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="026bc52c-cc50-4ce4-b01e-d236abf8fd5b" absoluteBounds="1.5150000000000001, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad8e9a4a-d396-4e83-9898-b20914ed7bc6" absoluteBounds="2, 1.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/QuanLyDataMessageDataContext/PhieuDNNK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab240baf-bdfb-4359-a0ea-5332e3a03fc4" absoluteBounds="2.015, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,6 @@
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\DAL\bin\Debug\DAL.dll.config
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\DAL\bin\Debug\DAL.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\DAL\bin\Debug\DAL.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\DAL\obj\Debug\DAL.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\DAL\obj\Debug\DAL.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

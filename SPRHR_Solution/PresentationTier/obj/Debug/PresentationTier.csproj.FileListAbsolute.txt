@@ -227,3 +227,4 @@ E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoa
 E:\BT\PTUD\SPRHR_Solution\PresentationTier\obj\Debug\PresentationTier.PhongKeHoach.FormThemLoaiSanPham.resources
 C:\Users\KuAnh\Desktop\GitALL\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
 C:\Users\hosa\Downloads\New folder (2)\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config
+C:\Users\Dat Nguyen\Desktop\Temp\New folder (2)\New folder\SPRHR_Solution\PresentationTier\bin\Debug\PresentationTier.exe.config

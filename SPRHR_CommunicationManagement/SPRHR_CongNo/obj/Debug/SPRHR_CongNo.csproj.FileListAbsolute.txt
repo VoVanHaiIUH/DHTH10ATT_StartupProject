@@ -1,0 +1,10 @@
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\bin\Debug\SPRHR_CongNo.exe.config
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\bin\Debug\SPRHR_CongNo.exe
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\bin\Debug\SPRHR_CongNo.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\bin\Debug\Apache.NMS.ActiveMQ.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\bin\Debug\Apache.NMS.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\obj\Debug\SPRHR_CongNo.Form1.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\obj\Debug\SPRHR_CongNo.Properties.Resources.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\obj\Debug\SPRHR_CongNo.csproj.GenerateResource.Cache
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\obj\Debug\SPRHR_CongNo.exe
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_CongNo\obj\Debug\SPRHR_CongNo.pdb

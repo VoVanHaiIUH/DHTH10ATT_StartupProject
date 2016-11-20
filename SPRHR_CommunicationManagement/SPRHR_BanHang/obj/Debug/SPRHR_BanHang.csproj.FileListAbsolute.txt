@@ -1,0 +1,10 @@
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\bin\Debug\SPRHR_BanHang.exe.config
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\bin\Debug\SPRHR_BanHang.exe
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\bin\Debug\SPRHR_BanHang.pdb
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\bin\Debug\Apache.NMS.ActiveMQ.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\bin\Debug\Apache.NMS.dll
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\obj\Debug\SPRHR_BanHang.Form1.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\obj\Debug\SPRHR_BanHang.Properties.Resources.resources
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\obj\Debug\SPRHR_BanHang.csproj.GenerateResource.Cache
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\obj\Debug\SPRHR_BanHang.exe
+C:\Users\Dat Nguyen\Desktop\Temp\New folder\SPRHR_CommunicationManagement\SPRHR_BanHang\obj\Debug\SPRHR_BanHang.pdb
