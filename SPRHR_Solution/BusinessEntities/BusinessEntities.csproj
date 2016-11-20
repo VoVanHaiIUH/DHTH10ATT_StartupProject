@@ -42,6 +42,10 @@
     <Compile Include="BanHang\eChiTietHoaDonBanHang.cs" />
     <Compile Include="BanHang\eGiaBan.cs" />
     <Compile Include="BanHang\eHoaDonBanHang.cs" />
+    <Compile Include="CongNo\eChiTietPhieuTraNoKhachHang.cs" />
+    <Compile Include="CongNo\eChiTietPhieuTraNoNCC.cs" />
+    <Compile Include="CongNo\eCongNoKhachHang.cs" />
+    <Compile Include="CongNo\eCongNoNCC.cs" />
     <Compile Include="Kho\eChiTietKho.cs" />
     <Compile Include="Kho\ePhieuNhapKho.cs" />
     <Compile Include="Kho\ePhieuXuatKho.cs" />
@@ -79,9 +83,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TichHop\eUser.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CongNo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

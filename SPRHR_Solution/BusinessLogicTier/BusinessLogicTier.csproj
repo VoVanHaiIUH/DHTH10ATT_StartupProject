@@ -43,6 +43,7 @@
     <Compile Include="BanHang\DinhGia\DinhGia_BUS.cs" />
     <Compile Include="BanHang\LapPhieuBanHang\LapPhieuBanHang_BUS.cs" />
     <Compile Include="BanHang\NhanHangTuKho\NhanHangTuKho_BUS.cs" />
+    <Compile Include="CongNo\CongNo_ALL_BUS.cs" />
     <Compile Include="Kho\ChiTietKho_BUS.cs" />
     <Compile Include="Kho\PhieuNhapKho_BUS.cs" />
     <Compile Include="Kho\PhieuXuatKho_BUS.cs" />
@@ -60,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BanHang\InDanBarCode\" />
-    <Folder Include="CongNo\" />
     <Folder Include="Kho\BaoCaoTinhTrangKho\" />
     <Folder Include="Kho\LapPhieuNhapKho\" />
     <Folder Include="Kho\LapPhieuXuatKho\" />
