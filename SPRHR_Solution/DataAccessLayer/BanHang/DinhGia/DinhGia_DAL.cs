@@ -18,21 +18,21 @@ namespace DataAccessLayer.BanHang.DinhGia
 
         public List<BusinessEntities.BanHang.eGiaBan> LoadBangGia()
         {
-            var linq = from gb in db.BangGiaBans
+            var vLinq = from gb in db.BangGiaBans
                        select gb;
-            List<BusinessEntities.BanHang.eGiaBan> list = new List<BusinessEntities.BanHang.eGiaBan>();
-            foreach (var item in linq.ToList())
+            List<BusinessEntities.BanHang.eGiaBan> lList = new List<BusinessEntities.BanHang.eGiaBan>();
+            foreach (var item in vLinq.ToList())
             {
-                BusinessEntities.BanHang.eGiaBan temp = new BusinessEntities.BanHang.eGiaBan(item.maSP, item.giaBan, item.ngayApDung);
-                list.Add(temp);
+                BusinessEntities.BanHang.eGiaBan egbTemp = new BusinessEntities.BanHang.eGiaBan(item.maSP, item.giaBan, item.ngayApDung);
+                lList.Add(egbTemp);
             }
-            return list;
+            return lList;
         }
         public IEnumerable<object> LoadListSP()
         {
             try
             {
-                var query = (from sp in db.SanPhams
+                var vQuery = (from sp in db.SanPhams
                              where !db.BangGiaBans.Any(e => e.maSP == sp.MaSP)
                              select new
                              {
@@ -40,19 +40,19 @@ namespace DataAccessLayer.BanHang.DinhGia
                                  sp.LoaiSanPham.TenLoaiSanPham,
                                  sp.TenSp,
                              });
-                return query;
+                return vQuery;
             }
             catch (Exception)
             {
                 return null;
             }
         }
-        public object GetSP(string masp)
+        public object GetSP(string pMaSp)
         {
             try
             {
-                var linq = (from sp in db.SanPhams
-                            where sp.MaSP == masp
+                var vLinq = (from sp in db.SanPhams
+                            where sp.MaSP == pMaSp
                             select new
                             {
                                 sp.MaSP,
@@ -64,7 +64,7 @@ namespace DataAccessLayer.BanHang.DinhGia
                                 sp.NgayHetHan,
                                 sp.NgaySanXuat,
                             }).First();
-                return linq;
+                return vLinq;
             }
             catch (Exception)
             {
@@ -74,19 +74,19 @@ namespace DataAccessLayer.BanHang.DinhGia
         /// <summary>
         /// Cập nhật số tiền nhập từ nhà cung cấp của sản phẩm gần nhất
         /// </summary>
-        /// <param name="masp">Mã sản phẩm cần cập nhật</param>
+        /// <param name="pMaSp">Mã sản phẩm cần cập nhật</param>
         /// <returns>Số tiền mua từ nhà cung cấp trong hóa đơn gần nhất</returns>
-        public decimal GetHDNCC(string masp)
+        public decimal GetHDNCC(string pMaSp)
         {
             try
             {
-                var linq = (from gm in db.ChiTietHoaDonNhaCungCaps
-                            where gm.MaSPNCC == masp
+                var vLinq = (from gm in db.ChiTietHoaDonNhaCungCaps
+                            where gm.MaSPNCC == pMaSp
                             select new
                             {
                                 gm.GiaMuaBenNhaCungCap,
                             });
-                return linq.ToList().Last().GiaMuaBenNhaCungCap;
+                return vLinq.ToList().Last().GiaMuaBenNhaCungCap;
             }
             catch (Exception)
             {
@@ -96,23 +96,24 @@ namespace DataAccessLayer.BanHang.DinhGia
         /// <summary>
         /// Cập nhật giá mới nhất cho sản phẩm
         /// </summary>
-        /// <param name="masp">Mã sản phẩm cần định giá</param>
-        /// <param name="giamoi">Giá tiền cập nhật</param>
+        /// <param name="pMaSp">Mã sản phẩm cần định giá</param>
+        /// <param name="pGiaMoi">Giá tiền cập nhật</param>
         /// <returns></returns>
-        public bool UpdateBangGia(string masp, decimal giamoi)
+        public bool UpdateBangGia(string pMaSp, decimal pGiaMoi)
         {
             try
             {
                 db.Connection.Open();
-                System.Data.Common.DbTransaction transaction = db.Connection.BeginTransaction();
-                db.Transaction = transaction;
-                var linq = (from gb in db.BangGiaBans
-                            where gb.maSP == masp
+                System.Data.Common.DbTransaction tTransaction = db.Connection.BeginTransaction();
+                db.Transaction = tTransaction;
+                var vLinq = (from gb in db.BangGiaBans
+                            where gb.maSP == pMaSp
                             select gb).First();
-                linq.giaBan = giamoi;
-                linq.ngayApDung = DateTime.Now;
+                vLinq.giaBan = pGiaMoi;
+                vLinq.ngayApDung = DateTime.Now;
                 db.SubmitChanges();
                 db.Transaction.Commit();
+                db.Connection.Close();
                 return true;
             }
             catch (Exception)

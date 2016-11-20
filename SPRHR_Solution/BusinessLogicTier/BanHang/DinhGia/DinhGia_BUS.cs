@@ -32,26 +32,26 @@ namespace BusinessLogicTier.BanHang.DinhGia
         /// <summary>
         /// Lấy thông tin về 1 Sản Phẩm 
         /// </summary>
-        /// <param name="masp">Mã sản phẩm cần tìm</param>
+        /// <param name="pMaSp">Mã sản phẩm cần tìm</param>
         /// <returns>1 Sản phẩm</returns>
-        public object GetSP(string masp)
+        public object GetSP(string pMaSp)
         {
-            return db.GetSP(masp);
+            return db.GetSP(pMaSp);
         }
         /// <summary>
         /// Định giá sản phẩm
         /// </summary>
-        /// <param name="masp"></param>
-        public bool DinhGiaSP(string masp)
+        /// <param name="pMaSp"></param>
+        public bool DinhGiaSP(string pMaSp)
         {
-            decimal giamua = db.GetHDNCC(masp);
-            if (giamua == -1)
+            decimal dcmGiaMua = db.GetHDNCC(pMaSp);
+            if (dcmGiaMua == -1)
             {
                 System.Windows.Forms.MessageBox.Show("Không tìm thấy Hóa Đơn Nhà cung cấp nào tương ứng với sản phẩm", "Lỗi Database", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
                 return false;
             }
-            decimal dinhgia = (giamua * 10 / 100) + giamua;
-            return db.UpdateBangGia(masp, dinhgia);
+            decimal dcmDinhGia = (dcmGiaMua * 10 / 100) + dcmGiaMua;
+            return db.UpdateBangGia(pMaSp, dcmDinhGia);
         }
     }
 }

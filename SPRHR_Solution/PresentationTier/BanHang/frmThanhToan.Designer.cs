@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace PresentationTier.BanHang
 {
     partial class frmThanhToan
     {
@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPThuc = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTienDu = new System.Windows.Forms.TextBox();
+            this.txtSoTienNhan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnHoanTat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,13 +49,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng tiền";
             // 
-            // textBox1
+            // txtTongTien
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtTongTien.Location = new System.Drawing.Point(148, 74);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(181, 20);
+            this.txtTongTien.TabIndex = 1;
             // 
             // label2
             // 
@@ -64,13 +66,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Phương thức Thanh Toán";
             // 
-            // comboBox1
+            // cboPThuc
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(148, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cboPThuc.FormattingEnabled = true;
+            this.cboPThuc.Location = new System.Drawing.Point(148, 18);
+            this.cboPThuc.Name = "cboPThuc";
+            this.cboPThuc.Size = new System.Drawing.Size(181, 21);
+            this.cboPThuc.TabIndex = 3;
             // 
             // label4
             // 
@@ -81,20 +83,20 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Tiền dư";
             // 
-            // textBox3
+            // txtTienDu
             // 
-            this.textBox3.Location = new System.Drawing.Point(178, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(151, 20);
-            this.textBox3.TabIndex = 1;
+            this.txtTienDu.Location = new System.Drawing.Point(178, 103);
+            this.txtTienDu.Name = "txtTienDu";
+            this.txtTienDu.ReadOnly = true;
+            this.txtTienDu.Size = new System.Drawing.Size(151, 20);
+            this.txtTienDu.TabIndex = 1;
             // 
-            // textBox2
+            // txtSoTienNhan
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtSoTienNhan.Location = new System.Drawing.Point(148, 46);
+            this.txtSoTienNhan.Name = "txtSoTienNhan";
+            this.txtSoTienNhan.Size = new System.Drawing.Size(181, 20);
+            this.txtSoTienNhan.TabIndex = 5;
             // 
             // label3
             // 
@@ -105,22 +107,45 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Số tiền đã nhận";
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Location = new System.Drawing.Point(15, 129);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(157, 23);
+            this.btnThanhToan.TabIndex = 6;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
+            // btnHoanTat
+            // 
+            this.btnHoanTat.Location = new System.Drawing.Point(185, 129);
+            this.btnHoanTat.Name = "btnHoanTat";
+            this.btnHoanTat.Size = new System.Drawing.Size(157, 23);
+            this.btnHoanTat.TabIndex = 6;
+            this.btnHoanTat.Text = "Hoàn tất";
+            this.btnHoanTat.UseVisualStyleBackColor = true;
+            this.btnHoanTat.Click += new System.EventHandler(this.btnHoanTat_Click);
+            // 
             // frmThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 135);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(354, 160);
+            this.Controls.Add(this.btnHoanTat);
+            this.Controls.Add(this.btnThanhToan);
+            this.Controls.Add(this.txtSoTienNhan);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboPThuc);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTienDu);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label1);
             this.Name = "frmThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh Toán";
+            this.Load += new System.EventHandler(this.frmThanhToan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,12 +154,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPThuc;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTienDu;
+        private System.Windows.Forms.TextBox txtSoTienNhan;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.Button btnHoanTat;
     }
 }

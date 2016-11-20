@@ -64,20 +64,19 @@ namespace BusinessEntities.BanHang
                 if (value > this._gia || value < 0) throw new Exception("Giá khuyến mãi không được nhỏ hơn 0 và phải nhỏ hơn giá sản phẩm");
                 _giaKhuyenMai = value; }
         }
-        public eChiTietHoaDonBanHang(string masp,short solg,decimal gia)
+        public eChiTietHoaDonBanHang(string pMaSp,short pSoLg,decimal pGia)
         {
-            this._maSP = masp;
-            this._soLuong = solg;
-            this._gia = gia;
-
+            this._maSP = pMaSp;
+            this._soLuong = pSoLg;
+            this._gia = pGia;
         }
 
-        public eChiTietHoaDonBanHang(string masp, short solg, decimal gia,decimal km)
+        public eChiTietHoaDonBanHang(string pMaSp, short pSoLg, decimal pGia,decimal pKm)
         {
-            this._maSP = masp;
-            this._soLuong = solg;
-            this._gia = gia;
-            this._giaKhuyenMai = km;
+            this._maSP = pMaSp;
+            this._soLuong = pSoLg;
+            this._gia = pGia;
+            this._giaKhuyenMai = pKm;
         }
         // override object.Equals
         public override bool Equals(object obj)

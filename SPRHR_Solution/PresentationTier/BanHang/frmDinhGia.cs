@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace PresentationTier.BanHang
 {
     public partial class frmDinhGia : Form
     {
@@ -23,10 +23,10 @@ namespace WindowsFormsApplication1
 
         private void frmDinhGia_Load(object sender, EventArgs e)
         {
-            List<string> select = new List<string>();
-            select.Add("Sản phẩm chưa được định giá");
-            select.Add("Sản phẩm đã được định giá");
-            cboSelect.DataSource = select;
+            List<string> lSelect = new List<string>();
+            lSelect.Add("Sản phẩm chưa được định giá");
+            lSelect.Add("Sản phẩm đã được định giá");
+            cboSelect.DataSource = lSelect;
         }
 
         private void LoadGiaBan()
@@ -59,106 +59,106 @@ namespace WindowsFormsApplication1
 
         private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            object temp = db.GetSP(dgvSanPham.CurrentRow.Cells[0].Value.ToString());
-            if (temp == null)
+            object oTemp = db.GetSP(dgvSanPham.CurrentRow.Cells[0].Value.ToString());
+            if (oTemp == null)
             {
                 MessageBox.Show("Sản Phẩm này đã bị xóa khỏi dữ liệu. Vui lòng tải lại dữ liệu", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            foreach (PropertyInfo item in temp.GetType().GetProperties())
+            foreach (PropertyInfo item in oTemp.GetType().GetProperties())
             {
                  if(item.Name=="MaSP")
                  {
-                     txtMaSP.Text = item.GetValue(temp).ToString();
+                     txtMaSP.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "TenSp")
                  {
-                     txtTenSP.Text = item.GetValue(temp).ToString();
+                     txtTenSP.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "TenLoaiSanPham")
                  {
-                     txtLoaiSP.Text = item.GetValue(temp).ToString();
+                     txtLoaiSP.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "MauSac")
                  {
-                     if (item.GetValue(temp) == null) txtMauSac.Text = "Không có dữ liệu";
+                     if (item.GetValue(oTemp) == null) txtMauSac.Text = "Không có dữ liệu";
                      else
-                         txtMauSac.Text = item.GetValue(temp).ToString();
+                         txtMauSac.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "TrongLuong")
                  {
-                     if (item.GetValue(temp) == null) txtTrongLuong.Text = "Không có dữ liệu";
+                     if (item.GetValue(oTemp) == null) txtTrongLuong.Text = "Không có dữ liệu";
                      else
-                     txtTrongLuong.Text = item.GetValue(temp).ToString();
+                     txtTrongLuong.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "DonViTinh")
                  {
-                     if (item.GetValue(temp) == null) txtDonViTinh.Text = "Không có dữ liệu";
+                     if (item.GetValue(oTemp) == null) txtDonViTinh.Text = "Không có dữ liệu";
                      else
-                         txtDonViTinh.Text = item.GetValue(temp).ToString();
+                         txtDonViTinh.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "NgaySanXuat")
                  {
-                     txtNgaySX.Text = item.GetValue(temp).ToString();
+                     txtNgaySX.Text = item.GetValue(oTemp).ToString();
                  }
                  if (item.Name == "NgayHetHan")
                  {
-                     if (item.GetValue(temp) == null) txtNgayHetHan.Text = "Không có dữ liệu";
+                     if (item.GetValue(oTemp) == null) txtNgayHetHan.Text = "Không có dữ liệu";
                      else
-                         txtNgayHetHan.Text = item.GetValue(temp).ToString();
+                         txtNgayHetHan.Text = item.GetValue(oTemp).ToString();
                  }
             }
         }
 
         private void dgvSanPham_SelectionChanged(object sender, EventArgs e)
         {
-            object temp = db.GetSP(dgvSanPham.CurrentRow.Cells[0].Value.ToString());
-            if (temp == null)
+            object oTemp = db.GetSP(dgvSanPham.CurrentRow.Cells[0].Value.ToString());
+            if (oTemp == null)
             {
                 MessageBox.Show("Sản Phẩm này đã bị xóa khỏi dữ liệu. Vui lòng tải lại dữ liệu", "Có lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            foreach (PropertyInfo item in temp.GetType().GetProperties())
+            foreach (PropertyInfo item in oTemp.GetType().GetProperties())
             {
                 if (item.Name == "MaSP")
                 {
-                    txtMaSP.Text = item.GetValue(temp).ToString();
+                    txtMaSP.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "TenSp")
                 {
-                    txtTenSP.Text = item.GetValue(temp).ToString();
+                    txtTenSP.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "TenLoaiSanPham")
                 {
-                    txtLoaiSP.Text = item.GetValue(temp).ToString();
+                    txtLoaiSP.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "MauSac")
                 {
-                    if (item.GetValue(temp) == null) txtMauSac.Text = "Không có dữ liệu";
+                    if (item.GetValue(oTemp) == null) txtMauSac.Text = "Không có dữ liệu";
                     else
-                        txtMauSac.Text = item.GetValue(temp).ToString();
+                        txtMauSac.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "TrongLuong")
                 {
-                    if (item.GetValue(temp) == null) txtTrongLuong.Text = "Không có dữ liệu";
+                    if (item.GetValue(oTemp) == null) txtTrongLuong.Text = "Không có dữ liệu";
                     else
-                        txtTrongLuong.Text = item.GetValue(temp).ToString();
+                        txtTrongLuong.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "DonViTinh")
                 {
-                    if (item.GetValue(temp) == null) txtDonViTinh.Text = "Không có dữ liệu";
+                    if (item.GetValue(oTemp) == null) txtDonViTinh.Text = "Không có dữ liệu";
                     else
-                        txtDonViTinh.Text = item.GetValue(temp).ToString();
+                        txtDonViTinh.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "NgaySanXuat")
                 {
-                    txtNgaySX.Text = item.GetValue(temp).ToString();
+                    txtNgaySX.Text = item.GetValue(oTemp).ToString();
                 }
                 if (item.Name == "NgayHetHan")
                 {
-                    if (item.GetValue(temp) == null) txtNgayHetHan.Text = "Không có dữ liệu";
+                    if (item.GetValue(oTemp) == null) txtNgayHetHan.Text = "Không có dữ liệu";
                     else
-                        txtNgayHetHan.Text = item.GetValue(temp).ToString();
+                        txtNgayHetHan.Text = item.GetValue(oTemp).ToString();
                 }
             }
         }
@@ -172,8 +172,7 @@ namespace WindowsFormsApplication1
             else
             {
                 MessageBox.Show("Định giá sản phẩm thành công", "Giao dịch hoàn tất", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cboSelect.SelectedIndex = 1;
-                LoadGiaBan();
+                this.Close();
             }
         }
    

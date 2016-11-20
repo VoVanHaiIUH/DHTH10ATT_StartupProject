@@ -30,11 +30,11 @@ namespace BusinessEntities.BanHang
             get { return _ngayApDung; }
         }
 
-        public eGiaBan(string masp,decimal giaban,DateTime ngayapdung)
+        public eGiaBan(string pMaSp,decimal pGiaBan,DateTime pNgayApDung)
         {
-            this._maSP = masp;
-            this._giaBan = giaban;
-            this._ngayApDung = ngayapdung;
+            this._maSP = pMaSp;
+            this._giaBan = pGiaBan;
+            this._ngayApDung = pNgayApDung;
         }
         // override object.Equals
         public override bool Equals(object obj)

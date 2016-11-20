@@ -27,7 +27,7 @@ namespace PresentationTier.BanHang
 
         private void btnDinhGia_Click(object sender, EventArgs e)
         {
-            PresentationTier.BanHang.frmDinhGia _frmDinhGia = new frmDinhGia();
+            frmDinhGia _frmDinhGia = new frmDinhGia();
             _frmDinhGia.ShowDialog();
         }
     }

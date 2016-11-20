@@ -53,17 +53,14 @@ namespace BusinessEntities.BanHang
             get { return _VAT; }
             set { _VAT = value; }
         }
-
-        List<eChiTietHoaDonBanHang> list;
        
-        public eHoaDonBanHang(string makh,string manv,bool VAT,DateTime ngaylap)
+        public eHoaDonBanHang(string pMaKh,string pMaNv,bool pVAT,DateTime pNgayLap,decimal pTongTien)
         {
-            this._tongTien = 0;
-            this._ngayLap = ngaylap;
-            this._maKH = makh;
-            this._maNV = manv;
-            this._VAT = VAT;
-            list = new List<eChiTietHoaDonBanHang>();
+            this._tongTien = pTongTien;
+            this._ngayLap = pNgayLap;
+            this._maKH = pMaKh;
+            this._maNV = pMaNv;
+            this._VAT = pVAT;
         }
         // override object.Equals
         public override bool Equals(object obj)

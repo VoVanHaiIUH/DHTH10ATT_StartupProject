@@ -57,7 +57,7 @@
     <Compile Include="BanHang\frmDinhGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BanHang\frmDinhGia.Designer.cs">
+    <Compile Include="BanHang\frmDinhGia.designer.cs">
       <DependentUpon>frmDinhGia.cs</DependentUpon>
     </Compile>
     <Compile Include="BanHang\frmLapPhieu.cs">

@@ -48,7 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.radYVAT = new System.Windows.Forms.RadioButton();
             this.radNVAT = new System.Windows.Forms.RadioButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.lblTIme = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.grbHD.Controls.Add(this.label2);
             this.grbHD.Controls.Add(this.txtMaNV);
             this.grbHD.Controls.Add(this.label1);
-            this.grbHD.Location = new System.Drawing.Point(91, 43);
+            this.grbHD.Location = new System.Drawing.Point(90, 43);
             this.grbHD.Name = "grbHD";
             this.grbHD.Size = new System.Drawing.Size(279, 81);
             this.grbHD.TabIndex = 0;
@@ -104,11 +104,20 @@
             // 
             // dgvChiTiet
             // 
+            this.dgvChiTiet.AllowUserToResizeColumns = false;
+            this.dgvChiTiet.AllowUserToResizeRows = false;
+            this.dgvChiTiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChiTiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTiet.Location = new System.Drawing.Point(12, 130);
+            this.dgvChiTiet.MultiSelect = false;
             this.dgvChiTiet.Name = "dgvChiTiet";
+            this.dgvChiTiet.ReadOnly = true;
+            this.dgvChiTiet.RowHeadersVisible = false;
+            this.dgvChiTiet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiTiet.Size = new System.Drawing.Size(437, 150);
             this.dgvChiTiet.TabIndex = 1;
+            this.dgvChiTiet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTiet_CellClick);
+            this.dgvChiTiet.SelectionChanged += new System.EventHandler(this.dgvChiTiet_SelectionChanged);
             // 
             // grbChiTiet
             // 
@@ -215,6 +224,7 @@
             this.btnXoaSP.Tag = "0";
             this.btnXoaSP.Text = "Xóa khỏi giỏ hàng";
             this.btnXoaSP.UseVisualStyleBackColor = true;
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
             // label6
             // 
@@ -235,6 +245,7 @@
             this.radYVAT.TabStop = true;
             this.radYVAT.Text = "Có";
             this.radYVAT.UseVisualStyleBackColor = true;
+            this.radYVAT.CheckedChanged += new System.EventHandler(this.radYVAT_CheckedChanged);
             // 
             // radNVAT
             // 
@@ -247,13 +258,13 @@
             this.radNVAT.Text = "Không";
             this.radNVAT.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtTongTien
             // 
-            this.textBox7.Location = new System.Drawing.Point(296, 411);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(153, 20);
-            this.textBox7.TabIndex = 7;
+            this.txtTongTien.Location = new System.Drawing.Point(296, 411);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(153, 20);
+            this.txtTongTien.TabIndex = 7;
             // 
             // label8
             // 
@@ -289,10 +300,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(464, 469);
+            this.ClientSize = new System.Drawing.Size(462, 469);
+            this.Controls.Add(this.dgvChiTiet);
             this.Controls.Add(this.lblTIme);
             this.Controls.Add(this.btnThanhToan);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.radNVAT);
             this.Controls.Add(this.radYVAT);
@@ -300,8 +312,8 @@
             this.Controls.Add(this.btnXoaSP);
             this.Controls.Add(this.btnThemSP);
             this.Controls.Add(this.grbChiTiet);
-            this.Controls.Add(this.dgvChiTiet);
             this.Controls.Add(this.grbHD);
+            this.MaximizeBox = false;
             this.Name = "frmLapPhieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập Hóa Đơn Bán Hàng";
@@ -336,7 +348,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radYVAT;
         private System.Windows.Forms.RadioButton radNVAT;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.Label lblTIme;

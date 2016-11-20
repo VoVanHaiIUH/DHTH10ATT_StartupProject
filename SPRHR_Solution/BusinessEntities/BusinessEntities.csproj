@@ -42,6 +42,8 @@
     <Compile Include="BanHang\eChiTietHoaDonBanHang.cs" />
     <Compile Include="BanHang\eGiaBan.cs" />
     <Compile Include="BanHang\eHoaDonBanHang.cs" />
+    <Compile Include="BanHang\ePhuongThucThanhToan.cs" />
+    <Compile Include="BanHang\eThanhToan.cs" />
     <Compile Include="CongNo\eChiTietPhieuTraNoKhachHang.cs" />
     <Compile Include="CongNo\eChiTietPhieuTraNoNCC.cs" />
     <Compile Include="CongNo\eCongNoKhachHang.cs" />

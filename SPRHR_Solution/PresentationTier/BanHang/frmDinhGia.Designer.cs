@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace PresentationTier.BanHang
 {
     partial class frmDinhGia
     {
